@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""學測社會：試卷切圖、逐題切片、題組、答案與配分擷取。
+"""學測社會、自然：試卷切圖、逐題切片、題組、答案與配分擷取（兩科版面相同）。
 
-用法：python tools/xuece/extract_social.py 115 [116 ...]
-輸入：incoming/xuece/<年>-s-paper.pdf、<年>-s-ans.pdf
-輸出：assets/xuece-soc/pages/<年>-<頁>.webp、incoming/xuece/extract-soc-<年>.json
+用法：python tools/xuece/extract_social.py [--subj s|n] 115 [116 ...]   （s＝社會，預設；n＝自然）
+輸入：incoming/xuece/<年>-<科>-paper.pdf、<年>-<科>-ans.pdf
+輸出：assets/xuece-soc（或 xuece-sci）/pages/<年>-<頁>.webp、incoming/xuece/extract-soc（或 sci）-<年>.json
 """
 import json
 import re
@@ -20,7 +20,7 @@ from parse_ans import parse  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
-OUT = ROOT / "assets" / "xuece-soc" / "pages"
+SUBJ = {"s": "soc", "n": "sci"}  # 檔名代號 → 輸出代號
 PART2 = re.compile(r"^\s*第貳部分")
 
 
@@ -37,8 +37,9 @@ def ns_points(text):
     return total or None
 
 
-def extract(year):
-    doc = pymupdf.open(INC / f"{year}-s-paper.pdf")
+def extract(year, subj="s"):
+    OUT = ROOT / "assets" / f"xuece-{SUBJ[subj]}" / "pages"
+    doc = pymupdf.open(INC / f"{year}-{subj}-paper.pdf")
     OUT.mkdir(parents=True, exist_ok=True)
     for pn in range(1, len(doc)):
         pix = doc[pn].get_pixmap(matrix=pymupdf.Matrix(SCALE, SCALE))
@@ -76,7 +77,7 @@ def extract(year):
         elif k == "Q":
             s = region(boxes, (p, y), nxt(i))
             qs.append({"n": v, "s": s, "t": text_of(doc, s)})
-    ans = parse(INC / f"{year}-s-ans.pdf")
+    ans = parse(INC / f"{year}-{subj}-ans.pdf")
     if [q["n"] for q in qs] != list(range(1, max(ans) + 1)):
         got = [q["n"] for q in qs]
         sys.exit(f"[錯誤] {year}：試卷題號 {len(got)} 題（最後 {got[-1]}），答案 {max(ans)} 題")
@@ -91,9 +92,13 @@ def extract(year):
 
 
 if __name__ == "__main__":
-    for y in sys.argv[1:]:
-        d = extract(int(y))
-        (INC / f"extract-soc-{y}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), "utf-8")
+    args = sys.argv[1:]
+    subj = "s"
+    if args[:1] == ["--subj"]:
+        subj, args = args[1], args[2:]
+    for y in args:
+        d = extract(int(y), subj)
+        (INC / f"extract-{SUBJ[subj]}-{y}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), "utf-8")
         ns = [q for q in d["q"] if q["ans"] in ("／", "/")]
         tot = sum(q["pts"] or 0 for q in d["q"])
         print(f"{y}：{len(d['q'])} 題、{len(d['g'])} 組題組、混合題自第 {d['mixed_from']} 題起、"

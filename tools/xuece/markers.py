@@ -1,7 +1,7 @@
 """找出試卷中的題號、題組標題、區段標題與其位置。"""
 import re, pymupdf
 QRE=re.compile(r"^\s*(\d{1,2})\s*[.．]\s*\S")
-GRE=re.compile(r"^\s*(\d{1,2})\s*[-－–~～]\s*(\d{1,2})\s*為題組")
+GRE=re.compile(r"^\s*(\d{1,2})\s*[-－–~～]\s*(\d{1,2})\s*題?\s*為題組")  # 「12-14為題組」或「1-2題為題組」
 SRE=re.compile(r"^\s*(第[壹貳參肆]部分|[一二三四]、\s*(單選|多選|混合|非選|綜合)|說明：)")
 def lines(page):
     out=[]
