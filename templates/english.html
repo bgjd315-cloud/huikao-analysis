@@ -1,0 +1,565 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>會考英語命題解剖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --card-red:#C23B4E; --card-red-soft:#F7E3E6;
+  --K:#8A8F98; --B:#2F6DB5; --P:#8FB3E0; --N:#2E9384; --W:#C23B4E; --C:#E8929E;
+  --dim1:#8A8F98; --dim2:#2F6DB5; --dim3:#D08A2C;
+  --focus:#2F6DB5;
+  --cV:#2F6DB5; --cG:#7A5AB8; --cR:#2E9384; --cC:#D08A2C; --cL1:#C23B4E; --cL2:#D9707F; --cL3:#8E2A3A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+    --K:#9CA1AA; --B:#5B93D6; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+    --dim1:#9CA1AA; --dim2:#5B93D6; --dim3:#E3A450; --focus:#8FB3E0; --cV:#5B93D6; --cG:#A58BE0; --cR:#3FB3A2; --cC:#E3A450; --cL1:#E8687A; --cL2:#F0A0AB; --cL3:#C9475B;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+  --K:#9CA1AA; --B:#5B93D6; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+  --dim1:#9CA1AA; --dim2:#5B93D6; --dim3:#E3A450; --focus:#8FB3E0; --cV:#5B93D6; --cG:#A58BE0; --cR:#3FB3A2; --cC:#E3A450; --cL1:#E8687A; --cL2:#F0A0AB; --cL3:#C9475B;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB","BiauKai",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:26px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--B)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+header.top{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--card-red);font-weight:700}
+.lede{max-width:62ch;color:var(--ink-2);font-size:16.5px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-3)}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 16px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:14px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--card-red)}
+
+section{padding-block:44px 8px;display:grid;gap:18px}
+.sec-head{display:grid;gap:6px}
+.sec-head .kicker{font-size:12.5px;letter-spacing:.1em;color:var(--ink-3);font-weight:500}
+.sec-head p{color:var(--ink-2);max-width:66ch}
+
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.findings li{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.findings b{font-family:"LXGW WenKai TC",serif;font-size:19px;color:var(--card-red);font-weight:700;line-height:1.4}
+@media (max-width:560px){.findings li{grid-template-columns:1fr;gap:2px}}
+
+/* answer card */
+.card-panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px;display:grid;gap:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.legend button{font:inherit;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 8px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.legend button[aria-pressed="true"]{border-color:var(--ink);background:var(--rule-2)}
+.legend .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.legend .ct{color:var(--ink-3);font-size:12px}
+.sheet{overflow-x:auto}
+.sheet-inner{min-width:760px;display:grid;gap:8px}
+.row{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px}
+.row .yr{font-weight:700;font-size:14px;color:var(--ink-2)}
+.bubbles{display:flex;gap:3px;align-items:center}
+.bubbles .gap{width:10px;flex:none;align-self:stretch;border-left:1px dashed var(--rule);margin-left:4px}
+.bub{flex:1 1 0;min-width:0;aspect-ratio:1/1.35;max-height:30px;border-radius:40%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;font-size:9.5px;color:#fff;font-variant-numeric:tabular-nums;transition:opacity .15s}
+.bub.dim{opacity:.14}
+.bub[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.scale{display:grid;grid-template-columns:44px 1fr;gap:10px;font-size:11.5px;color:var(--ink-3)}
+.scale .ticks{display:flex;justify-content:space-between}
+.detail{min-height:48px;border-top:1px solid var(--rule);padding-top:10px;font-size:14.5px;color:var(--ink-2)}
+.detail strong{color:var(--ink)}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:44px 1fr 64px;gap:10px;align-items:center;font-size:13.5px}
+.bar{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
+.bar span{display:grid;place-items:center;color:#fff;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.bar-row .yr{font-weight:700;color:var(--ink-2)}
+.bar-row .note{color:var(--ink-3);font-size:12.5px;text-align:right}
+.mini-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.mini-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center}
+.q{font-variant-numeric:tabular-nums;color:var(--card-red);font-weight:500}
+.miss{color:var(--ink-3)}
+.tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:3px;margin:1px 3px 1px 0;border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.tag.x{border-color:var(--B);color:var(--B)}
+.tag.g{border-color:var(--N);color:var(--N)}
+.tag.w{border-color:var(--W);color:var(--W)}
+.tag.p{border-color:var(--P);color:var(--ink-2)}
+.hit{background:var(--card-red-soft)}
+
+.year-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.year-tabs button{font:inherit;font-size:14px;padding:4px 14px;border-radius:4px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer}
+.year-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);border-radius:6px;background:var(--surface);overflow:hidden}
+.levels > div{padding:16px 18px;display:grid;gap:8px;align-content:start;border-right:1px solid var(--rule)}
+.levels > div:last-child{border-right:0}
+.levels h3{display:flex;align-items:baseline;gap:8px}
+.levels .grade{font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:500;color:var(--ink-3)}
+.levels ul{margin:0;padding-left:1.1em;font-size:13.5px;color:var(--ink-2);display:grid;gap:3px}
+.levels .sum{font-size:14px}
+@media (max-width:760px){.levels{grid-template-columns:1fr}.levels > div{border-right:0;border-bottom:1px solid var(--rule)}.levels > div:last-child{border-bottom:0}}
+
+.prompts{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.prompts li{display:grid;grid-template-columns:56px 1fr auto;gap:14px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.prompts .y{font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.prompts .t{font-family:"LXGW WenKai TC",serif;font-size:17px}
+.prompts .t small{display:block;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:var(--ink-3)}
+.prompts .k{font-size:12px;color:var(--ink-3);white-space:nowrap}
+.prompts li.new .k{color:var(--card-red)}
+@media (max-width:560px){.prompts li{grid-template-columns:48px 1fr}.prompts .k{grid-column:2}}
+
+.advice{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.advice > div{padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.advice h3{font-size:17px}
+.advice p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.advice{grid-template-columns:1fr}}
+
+/* question bank */
+.bank-ctl{display:grid;gap:10px}
+.bank-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bank-row select,.bank-row input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink)}
+.bank-row input{flex:1 1 220px;min-width:0}
+.bank-count{font-size:13px;color:var(--ink-3)}
+.qlist{display:grid;border-top:1px solid var(--rule)}
+.qitem{border-bottom:1px solid var(--rule)}
+.qitem > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:78px 1fr;gap:12px;padding:10px 4px;align-items:baseline}
+.qitem > summary::-webkit-details-marker{display:none}
+.qitem > summary:hover{background:var(--rule-2)}
+.qid{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.qid .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.qsum{display:grid;gap:2px;min-width:0}
+.qsum .lab{font-size:14.5px}
+.qsum .lab small{color:var(--ink-3);font-size:12.5px;margin-left:6px}
+.qsum .snip{font-size:13px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qitem[open] > summary{background:var(--rule-2)}
+.qbody{padding:12px 4px 18px;display:grid;gap:10px}
+.paper{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:6px 4px;display:grid;gap:0}
+.paper svg{display:block;width:100%;height:auto}
+.passage > summary{cursor:pointer;font-size:13.5px;color:var(--ink-2);padding:4px 0}
+.qtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qtools button{font:inherit;font-size:13px;padding:4px 12px;border-radius:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+.qtools .msg{font-size:12.5px;color:var(--ink-3)}
+.qtext{white-space:pre-wrap;font-size:14px;line-height:1.8;background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;margin:0;max-height:360px;overflow:auto;font-family:inherit}
+mark{background:var(--card-red-soft);color:inherit}
+.ans-toggle{font-size:14px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.ans-toggle input{flex:none;width:16px;height:16px;accent-color:var(--card-red)}
+.qitem > summary{grid-template-columns:78px 1fr auto}
+.ans{font-weight:700;font-size:13px;color:var(--card-red);border:1.5px solid var(--card-red);border-radius:4px;padding:0 7px;align-self:center;font-variant-numeric:tabular-nums}
+.ans-reveal{font-size:14px;font-weight:700;color:var(--card-red)}
+.more{font:inherit;font-size:14px;padding:8px;border:1px dashed var(--rule);background:transparent;color:var(--ink-2);border-radius:4px;cursor:pointer}
+
+.source{font-size:13px;color:var(--ink-3);display:grid;gap:6px}
+.source ul{margin:0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.sheet-h{font-size:15px;margin-top:4px}
+.sheet-inner.narrow{min-width:420px;max-width:640px}
+.qlink{text-decoration:none}
+.qlink:hover{text-decoration:underline}
+.audio{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.audio audio{width:min(100%,360px)}
+.audio .msg{font-size:12.5px;color:var(--ink-3)}
+.scripts{display:grid;gap:6px}
+.scripts h3{font-size:16px;margin-top:8px}
+.script{display:grid;gap:4px;margin:8px 0}
+.script-h{font-size:13.5px;color:var(--ink-2)}
+.qtext{font-family:inherit}
+</style>
+
+<div class="wrap">
+<a class="home-link" href="../" style="display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none">← 五科總覽</a>
+<header class="top">
+  <div class="eyebrow">國中教育會考 · 英語科 · 111–115 年</div>
+  <h1>會考英語命題解剖</h1>
+  <p class="lede">依心測中心公布的 111–115 年英語科閱讀與聽力試題本、試題說明、聽力音檔與參考答案，把五年共 320 題逐題分類：單題考哪些字彙與語法，題組評量哪些閱讀次能力，聽力三部分怎麼出，並附可搜尋、可播放聽力、含答案的原題試題庫。</p>
+  <div class="meta"><span>資料來源：國中教育會考官網「歷屆試題」</span><span>整理日期：2026-09-27</span><span>字彙、語法、篇章、克漏字題數為官方數據；閱讀次能力為本頁逐題分類</span></div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#findings">五年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#structure">試題本結構</a><a href="#skills">閱讀次能力</a><a href="#grammar">語法考點</a><a href="#groups">題組文本</a><a href="#listening">聽力</a><a href="#levels">等級分界</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
+</nav>
+
+<section id="findings">
+  <div class="sec-head"><span class="kicker">重點</span><h2>五年結論</h2></div>
+  <ul class="findings">
+    <li><b>兩本試題本</b><p>閱讀 43 題（四選一，60 分鐘）加聽力 21 題（三選一，25 分鐘）。聽力五年結構完全相同：辨識句意 3 題、基本問答 8 題、言談理解 10 題。</p></li>
+    <li><b>單題變少</b><p>閱讀單題從 112 年的 23 題減為 114、115 年的 19 題；題組固定 8 篇，題組題增加到 24 題。</p></li>
+    <li><b>字彙多於語法</b><p>五年單題中字彙 62 題、語法 40 題。語法題從每年 9 題降到 7 題，其中 18 題考動詞時態。</p></li>
+    <li><b>找細節最多</b><p>題組題（不含克漏字）以「指出細節」31 題最多，其次是「推敲文意」21 題、「擷取大意」11 題；猜字義、作者目的每年都有。</p></li>
+    <li><b>文本很生活</b><p>每年都有廣告、傳單、地圖、漫畫、食譜、手冊這類不連續文本，搭配報導、故事、投書等連續文本。</p></li>
+    <li><b>克漏字考篇章</b><p>克漏字每年 1 篇 2–6 題，選項多是整句或片語，要看前後文的連貫，不只是文法。</p></li>
+    <li><b>聽力只分兩級</b><p>聽力成績只分「基礎」與「待加強」，官方示例顯示答對第三部分的短對話或廣播就達到基礎。</p></li>
+  </ul>
+</section>
+
+<section id="sheet">
+  <div class="sec-head"><span class="kicker">互動</span><h2>題目地圖</h2><p>上半部是閱讀 43 題、下半部是聽力 21 題，排列方式像答案卡。顏色代表題目類別，閱讀的虛線右邊是題組。點選圓點會在試題庫打開原題。</p></div>
+  <div class="card-panel">
+    <div class="legend" id="legend" role="group" aria-label="篩選類別"></div>
+    <h3 class="sheet-h">閱讀</h3>
+    <div class="sheet"><div class="sheet-inner" id="sheetR"></div></div>
+    <h3 class="sheet-h">聽力</h3>
+    <div class="sheet"><div class="sheet-inner narrow" id="sheetL"></div></div>
+    <div class="detail" id="detail" aria-live="polite">點選任一題，會在下方試題庫打開原題。</div>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="sec-head"><span class="kicker">原試題</span><h2>試題庫</h2><p>五年 320 題的原始題目，圖片直接裁切自官方試題本；聽力題可以直接播放官方音檔。可以依年度、試題本、類別篩選，或用關鍵字搜尋題幹、選項與選文。答案預設隱藏，可逐題點「看答案」，或勾選「列表顯示答案」。</p></div>
+  <div class="bank-ctl">
+    <div class="bank-row">
+      <label for="bYear" class="bank-count">年度</label>
+      <select id="bYear"><option value="all">全部</option></select>
+      <label for="bBook" class="bank-count">試題本</label>
+      <select id="bBook"><option value="all">全部</option><option value="R">閱讀</option><option value="L">聽力</option></select>
+      <label for="bCat" class="bank-count">類別</label>
+      <select id="bCat"><option value="all">全部</option></select>
+    </div>
+    <div class="bank-row">
+      <input id="bSearch" type="search" placeholder="搜尋：例如 relative、時態、infographic、Halloween">
+      <label class="ans-toggle" for="bAns"><input type="checkbox" id="bAns"> 列表顯示答案</label>
+    </div>
+    <div class="bank-count" id="bCount" aria-live="polite"></div>
+  </div>
+  <div class="qlist" id="qlist"></div>
+</section>
+
+<section id="structure">
+  <div class="sec-head"><span class="kicker">官方數據</span><h2>試題本結構</h2><p>試題說明公布的閱讀試題本題數分配。聽力五年都是辨識句意 3、基本問答 8、言談理解 10。</p></div>
+  <div class="mini-legend" id="structLegend"></div>
+  <div class="bars" id="structBars"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th class="c">單題</th><th class="c">字彙</th><th class="c">語法</th><th class="c">篇章理解</th><th class="c">克漏字</th><th class="c">題組篇數</th><th class="c">聽力</th></tr></thead>
+    <tbody id="structTable"></tbody>
+  </table></div>
+</section>
+
+<section id="skills">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>閱讀次能力</h2><p>題組題依官方試題說明使用的閱讀次能力名稱逐題歸類；官方在說明中點名的題目依官方歸類，其餘由本頁判讀。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>閱讀次能力</th><th>典型問法</th><th class="c">111</th><th class="c">112</th><th class="c">113</th><th class="c">114</th><th class="c">115</th><th class="c">合計</th></tr></thead>
+    <tbody id="skillTable"></tbody>
+  </table></div>
+</section>
+
+<section id="grammar">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>語法考點</h2><p>五年 40 題語法單題依考點歸類，數字是題號，點題號可看原題。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>考點</th><th class="c">111</th><th class="c">112</th><th class="c">113</th><th class="c">114</th><th class="c">115</th><th class="c">合計</th></tr></thead>
+    <tbody id="gramTable"></tbody>
+  </table></div>
+</section>
+
+<section id="groups">
+  <div class="sec-head"><span class="kicker">題組</span><h2>題組文本</h2><p>每年 8 篇題組，最後一篇固定是克漏字。</p></div>
+  <div class="year-tabs" role="tablist" aria-label="選擇年度" id="gTabs"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>題號</th><th>文體</th><th>主題</th><th>本組次能力</th></tr></thead>
+    <tbody id="gTable"></tbody>
+  </table></div>
+</section>
+
+<section id="listening">
+  <div class="sec-head"><span class="kicker">聽力</span><h2>聽力</h2><p>三選一、每題播放兩次，全部是單題。官方沒有公布完整播音稿，只在試題說明中公布每年 3 題示例的稿子，列在下方；其他題目可在試題庫播放原音。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>部分</th><th>題號</th><th>形式</th><th>官方示例與等級</th></tr></thead>
+    <tbody>
+      <tr><td><b>一、辨識句意</b></td><td class="num">1–3</td><td>聽一句描述，從三張圖片選出相符者</td><td>111 #2、112 #2、113 #3、114 #2、115 #2：答錯者較可能是待加強</td></tr>
+      <tr><td><b>二、基本問答</b></td><td class="num">4–11</td><td>聽一句問話，選出最適合的回應</td><td>111 #5、112 #4、113 #4、114 #4、115 #4：答錯者較可能是待加強</td></tr>
+      <tr><td><b>三、言談理解</b></td><td class="num">12–21</td><td>聽短對話或廣播後回答問題</td><td>111 #12、112 #13、113 #12、114 #12、115 #12：答對者較可能達到基礎</td></tr>
+    </tbody>
+  </table></div>
+  <div class="scripts" id="scripts"></div>
+</section>
+
+<section id="levels">
+  <div class="sec-head"><span class="kicker">試題說明「能力等級示例」</span><h2>等級分界（閱讀）</h2><p>閱讀分精熟、基礎、待加強三級，五年示例的出題位置非常一致。</p></div>
+  <div class="levels">
+    <div>
+      <h3>精熟 <span class="grade">A++／A+／A</span></h3>
+      <p class="sum">答對者較可能是精熟</p>
+      <ul>
+        <li>111 #24 糖的資訊圖表：推論清單用意</li>
+        <li>112 #33 〈給愛麗絲〉：統整三個故事</li>
+        <li>113 #33 難民餐廳：統整段落大意</li>
+        <li>114 #29 復活節島漫畫：推論寓意</li>
+        <li>115 #32 海玻璃：推知標題含義</li>
+      </ul>
+      <p class="sum">都要統整整篇或多段訊息再推論，答案不能從單一句子直接找到。</p>
+    </div>
+    <div>
+      <h3>基礎 <span class="grade">B++／B+／B</span></h3>
+      <p class="sum">答對者較可能是基礎以上</p>
+      <ul>
+        <li>111 #21 茶飲廣告</li>
+        <li>112 #26 幼鳥筆記</li>
+        <li>113 #22 忘帶鑰匙的故事</li>
+        <li>114 #21 小狗 Rex</li>
+        <li>115 #21 水果茶食譜</li>
+      </ul>
+      <p class="sum">全部是第一、二篇題組的細節題，文本語句簡短、敘述直白。</p>
+    </div>
+    <div>
+      <h3>待加強 <span class="grade">C</span></h3>
+      <p class="sum">答錯者較可能是待加強</p>
+      <ul>
+        <li>111 #6 choice</li>
+        <li>112 #3 shout</li>
+        <li>113 #2 neck</li>
+        <li>114 #2 shy</li>
+        <li>115 #2 feeds</li>
+      </ul>
+      <p class="sum">全部是單題前段的字彙題，情境常見、線索明顯。</p>
+    </div>
+  </div>
+</section>
+
+<section id="advice">
+  <div class="sec-head"><span class="kicker">依上面數據推論</span><h2>教學建議</h2></div>
+  <div class="advice">
+    <div><h3>字彙以情境句練習</h3><p>字彙題每年 11–14 題，題幹都用前後句提供線索，例如「錢只夠買一樣」推出 choice。練習時要求學生說出線索句，而不只背中文意思。</p></div>
+    <div><h3>語法集中練時態</h3><p>40 題語法中有 18 題考動詞時態（含時間子句），其次是代名詞與關係子句。</p></div>
+    <div><h3>不連續文本要常讀</h3><p>傳單、地圖、手冊、資訊圖表幾乎每年出現，題目常要求套用規則計算或選路線，需要專門練習讀表格與圖例。</p></div>
+    <div><h3>精熟靠統整推論</h3><p>精熟示例都要整合多段或多個圖表才能作答。可以練習「用一句話說出這段在講什麼」「作者為什麼放這張圖」。</p></div>
+    <div><h3>克漏字看上下文</h3><p>克漏字選項多為整句，練習時先讀完整篇，再依前後句的邏輯關係選答。</p></div>
+    <div><h3>聽力先顧第三部分</h3><p>第三部分言談理解 10 題占聽力一半，內容是生活對話與公共廣播。先看選項再聽，抓住題目問的是地點、目的還是意見。</p></div>
+  </div>
+</section>
+
+<section id="source">
+  <div class="sec-head"><span class="kicker">說明</span><h2>資料與方法</h2></div>
+  <div class="source">
+    <ul>
+      <li>原始資料：心測中心國中教育會考官網「歷屆試題」頁所連結的 111–115 年英語科閱讀試題本、聽力試題本與音檔、試題說明，以及選擇題參考答案一覽表的「閱讀」「聽力」欄。</li>
+      <li>單題、字彙、語法、篇章理解、克漏字題數與能力等級示例取自各年「試題說明」。本頁逐題的字彙／語法歸類已與官方題數逐年對齊（連接詞、疑問詞等功能字依官方題數歸入字彙）。</li>
+      <li>題組的閱讀次能力：試題說明有點名的題目依官方歸類，其餘由本頁判讀，不是官方分類。</li>
+      <li>參考答案已用試題說明中標註答案的示例題核對，全部相符。</li>
+      <li>聽力音檔為官方音檔轉成單聲道較低位元率，以縮小檔案，內容未剪輯；每題音檔包含播放兩次的完整內容。</li>
+      <li>「試題庫」的題目圖片裁切自官方試題本 PDF，未經改動；「文字版」由 PDF 自動擷取，圖表內文字可能不完整。</li>
+    </ul>
+    <p>官網：<a href="https://cap.rcpet.edu.tw/examination.html" target="_blank" rel="noopener">cap.rcpet.edu.tw/examination.html</a></p>
+  </div>
+</section>
+</div>
+
+<script id="clsData" type="application/json">{{json:clsData}}</script>
+<script id="ansData" type="application/json">{{json:ansData}}</script>
+<script id="exR" type="application/json">{{json:exR}}</script>
+<script id="exL" type="application/json">{{json:exL}}</script>
+<script>
+const YEARS = {{years}};
+const CLS = JSON.parse(document.getElementById("clsData").textContent);
+const ANS = JSON.parse(document.getElementById("ansData").textContent);
+const EXR = JSON.parse(document.getElementById("exR").textContent);
+const EXL = JSON.parse(document.getElementById("exL").textContent);
+const CAT = {
+  V:{name:"字彙",v:"--cV",book:"R"}, G:{name:"語法",v:"--cG",book:"R"},
+  M:{name:"擷取大意",v:"--cR",book:"R"}, D:{name:"指出細節",v:"--cR",book:"R"}, W:{name:"猜測字義",v:"--cR",book:"R"},
+  I:{name:"推敲文意",v:"--cR",book:"R"}, P:{name:"作者目的與態度",v:"--cR",book:"R"}, S:{name:"比較與整合",v:"--cR",book:"R"},
+  K:{name:"篇章連貫",v:"--cR",book:"R"}, C:{name:"克漏字",v:"--cC",book:"R"},
+  L1:{name:"辨識句意",v:"--cL1",book:"L"}, L2:{name:"基本問答",v:"--cL2",book:"L"}, L3:{name:"言談理解",v:"--cL3",book:"L"}
+};
+const LEG = [["V","字彙"],["G","語法"],["R","篇章理解"],["C","克漏字"],["L1","辨識句意"],["L2","基本問答"],["L3","言談理解"]];
+const legKey = c => ["M","D","W","I","P","S","K"].includes(c) ? "R" : c;
+const SKILLDESC = {M:"What is the reading mainly about?",D:"According to the reading, which is true…?",W:"What does ___ mean in the reading?",I:"What can we learn / most likely…?",P:"Why does the writer…? / What does the writer think…?",S:"比較兩篇、兩張圖表或排序訊息",K:"代稱指涉、段落之間的關聯"};
+const STRUCT = {{js:STRUCT}};
+const SCRIPTS = {{js:SCRIPTS}};
+const GRAMTOPIC = l => /式|時態|時間子句/.test(l) ? "動詞時態" : /關係子句/.test(l) ? "關係子句" : /代名詞/.test(l) ? "代名詞" : /被動/.test(l) ? "被動語態" : /不定詞|動名詞|分詞/.test(l) ? "不定詞、動名詞與分詞" : /對等連接/.test(l) ? "對等連接" : "其他（比較級、倒裝、附加問句、祈使句等）";
+const GORDER = ["動詞時態","代名詞","關係子句","被動語態","不定詞、動名詞與分詞","對等連接","其他（比較級、倒裝、附加問句、祈使句等）"];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lpart = n => n<=3?"L1":n<=11?"L2":"L3";
+
+/* build items */
+const ITEMS=[];
+YEARS.forEach(y=>{
+  const R=EXR[y], cls=CLS[y].items;
+  R.q.forEach(q=>{
+    const [c,lab]=cls[q.n-1]; const g=R.g.find(g=>q.n>=g.a&&q.n<=g.b)||null;
+    const gi=g?R.g.indexOf(g):-1;
+    const label = c==="V"||c==="G" ? `${CAT[c].name}：${lab}` : c==="C" ? `克漏字：${CLS[y].gt[gi][1]}` : `${CAT[c].name}：${CLS[y].gt[gi][1]}`;
+    ITEMS.push({y,book:"R",n:q.n,c,label,q,g,ex:R,part:q.n<=R.single?"單題":"題組",ans:ANS[y].R[q.n-1],
+      hay:(label+" "+CAT[c].name+" "+q.t+" "+(g?g.t:"")).replace(/\s+/g," ").toLowerCase()});
+  });
+  EXL[y].q.forEach(q=>{
+    const c=lpart(q.n); const sc=(SCRIPTS[y]||[]).find(s=>s[0]===q.n);
+    ITEMS.push({y,book:"L",n:q.n,c,label:`聽力・${CAT[c].name}`,q,g:null,ex:EXL[y],part:"聽力",ans:ANS[y].L[q.n-1],script:sc?sc[1]:null,
+      hay:("聽力 "+CAT[c].name+" "+q.t+" "+(sc?sc[1]:"")).replace(/\s+/g," ").toLowerCase()});
+  });
+});
+const findItem=(y,book,n)=>ITEMS.find(i=>i.y===y&&i.book===book&&i.n===n);
+
+/* sheet */
+let filter=null, picked=null;
+const legend=document.getElementById("legend");
+LEG.forEach(([k,name])=>{
+  const cnt=ITEMS.filter(i=>legKey(i.c)===k).length;
+  const v = k==="R"?"--cR":CAT[k].v;
+  const b=document.createElement("button"); b.type="button"; b.id="lg-"+k; b.dataset.k=k; b.setAttribute("aria-pressed","false");
+  b.innerHTML=`<span class="sw" style="background:var(${v})"></span>${name}<span class="ct num">${cnt}</span>`;
+  b.addEventListener("click",()=>{filter=filter===k?null:k;renderFilter();}); legend.appendChild(b);
+});
+function buildSheet(el,book){
+  YEARS.forEach(y=>{
+    const r=document.createElement("div"); r.className="row"; r.innerHTML=`<span class="yr num">${y}</span>`;
+    const bb=document.createElement("div"); bb.className="bubbles";
+    ITEMS.filter(i=>i.y===y&&i.book===book).forEach(it=>{
+      if(book==="R"&&it.n===EXR[y].single+1){const g=document.createElement("span");g.className="gap";g.setAttribute("aria-hidden","true");bb.appendChild(g);}
+      if(book==="L"&&(it.n===4||it.n===12)){const g=document.createElement("span");g.className="gap";g.setAttribute("aria-hidden","true");bb.appendChild(g);}
+      const b=document.createElement("button"); b.type="button"; b.className="bub"; b.id=`q-${y}-${book}-${it.n}`; b.dataset.k=legKey(it.c);
+      b.style.background=`var(${CAT[it.c].v})`; b.textContent=it.n;
+      b.setAttribute("aria-label",`${y}年${book==="R"?"閱讀":"聽力"}第${it.n}題，${it.label}`); b.setAttribute("aria-pressed","false");
+      b.addEventListener("click",()=>{
+        if(picked) picked.setAttribute("aria-pressed","false"); picked=b; b.setAttribute("aria-pressed","true");
+        document.getElementById("detail").innerHTML=`<strong>${y} 年${book==="R"?"閱讀":"聽力"}第 ${it.n} 題</strong>　${esc(it.label)}　<a href="#qi-${y}-${book}-${it.n}">看原題 ↓</a>`;
+        openInBank(y,book,it.n);
+      });
+      bb.appendChild(b);
+    });
+    r.appendChild(bb); el.appendChild(r);
+  });
+}
+buildSheet(document.getElementById("sheetR"),"R");
+buildSheet(document.getElementById("sheetL"),"L");
+function renderFilter(){
+  document.querySelectorAll(".legend button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===filter)));
+  document.querySelectorAll(".bub").forEach(b=>b.classList.toggle("dim",!!filter&&b.dataset.k!==filter));
+}
+
+/* structure */
+const SC=["--cV","--cG","--cR","--cC"], SN=["字彙","語法","篇章理解","克漏字"];
+document.getElementById("structLegend").innerHTML=SN.map((n,i)=>`<span><i style="background:var(${SC[i]})"></i>${n}</span>`).join("");
+YEARS.forEach(y=>{
+  const [s,v,g,r,c]=STRUCT[y]; const vals=[v,g,r,c];
+  document.getElementById("structBars").insertAdjacentHTML("beforeend",`<div class="bar-row"><span class="yr num">${y}</span><div class="bar" role="img" aria-label="${y}年 字彙${v} 語法${g} 篇章理解${r} 克漏字${c}">${
+    vals.map((n,i)=>`<span style="width:${n/43*100}%;background:var(${SC[i]})">${n}</span>`).join("")}</div><span class="note num">單題 ${s}</span></div>`);
+  document.getElementById("structTable").insertAdjacentHTML("beforeend",`<tr><td class="num"><b>${y}</b></td><td class="c num">${s}</td><td class="c num">${v}</td><td class="c num">${g}</td><td class="c num">${r}（7 篇）</td><td class="c num">${c}（1 篇）</td><td class="c num">8</td><td class="c num">3／8／10</td></tr>`);
+});
+
+/* skills table */
+const sk=document.getElementById("skillTable");
+["D","I","M","W","P","S","K"].forEach(c=>{
+  const per=YEARS.map(y=>CLS[y].items.filter(([x])=>x===c).length);
+  sk.insertAdjacentHTML("beforeend",`<tr><td><b>${CAT[c].name}</b></td><td style="color:var(--ink-2);font-size:13px">${esc(SKILLDESC[c])}</td>${per.map(n=>`<td class="c num">${n}</td>`).join("")}<td class="c num"><b>${per.reduce((a,b)=>a+b,0)}</b></td></tr>`);
+});
+
+/* grammar table */
+const gt=document.getElementById("gramTable");
+GORDER.forEach(topic=>{
+  const per=YEARS.map(y=>CLS[y].items.map((it,i)=>[it,i+1]).filter(([[c,l]])=>c==="G"&&GRAMTOPIC(l)===topic).map(([,n])=>n));
+  const sum=per.reduce((a,b)=>a+b.length,0); if(!sum) return;
+  gt.insertAdjacentHTML("beforeend",`<tr><td><b>${topic}</b></td>${per.map((q,i)=>q.length?`<td class="c hit">${q.map(n=>`<a class="q qlink" href="#qi-${YEARS[i]}-R-${n}" data-y="${YEARS[i]}" data-b="R" data-n="${n}">${n}</a>`).join("、")}</td>`:`<td class="c miss">—</td>`).join("")}<td class="c num"><b>${sum}</b></td></tr>`);
+});
+gt.addEventListener("click",e=>{const a=e.target.closest(".qlink"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,a.dataset.b,+a.dataset.n);});
+
+/* groups */
+const gTabs=document.getElementById("gTabs"), gTable=document.getElementById("gTable");
+function showGroups(y){
+  gTabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(+b.dataset.y===y)));
+  gTable.innerHTML=EXR[y].g.map((g,i)=>{
+    const cs=CLS[y].items.slice(g.a-1,g.b).map(([c])=>c);
+    const tags=[...new Set(cs)].map(c=>`<span class="tag">${CAT[c].name}${cs.filter(x=>x===c).length>1?"×"+cs.filter(x=>x===c).length:""}</span>`).join("");
+    return `<tr><td class="q" style="white-space:nowrap">${g.a}–${g.b}</td><td style="white-space:nowrap">${CLS[y].gt[i][0]}</td><td>${esc(CLS[y].gt[i][1])}</td><td>${tags}</td></tr>`;}).join("");
+  try{localStorage.setItem("eng-gyear",y);}catch(e){}
+}
+YEARS.forEach(y=>{const b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.id="gt-"+y;b.dataset.y=y;b.textContent=y+" 年";b.addEventListener("click",()=>showGroups(y));gTabs.appendChild(b);});
+let gy=115; try{const s=+localStorage.getItem("eng-gyear"); if(YEARS.includes(s)) gy=s;}catch(e){}
+showGroups(gy);
+
+/* official listening scripts */
+document.getElementById("scripts").innerHTML=`<h3>官方公布的聽力示例播音稿</h3>`+YEARS.map(y=>`<details class="passage"><summary>${y} 年：第 ${SCRIPTS[y].map(s=>s[0]).join("、")} 題</summary>${SCRIPTS[y].map(([n,t])=>`<div class="script"><div class="script-h">第 ${n} 題　<a href="#qi-${y}-L-${n}" class="qlink" data-y="${y}" data-b="L" data-n="${n}">看題目與音檔</a></div><pre class="qtext">${esc(t)}</pre></div>`).join("")}</details>`).join("");
+document.getElementById("scripts").addEventListener("click",e=>{const a=e.target.closest(".qlink"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,a.dataset.b,+a.dataset.n);});
+
+/* question bank */
+let uid=0;
+function paperHTML(it, slices, label){
+  const ex=it.ex, W=ex.w, H=ex.h, X0=ex.x0, XW=ex.xw;
+  return `<div class="paper">${slices.map(([p,a,b,clips,masks])=>{
+    const id=`cp${uid++}`;
+    return `<svg viewBox="${X0} ${a} ${XW} ${(b-a).toFixed(1)}" role="img" aria-label="${label}"><defs><clipPath id="${id}">${clips.map(([x,yy,w,h])=>`<rect x="${x}" y="${yy}" width="${w}" height="${h}"/>`).join("")}</clipPath></defs><g clip-path="url(#${id})"><image href="eng-pages/${it.y}-${it.book}-${p}.webp" x="0" y="0" width="${W}" height="${H}"/>${masks.map(([x,yy,w,h])=>`<rect x="${x}" y="${yy}" width="${w}" height="${h}" fill="#fff"/>`).join("")}</g></svg>`;}).join("")}</div>`;
+}
+const bYear=document.getElementById("bYear"), bBook=document.getElementById("bBook"), bCat=document.getElementById("bCat"), bSearch=document.getElementById("bSearch"), bAns=document.getElementById("bAns");
+YEARS.forEach(y=>bYear.insertAdjacentHTML("beforeend",`<option value="${y}">${y} 年</option>`));
+function fillCats(){
+  const cur=bCat.value, b=bBook.value;
+  bCat.innerHTML=`<option value="all">全部</option>`+Object.keys(CAT).filter(k=>b==="all"||CAT[k].book===b).map(k=>`<option value="${k}">${CAT[k].book==="L"?"聽力・":""}${CAT[k].name}</option>`).join("");
+  if([...bCat.options].some(o=>o.value===cur)) bCat.value=cur;
+}
+fillCats();
+function snippet(it,kw){
+  const t=it.q.t.replace(/^(\d{1,2}[\.．]|第\s*\d+\s*題)\s*/,"").replace(/\s+/g," ");
+  if(kw){const flat=it.hay; const i=flat.indexOf(kw); if(i>=0&&!it.label.toLowerCase().includes(kw)){const st=Math.max(0,i-24);return esc(flat.slice(st,i))+"<mark>"+esc(flat.slice(i,i+kw.length))+"</mark>"+esc(flat.slice(i+kw.length,i+kw.length+50));}}
+  return esc(t.slice(0,110));
+}
+let LIMIT=60;
+const iid=it=>`qi-${it.y}-${it.book}-${it.n}`;
+function renderBank(openId){
+  const y=bYear.value, b=bBook.value, c=bCat.value, kw=bSearch.value.trim().replace(/\s+/g," ").toLowerCase();
+  const hits=ITEMS.filter(it=>(y==="all"||it.y==+y)&&(b==="all"||it.book===b)&&(c==="all"||it.c===c)&&(!kw||it.hay.includes(kw)));
+  const list=document.getElementById("qlist");
+  const shown=hits.slice(0,Math.max(LIMIT,openId?hits.findIndex(h=>iid(h)===openId)+1:0));
+  list.innerHTML=shown.map(it=>`<details class="qitem" id="${iid(it)}" data-y="${it.y}" data-b="${it.book}" data-n="${it.n}">
+    <summary><span class="qid"><span class="dot" style="background:var(${CAT[it.c].v})"></span>${it.y}-${it.book==="R"?"閱":"聽"}${String(it.n).padStart(2,"0")}</span>
+    <span class="qsum"><span class="lab">${esc(it.label)}<small>${it.part}</small></span><span class="snip">${snippet(it,kw)}</span></span>${bAns.checked?`<span class="ans" aria-label="參考答案 ${it.ans}">${it.ans}</span>`:"<span></span>"}</summary>
+    <div class="qbody"></div></details>`).join("")+
+    (hits.length>shown.length?`<button type="button" class="more" id="moreBtn">再顯示 ${Math.min(60,hits.length-shown.length)} 題（共 ${hits.length} 題）</button>`:"");
+  document.getElementById("bCount").textContent=`符合 ${hits.length} 題`;
+  const mb=document.getElementById("moreBtn"); if(mb) mb.addEventListener("click",()=>{LIMIT+=60;renderBank();});
+  list.querySelectorAll("details.qitem").forEach(d=>d.addEventListener("toggle",()=>{if(d.open) fillBody(d);}));
+}
+function fillBody(d){
+  const body=d.querySelector(".qbody"); if(body.dataset.done) return;
+  const it=findItem(+d.dataset.y,d.dataset.b,+d.dataset.n);
+  let h="";
+  if(it.book==="L") h+=`<div class="audio"><audio controls preload="none" src="eng-audio/${it.y}-${it.n}.mp3"></audio><span class="msg">官方音檔，含播放兩次</span></div>`;
+  if(it.g) h+=`<details class="passage" ${it.n===it.g.a?"open":""}><summary>題組選文（第 ${it.g.a}–${it.g.b} 題共用）</summary>${paperHTML(it,it.g.s,`${it.y}年第${it.g.a}至${it.g.b}題選文`)}</details>`;
+  h+=paperHTML(it,it.q.s,`${it.y}年${it.book==="R"?"閱讀":"聽力"}第${it.n}題原題`);
+  if(it.script) h+=`<details class="passage" open><summary>官方公布的播音稿</summary><pre class="qtext">${esc(it.script)}</pre></details>`;
+  h+=`<div class="qtools"><button type="button" class="an">看答案</button><button type="button" class="cp">複製題目文字</button><button type="button" class="tx">顯示文字版</button><span class="msg" aria-live="polite"></span></div><pre class="qtext txt" hidden></pre>`;
+  body.innerHTML=h; body.dataset.done="1";
+  const txt=(it.g?it.g.t+"\n\n":"")+it.q.t; const pre=body.querySelector(".txt"); pre.textContent=txt;
+  body.querySelector(".an").addEventListener("click",e=>{const b=e.currentTarget; if(b.dataset.on){b.textContent="看答案";delete b.dataset.on;}else{b.innerHTML=`參考答案：<span class="ans-reveal">(${it.ans})</span>`;b.dataset.on="1";}});
+  body.querySelector(".tx").addEventListener("click",e=>{pre.hidden=!pre.hidden;e.currentTarget.textContent=pre.hidden?"顯示文字版":"隱藏文字版";});
+  body.querySelector(".cp").addEventListener("click",()=>{
+    const msg=body.querySelector(".qtools .msg");
+    const fallback=()=>{pre.hidden=false;const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent="已選取文字，請按 Ctrl+C 複製";};
+    try{navigator.clipboard.writeText(txt).then(()=>msg.textContent="已複製（文字由 PDF 擷取，圖表請看原題）",fallback);}catch(e){fallback();}
+  });
+}
+function openInBank(y,book,n){
+  bYear.value=String(y); bBook.value="all"; fillCats(); bCat.value="all"; bSearch.value="";
+  renderBank(`qi-${y}-${book}-${n}`);
+  const d=document.getElementById(`qi-${y}-${book}-${n}`);
+  if(d){d.open=true; fillBody(d); d.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}
+}
+bAns.addEventListener("change",()=>{const open=[...document.querySelectorAll("details.qitem[open]")].map(d=>d.id);renderBank();open.forEach(id=>{const d=document.getElementById(id);if(d){d.open=true;fillBody(d);}});});
+bBook.addEventListener("change",()=>{fillCats();LIMIT=60;renderBank();});
+[bYear,bCat].forEach(el=>el.addEventListener("change",()=>{LIMIT=60;renderBank();}));
+let st; bSearch.addEventListener("input",()=>{clearTimeout(st);st=setTimeout(()=>{LIMIT=60;renderBank();},180);});
+bYear.value="115"; renderBank();
+
+</script>
+
+</body></html>

@@ -1,0 +1,6 @@
+dist/
+__pycache__/
+node_modules/
+.DS_Store
+# 每年新下載的原始 PDF 放這裡處理，不進版本庫
+incoming/

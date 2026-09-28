@@ -1,0 +1,2566 @@
+{
+ "json:clsData": {
+  "items": [
+   [
+    "V",
+    "名詞"
+   ],
+   [
+    "V",
+    "形容詞"
+   ],
+   [
+    "V",
+    "動名詞"
+   ],
+   [
+    "G",
+    "動名詞與原形動詞"
+   ],
+   [
+    "V",
+    "形容詞"
+   ],
+   [
+    "V",
+    "名詞"
+   ],
+   [
+    "V",
+    "名詞"
+   ],
+   [
+    "G",
+    "代名詞（the other）"
+   ],
+   [
+    "V",
+    "動詞"
+   ],
+   [
+    "G",
+    "現在進行式表未來"
+   ],
+   [
+    "G",
+    "祈使句"
+   ],
+   [
+    "V",
+    "名詞"
+   ],
+   [
+    "V",
+    "副詞"
+   ],
+   [
+    "V",
+    "數量詞"
+   ],
+   [
+    "V",
+    "連接詞"
+   ],
+   [
+    "V",
+    "動詞"
+   ],
+   [
+    "G",
+    "助動詞代替動詞"
+   ],
+   [
+    "G",
+    "時間子句的時態"
+   ],
+   [
+    "G",
+    "對等連接"
+   ],
+   [
+    "D",
+    ""
+   ],
+   [
+    "D",
+    ""
+   ],
+   [
+    "I",
+    ""
+   ],
+   [
+    "W",
+    ""
+   ],
+   [
+    "D",
+    ""
+   ],
+   [
+    "I",
+    ""
+   ],
+   [
+    "I",
+    ""
+   ],
+   [
+    "M",
+    ""
+   ],
+   [
+    "W",
+    ""
+   ],
+   [
+    "M",
+    ""
+   ],
+   [
+    "D",
+    ""
+   ],
+   [
+    "K",
+    ""
+   ],
+   [
+    "M",
+    ""
+   ],
+   [
+    "D",
+    ""
+   ],
+   [
+    "I",
+    ""
+   ],
+   [
+    "M",
+    ""
+   ],
+   [
+    "I",
+    ""
+   ],
+   [
+    "P",
+    ""
+   ],
+   [
+    "C",
+    ""
+   ],
+   [
+    "C",
+    ""
+   ],
+   [
+    "C",
+    ""
+   ],
+   [
+    "C",
+    ""
+   ],
+   [
+    "C",
+    ""
+   ],
+   [
+    "C",
+    ""
+   ]
+  ],
+  "gt": [
+   [
+    "故事",
+    "幫助車禍小狗 Rex 復健"
+   ],
+   [
+    "對話",
+    "朋友搶了鋒頭"
+   ],
+   [
+    "海報",
+    "城市交通卡"
+   ],
+   [
+    "報導",
+    "在自家農場工作的少女"
+   ],
+   [
+    "漫畫",
+    "復活節島的故事"
+   ],
+   [
+    "專題報導",
+    "IKEA 效應研究"
+   ],
+   [
+    "歷史報導",
+    "英國電力工人罷工"
+   ],
+   [
+    "克漏字",
+    "生日送禮物給母親"
+   ]
+  ]
+ },
+ "json:ansData": {
+  "R": "DDCBDAABDCADDAADBABBBACDCCADCDBDABCCCBCCABA",
+  "L": "ACCBABABCABBACAABCBBC"
+ },
+ "json:exR": {
+  "w": 595.3,
+  "h": 822,
+  "x0": 40,
+  "xw": 520,
+  "q": [
+   {
+    "n": 1,
+    "s": [
+     [
+      1,
+      74.2,
+      286.2,
+      [
+       [
+        40,
+        74.2,
+        520,
+        212
+       ],
+       [
+        285.1,
+        96.6,
+        248.9,
+        185.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "1.   Look at the picture. A 　　　 is flying over the houses.\n(A) bird\n(B) butterfly\n(C) kite\n(D) plane"
+   },
+   {
+    "n": 2,
+    "s": [
+     [
+      1,
+      284.2,
+      338.7,
+      [
+       [
+        40,
+        284.2,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        302.7,
+        64.9,
+        24.2
+       ],
+       [
+        409.3,
+        302.7,
+        42.5,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "2.  When I was a teenager, I was very 　　　 . But now, it’s easier for me to talk to people.\n(A) happy             (B) lazy              (C) popular           (D) shy,\n(C) popular\n(D) shy"
+   },
+   {
+    "n": 3,
+    "s": [
+     [
+      1,
+      336.7,
+      391.2,
+      [
+       [
+        40,
+        336.7,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        355.2,
+        60.4,
+        24.2
+       ],
+       [
+        409.3,
+        355.2,
+        69.8,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "3.   Lena doesn’t want to go 　　　 with John because she is afraid of water.\n(A) dancing           (B) hiking             (C) sailing           (D) shopping\n(C) sailing\n(D) shopping"
+   },
+   {
+    "n": 4,
+    "s": [
+     [
+      1,
+      389.2,
+      443.7,
+      [
+       [
+        40,
+        389.2,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        407.7,
+        66.7,
+        24.2
+       ],
+       [
+        409.3,
+        407.7,
+        69.4,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "4.   Cindy enjoys 　　　 her dad read stories to her before bed.\n(A) to listen to         (B) listening to        (C) listen to            (D) listens to\n(C) listen to\n(D) listens to"
+   },
+   {
+    "n": 5,
+    "s": [
+     [
+      1,
+      441.7,
+      496.2,
+      [
+       [
+        40,
+        441.7,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        460.2,
+        67.8,
+        24.2
+       ],
+       [
+        409.3,
+        460.2,
+        52.9,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "5.   Dad is busy cooking in the kitchen. Dinner will be 　　　 in ten minutes.\n(A) free                (B) full             (C) medium          (D) ready\n(C) medium\n(D) ready"
+   },
+   {
+    "n": 6,
+    "s": [
+     [
+      1,
+      494.2,
+      566.2,
+      [
+       [
+        40,
+        494.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        530.2,
+        52,
+        24.2
+       ],
+       [
+        409.3,
+        530.2,
+        49.2,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "6.   There are so many new 　　　 in the office.  It’ll take me some time to remember who iswho.\n(A) faces              (B) ideas              (C) rules              (D) tools\n(C) rules\n(D) tools"
+   },
+   {
+    "n": 7,
+    "s": [
+     [
+      1,
+      564.2,
+      636.2,
+      [
+       [
+        40,
+        564.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        600.2,
+        49.9,
+        24.2
+       ],
+       [
+        409.3,
+        600.2,
+        65.1,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "7.    I feel like a 　　　 .  I was looking for my keys for hours but they have been in my pocketthe whole time.\n(A) fool               (B) ghost             (C) king              (D) stranger\n(C) king\n(D) stranger"
+   },
+   {
+    "n": 8,
+    "s": [
+     [
+      1,
+      634.2,
+      706.2,
+      [
+       [
+        40,
+        634.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        670.2,
+        63.1,
+        24.2
+       ],
+       [
+        409.3,
+        670.2,
+        64.3,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "8.   Mr. and Mrs. Wu have three daughters. Two are in high school, and 　　　 is inelementary school.\n(A) each               (B) the other           (C) the one            (D) the next\n(C) the one\n(D) the next"
+   },
+   {
+    "n": 9,
+    "s": [
+     [
+      1,
+      704.2,
+      746.8,
+      [
+       [
+        40,
+        704.2,
+        520,
+        40.2
+       ],
+       [
+        302.2,
+        722.7,
+        58.6,
+        24.2
+       ],
+       [
+        409.3,
+        722.7,
+        50.8,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "9.     It is hard for trees to 　　　 along this beach because of the strong winds from the sea.\n(A) blow              (B) build              (C) follow           (D) grow\n(C) followg\n(D) grow"
+   },
+   {
+    "n": 10,
+    "s": [
+     [
+      2,
+      49.2,
+      103.7,
+      [
+       [
+        40,
+        49.2,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        67.7,
+        75.4,
+        24.2
+       ],
+       [
+        409.3,
+        67.7,
+        83.9,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "10.  Christmas 　　　 and I want to visit my aunt abroad. Do you have any plans yet?\n(A) came            (B) comes              (C) is coming        (D) was comingy\n(C) is comingy p    y\n(D) was coming"
+   },
+   {
+    "n": 11,
+    "s": [
+     [
+      2,
+      101.7,
+      156.2,
+      [
+       [
+        40,
+        101.7,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        120.2,
+        66.6,
+        24.2
+       ],
+       [
+        409.3,
+        120.2,
+        73.6,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "11.  Jo won’t be happy if you’re late for his party tonight, so 　　　 sure that you arrive on time.\n(A) make            (B) makes             (C) to make            (D) is makingg   ,\n(C) to makey\n(D) is making"
+   },
+   {
+    "n": 12,
+    "s": [
+     [
+      2,
+      154.2,
+      226.2,
+      [
+       [
+        40,
+        154.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        190.2,
+        62.6,
+        24.2
+       ],
+       [
+        409.3,
+        190.2,
+        54.6,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "12.  You may have a long drive because of the terrible 　　　 . There are usually a lot of carsand buses during this time.\n(A) experience       (B) machine           (C) service             (D) traffic\n(C) service\n(D) traffic"
+   },
+   {
+    "n": 13,
+    "s": [
+     [
+      2,
+      224.2,
+      296.2,
+      [
+       [
+        40,
+        224.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        260.2,
+        54.5,
+        24.2
+       ],
+       [
+        409.3,
+        260.2,
+        63.5,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "13.  In the future, there will 　　　 be greater basketball players than Stephen Curry, but nowwe believe he is the best!\n(A) again             (B) already           (C) never             (D) perhaps\n(C) never\n(D) perhaps"
+   },
+   {
+    "n": 14,
+    "s": [
+     [
+      2,
+      294.2,
+      366.2,
+      [
+       [
+        40,
+        294.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        330.2,
+        52.6,
+        24.2
+       ],
+       [
+        409.3,
+        330.2,
+        53.2,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "14.   I guess the rainwater has come in from the kitchen. See?  　　　 of the windows are closedexcept the one in the kitchen.\n(A) All               (B) Both             (C) Most            (D) Some\n(C) Most\n(D) Some"
+   },
+   {
+    "n": 15,
+    "s": [
+     [
+      2,
+      364.2,
+      436.2,
+      [
+       [
+        40,
+        364.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        400.2,
+        60.2,
+        24.2
+       ],
+       [
+        409.3,
+        400.2,
+        34.2,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "15.   　　　 machines have been used to pick fruits for a long time, they were not used onstrawberry farms until several years ago.\n(A) Although         (B) Because          (C) Before             (D) If\n(C) Before\n(D) If"
+   },
+   {
+    "n": 16,
+    "s": [
+     [
+      2,
+      434.2,
+      506.2,
+      [
+       [
+        40,
+        434.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        470.2,
+        50.9,
+        24.2
+       ],
+       [
+        409.3,
+        470.2,
+        47,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "16.  There are online videos that teach you exercises you can do at home. They’ll 　　　 you atrip to the gym, and some money too.\n(A) cost               (B) give              (C) keep              (D) save\n(C) keep\n(D) save"
+   },
+   {
+    "n": 17,
+    "s": [
+     [
+      2,
+      504.2,
+      576.2,
+      [
+       [
+        40,
+        504.2,
+        520,
+        72
+       ],
+       [
+        302.2,
+        540.2,
+        40.2,
+        24.2
+       ],
+       [
+        409.3,
+        540.2,
+        48.2,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "17.   Jane’s parents are always happy to see their grandchildren, but mine 　　　 less so when Ivisit them with my kids.\n(A) is                  (B) are                (C) do                (D) does\n(C) do\n(D) does"
+   },
+   {
+    "n": 18,
+    "s": [
+     [
+      2,
+      574.2,
+      628.7,
+      [
+       [
+        40,
+        574.2,
+        520,
+        54.5
+       ],
+       [
+        302.2,
+        592.7,
+        81.5,
+        24.2
+       ],
+       [
+        409.3,
+        592.7,
+        64.1,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "18.  Before she 　　　 about it, you should tell Daphne you broke her favorite cup.\n(A) asks              (B) asked            (C) was asking        (D) will askp   y\n(C) was askingp\n(D) will ask"
+   },
+   {
+    "n": 19,
+    "s": [
+     [
+      2,
+      626.7,
+      686.8,
+      [
+       [
+        40,
+        626.7,
+        520,
+        57.7
+       ],
+       [
+        302.2,
+        662.7,
+        55.4,
+        24.2
+       ],
+       [
+        409.3,
+        662.7,
+        73.7,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "19.   It was very windy this morning. Some of the shirts on the balcony were blown awayin the pond.\n(A) fell               (B) and fell            (C) fallen            (D) and fallen\n(C) fallen\n(D) and fallen"
+   },
+   {
+    "n": 20,
+    "s": [
+     [
+      3,
+      355.7,
+      462.7,
+      [
+       [
+        40,
+        355.7,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "20.  What happened to Rex?\n(A) He got lost.\n(B) He got hurt.\n(C) He bit people.\n(D) He ate too much."
+   },
+   {
+    "n": 21,
+    "s": [
+     [
+      3,
+      460.7,
+      553.3,
+      [
+       [
+        40,
+        460.7,
+        520,
+        92.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "21.  How did the writer help Rex?\n(A) By calling the police.\n(B) By making him exercise.\n(C) By taking him to see a doctor.\n(D) By looking for a new home for him."
+   },
+   {
+    "n": 22,
+    "s": [
+     [
+      4,
+      539.2,
+      646.2,
+      [
+       [
+        40,
+        539.2,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "22.  What do we know about Mark from the dialogue?\n(A) He made Linda unhappy.\n(B) He is looking for a new job.\n(C) He did not like Linda’s cake.\n(D) He is getting married to Jenny."
+   },
+   {
+    "n": 23,
+    "s": [
+     [
+      4,
+      643.5,
+      754.3,
+      [
+       [
+        40,
+        644.2,
+        520,
+        110.2
+       ],
+       [
+        442.3,
+        643.5,
+        91.4,
+        27.6
+       ],
+       [
+        444.1,
+        645.2,
+        87.8,
+        28.8
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "23.  Which is most likely an example of stealing someone＇s thunder?      likely 可能\n(A) Dennis never changes his mind except when his wife tells him to.\n(B) Melisa tells Tom she’ll go to the party but tells her mom she’ll stay home.\n(C) Jeff tells everyone he’ll move abroad when Ivy is still telling them about her baby.\n(D) Alisa says she doesn’t care what we have for lunch but also doesn’t like the restaurantwe chose.  likely 可能  likely 可能"
+   },
+   {
+    "n": 24,
+    "s": [
+     [
+      5,
+      512.2,
+      619.2,
+      [
+       [
+        40,
+        512.2,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "24.  What can you do with a White Lake City Card?\n(A) Save 20% on children’s train tickets.\n(B) Visit any public museum in the city for free.\n(C) Take a train to places out of the three zones.\n(D) Move around the city by metro as much as you want."
+   },
+   {
+    "n": 25,
+    "s": [
+     [
+      5,
+      617.2,
+      762.3,
+      [
+       [
+        40,
+        617.2,
+        520,
+        145.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "25.  Stacy is going to White Lake City and is staying at a hotel near the White Lake MainStation. She wants to visit the Museum of White Lake City History on Friday and seeWhite Lake on Saturday. If she plans to buy (a) White Lake City Card(s), which of the fourchoices will be best for her and cost her the least?\n(A) A 3-day Card for Zone 1.\n(B) A Weekend Card for Zones 1-3.\n(C) A 1-day Card for Zone 1 and a Weekend Card for Zones 1-2.\n(D) A 1-day Card for Zones 1-2 and a Weekend Card for Zones 1-2."
+   },
+   {
+    "n": 26,
+    "s": [
+     [
+      6,
+      388.2,
+      495.2,
+      [
+       [
+        40,
+        388.2,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "26.  What is Rolling Acres?\n(A) A zoo.\n(B) A campground.\n(C) A vacation farm.\n(D) A family restaurant."
+   },
+   {
+    "n": 27,
+    "s": [
+     [
+      6,
+      492.4,
+      600.2,
+      [
+       [
+        40,
+        493.2,
+        520,
+        107
+       ],
+       [
+        421.1,
+        492.4,
+        112.6,
+        27.6
+       ],
+       [
+        422.9,
+        494.1,
+        108.4,
+        28.8
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "27.  What do we learn from the first paragraph?             paragraph 段落\n(A) What Libby does at Rolling Acres.\n(B) What visitors think of Rolling Acres.\n(C) Why Libby’s grandparents started Rolling Acres.\n(D) What the Larson family’s plans are for Rolling Acres.  paragraph 段落  paragraph 段落"
+   },
+   {
+    "n": 28,
+    "s": [
+     [
+      6,
+      598.2,
+      690.8,
+      [
+       [
+        40,
+        598.2,
+        520,
+        92.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "28.  What does making sacrifices mean?\n(A) Learning to make money and use it wisely.\n(B) Getting to know different sides of your family.\n(C) Making excuses for failing to do something difficult.\n(D) Giving up something important to do something else."
+   },
+   {
+    "n": 29,
+    "s": [
+     [
+      8,
+      414.2,
+      521.2,
+      [
+       [
+        40,
+        414.2,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "29.  What do the comics tell us?\n(A) Enjoy life while we can.\n(B) Follow the old ways of life.\n(C) Save our planet before it’s too late.\n(D) Treat others the way we want to be treated."
+   },
+   {
+    "n": 30,
+    "s": [
+     [
+      8,
+      519.2,
+      626.2,
+      [
+       [
+        40,
+        519.2,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "30.  What can we learn about the people in the comics?\n(A) They made fire before starting a fight.\n(B) They fought for land and plants all the time.\n(C) They prayed to the statues beside a large fire.\n(D) They used statues to show how strong they were."
+   },
+   {
+    "n": 31,
+    "s": [
+     [
+      8,
+      624.2,
+      716.8,
+      [
+       [
+        40,
+        624.2,
+        520,
+        92.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "31.  What does did it in Picture 7 mean?\n(A) Fall to the ground.\n(B) Cut down the last trees.\n(C) Move the statues to fighting grounds.\n(D) Understand how important trees were."
+   },
+   {
+    "n": 32,
+    "s": [
+     [
+      9,
+      541.7,
+      648.7,
+      [
+       [
+        40,
+        541.7,
+        520,
+        107
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "32.  What did Ariely try to find out in the origami study?\n(A) If he could stop the IKEA effect.\n(B) Why people love making origami.\n(C) Why IKEA furniture is so famous.\n(D) If anyone shared his IKEA experience."
+   },
+   {
+    "n": 33,
+    "s": [
+     [
+      9,
+      646.7,
+      739.3,
+      [
+       [
+        40,
+        646.7,
+        520,
+        92.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "33.  Which is true about the origami study?\n(A) Buyers would spend less on builders’ origami than builders would.\n(B) Builders and buyers needed to decide a price on the origami they made.\n(C) Builders knew others would not pay as much for the origami as they would.\n(D) Buyers would spend more on builders’ origami after knowing how they were made."
+   },
+   {
+    "n": 34,
+    "s": [
+     [
+      10,
+      49.2,
+      176.8,
+      [
+       [
+        40,
+        49.2,
+        520,
+        127.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "34.  Jerry just can’t get his daughter Mia to eat more vegetables at dinner. Every time he triesto do so, there is always a lot of shouting and crying. If Jerry wants to have Mia eat morevegetables by using the IKEA effect, what should he do?\n(A) Tell Mia that he cooks the vegetables just for her.\n(B) Ask Mia to help him cook vegetables for her meal.\n(C) Give Mia her favorite candy after she eats vegetables.\n(D) Ask Mia what vegetables she likes and cook them for her."
+   },
+   {
+    "n": 35,
+    "s": [
+     [
+      11,
+      650.7,
+      743.3,
+      [
+       [
+        40,
+        650.7,
+        520,
+        92.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "35.  What is the reading mainly about?\n(A) The tips on using a picture to tell a story.\n(B) The change that electricity brought to people’s lives.\n(C) The history behind the picture of a UK electricity worker.\n(D) The story of a famous UK electricity worker from the 1970s."
+   },
+   {
+    "n": 36,
+    "s": [
+     [
+      12,
+      49.2,
+      156.2,
+      [
+       [
+        40,
+        49.2,
+        520,
+        107
+       ],
+       [
+        442.3,
+        75,
+        91.4,
+        27.6
+       ],
+       [
+        444.1,
+        76.8,
+        87.8,
+        28.8
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "36.  In the UK in the 1970s, what did people most likely think of the UK electricity workers?\n(A) They were not brave enough to fix their problems.  likely 可能     (B) They worked like robots and never learned to change.\n(C) They were asking too much and did not know when to stop.\n(D) They did not care whether their job might hurt people’s health.  likely 可能  likely 可能"
+   },
+   {
+    "n": 37,
+    "s": [
+     [
+      12,
+      154.2,
+      246.8,
+      [
+       [
+        40,
+        154.2,
+        520,
+        92.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "37.  Why does the writer put the “ ” mark around the word dark in the last sentence?\n(A) To say that the “dark” time was actually not dark.\n(B) To tell people that the word was said by the government.\n(C) To mean both the days without lights and the difficult lives people lived.\n(D) To show that the government and the electricity workers both lost their fights."
+   },
+   {
+    "n": 38,
+    "s": [
+     [
+      13,
+      410.2,
+      447.2,
+      [
+       [
+        40,
+        410.2,
+        520,
+        37
+       ],
+       [
+        303.2,
+        411.2,
+        80.1,
+        24.2
+       ],
+       [
+        409.3,
+        411.2,
+        69.4,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "38.   (A) starts              (B) started            (C) has started        (D) will start\n(C) has started\n(D) will start"
+   },
+   {
+    "n": 39,
+    "s": [
+     [
+      13,
+      445.2,
+      534.7,
+      [
+       [
+        40,
+        445.2,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "39.  (A) he got quite scared of two things\n(B) he still couldn’t understand two things\n(C) he couldn’t stop thinking about two things\n(D) he did two things that would change his life"
+   },
+   {
+    "n": 40,
+    "s": [
+     [
+      13,
+      532.7,
+      622.2,
+      [
+       [
+        40,
+        532.7,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "40.  (A) should be spent helping his mom\n(B) should be a time of welcoming a new start\n(C) should not be about him, but about his mom\n(D) should not be celebrated for just one day, but for nine months"
+   },
+   {
+    "n": 41,
+    "s": [
+     [
+      13,
+      620.2,
+      657.2,
+      [
+       [
+        40,
+        620.2,
+        520,
+        37
+       ],
+       [
+        303.2,
+        621.2,
+        49.5,
+        24.2
+       ],
+       [
+        409.3,
+        621.2,
+        50.8,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "41.   (A) first                 (B) last               (C) only              (D) other\n(C) only\n(D) other"
+   },
+   {
+    "n": 42,
+    "s": [
+     [
+      13,
+      655.2,
+      709.7,
+      [
+       [
+        40,
+        655.2,
+        520,
+        54.5
+       ],
+       [
+        303.2,
+        656.2,
+        119,
+        24.2
+       ],
+       [
+        302.2,
+        673.7,
+        151.5,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "42.  (A) made his head hurt                    (B) made his heart sing\n(C) made him change his mind            (D) made him give up baking\n(B) made his heart sing\n(  )               g\n(D) made him give up baking"
+   },
+   {
+    "n": 43,
+    "s": [
+     [
+      13,
+      707.7,
+      732.8,
+      [
+       [
+        40,
+        707.7,
+        520,
+        22.7
+       ],
+       [
+        303.2,
+        708.7,
+        73.7,
+        24.2
+       ],
+       [
+        409.3,
+        708.7,
+        48.3,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "43.   (A) is going to give    (B) gives              (C) has given         (D) gave\n(C) has given\n(D) gave"
+   }
+  ],
+  "g": [
+   {
+    "a": 20,
+    "b": 21,
+    "s": [
+     [
+      3,
+      75.7,
+      357.7,
+      [
+       [
+        40,
+        75.7,
+        520,
+        282
+       ],
+       [
+        404,
+        234.8,
+        115.1,
+        113.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(20-21)Rex is a dog that lives at the bakery next to our school. He is cute and friendly.Every morning, he stands in front of the school to welcome everybody. We all see Rexas one of us. But one Monday morning, I was surprised that Rex was not there to sayhello to us. “Rex is in the hospital. He was hit by a car last night,” my classmate told me.We went to see Rex in the hospital that day after school. Two weeks later, Rex was muchbetter, and we decided to take him for a walk every evening. Because of the exercise, Rexbecame healthier and stronger. Soon he could happily run and jump again. He is now ashandsome and strong as before!"
+   },
+   {
+    "a": 22,
+    "b": 23,
+    "s": [
+     [
+      4,
+      49.2,
+      541.2,
+      [
+       [
+        40,
+        49.2,
+        520,
+        492
+       ],
+       [
+        460.9,
+        106.5,
+        43.7,
+        45.6
+       ],
+       [
+        461,
+        401.3,
+        43.4,
+        46.7
+       ],
+       [
+        266.2,
+        149.8,
+        25.5,
+        25.5
+       ],
+       [
+        250,
+        86.2,
+        13.1,
+        15.7
+       ],
+       [
+        259.1,
+        83.3,
+        49.2,
+        21.8
+       ],
+       [
+        305.3,
+        83.3,
+        24.9,
+        20.8
+       ],
+       [
+        330.8,
+        85.1,
+        43.2,
+        19.5
+       ],
+       [
+        370.3,
+        84.6,
+        40.3,
+        18.7
+       ],
+       [
+        406.9,
+        84.6,
+        36.8,
+        17.4
+       ],
+       [
+        199.6,
+        120.2,
+        262.3,
+        18.3
+       ],
+       [
+        249.9,
+        422.9,
+        11.3,
+        15.1
+       ],
+       [
+        256.5,
+        421.8,
+        23.3,
+        16.3
+       ],
+       [
+        275.7,
+        421.8,
+        53.6,
+        16.3
+       ],
+       [
+        325.2,
+        421.8,
+        28.2,
+        16.3
+       ],
+       [
+        349.1,
+        424.3,
+        24.4,
+        15.8
+       ],
+       [
+        370.1,
+        421.8,
+        33.7,
+        16.2
+       ],
+       [
+        399.8,
+        422.9,
+        16.5,
+        15.1
+       ],
+       [
+        412.4,
+        421.8,
+        36.9,
+        16.3
+       ],
+       [
+        247.1,
+        156.6,
+        21.9,
+        13.7
+       ],
+       [
+        248.8,
+        242,
+        24.9,
+        15.1
+       ],
+       [
+        269.4,
+        241.3,
+        34.9,
+        17.8
+       ],
+       [
+        249.2,
+        198,
+        25.3,
+        17.8
+       ],
+       [
+        270,
+        198.7,
+        23,
+        17.1
+       ],
+       [
+        288.3,
+        197.5,
+        23.3,
+        16.3
+       ],
+       [
+        306.6,
+        197.5,
+        22.9,
+        18.3
+       ],
+       [
+        326,
+        197.5,
+        23.1,
+        16.3
+       ],
+       [
+        344.8,
+        197.6,
+        42.7,
+        16.2
+       ],
+       [
+        383.6,
+        200.1,
+        17.8,
+        13.7
+       ],
+       [
+        397.7,
+        197.5,
+        36.1,
+        16.3
+       ],
+       [
+        251.5,
+        447.2,
+        33.3,
+        16.3
+       ],
+       [
+        283.7,
+        447.7,
+        33.9,
+        17.8
+       ],
+       [
+        313.3,
+        447.8,
+        36.3,
+        17.8
+       ],
+       [
+        349.1,
+        447.2,
+        17.1,
+        16.2
+       ],
+       [
+        362.8,
+        449.8,
+        34.2,
+        13.7
+       ],
+       [
+        392.6,
+        447.3,
+        19.3,
+        16.2
+       ],
+       [
+        407.4,
+        447.2,
+        27,
+        16.3
+       ],
+       [
+        247.2,
+        464.2,
+        13.1,
+        13.7
+       ],
+       [
+        256.6,
+        461.6,
+        32.8,
+        16.3
+       ],
+       [
+        284.8,
+        461.6,
+        49.1,
+        18.3
+       ],
+       [
+        330.3,
+        462.2,
+        8.7,
+        15.7
+       ],
+       [
+        335.2,
+        461.8,
+        28.4,
+        18.2
+       ],
+       [
+        250.7,
+        381.7,
+        14.2,
+        9.1
+       ],
+       [
+        250.4,
+        324.4,
+        35.8,
+        16.2
+       ],
+       [
+        284.3,
+        324.9,
+        34.5,
+        17.8
+       ],
+       [
+        314,
+        326.9,
+        25.4,
+        13.7
+       ],
+       [
+        334.7,
+        324.4,
+        36.3,
+        18.3
+       ],
+       [
+        366.9,
+        326.9,
+        17.3,
+        13.7
+       ],
+       [
+        379.8,
+        324.4,
+        34.9,
+        16.3
+       ],
+       [
+        410.6,
+        324.4,
+        22.9,
+        16.3
+       ],
+       [
+        429.2,
+        324.4,
+        20.9,
+        18.3
+       ],
+       [
+        446,
+        326.9,
+        33.6,
+        13.7
+       ],
+       [
+        478.8,
+        324.3,
+        20.2,
+        16.3
+       ],
+       [
+        248.2,
+        338.8,
+        18.4,
+        16.2
+       ],
+       [
+        262.4,
+        341.3,
+        24.2,
+        15.8
+       ],
+       [
+        282.4,
+        339.9,
+        30.9,
+        15.1
+       ],
+       [
+        309.2,
+        341.3,
+        17.3,
+        13.7
+       ],
+       [
+        321.8,
+        339.9,
+        17.2,
+        15.1
+       ],
+       [
+        335,
+        338.8,
+        28.5,
+        16.3
+       ],
+       [
+        358.8,
+        338.8,
+        34.9,
+        16.3
+       ],
+       [
+        388.8,
+        341.3,
+        29,
+        15.8
+       ],
+       [
+        413.5,
+        338.8,
+        44.2,
+        18.3
+       ],
+       [
+        453.9,
+        338.9,
+        32.5,
+        16.1
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(22-23)"
+   },
+   {
+    "a": 24,
+    "b": 25,
+    "s": [
+     [
+      5,
+      49.2,
+      514.2,
+      [
+       [
+        40,
+        49.2,
+        520,
+        465
+       ],
+       [
+        450.1,
+        477.4,
+        74.7,
+        27.6
+       ],
+       [
+        345,
+        263,
+        165.8,
+        165.5
+       ],
+       [
+        451.9,
+        479.2,
+        71.1,
+        28.8
+       ],
+       [
+        260.4,
+        261.2,
+        60.2,
+        24.2
+       ],
+       [
+        276.9,
+        254.9,
+        27.4,
+        75
+       ],
+       [
+        276.9,
+        273.5,
+        27.4,
+        75
+       ],
+       [
+        273.5,
+        292,
+        34,
+        75
+       ],
+       [
+        276.9,
+        310.6,
+        27.4,
+        75
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(24-25)Buy a White Lake City Card When You’re in the City With any of the Cards, you can-  visit the city by metro, bus, or train as many times as you want. *-  take one child under 12 with you for free.-  save 20% on tickets to public museums. The 1-day, 3-day, and 5-day Cards are for trips from Monday to Friday, and theWeekend Card is for trips on weekends and holidays. Check the map and buy the right Card for the zones you’ll be entering.Card   Zone 1  Zones 1-2  Zones 1-31-day3-day               $20      $40       $605-day               $40      $60       $80Weekend               $50      $80       $110* The Cards are only for trips inside the three zones.               $30      $50       $80ⓐ White Lake Main Stationⓑ Museum of White Lake City Historyⓒ Museum of Modern Artⓓ White Lakeⓔ White Lake Castleⓕ White Lake Airport  zone 區  zone 區  zone 區Zones 1-3ones 1$60  $80 $110ones 1$60  $80 $110  $80$60  $80 $110he three  $80$80$110e three $80"
+   },
+   {
+    "a": 26,
+    "b": 28,
+    "s": [
+     [
+      6,
+      49.2,
+      390.2,
+      [
+       [
+        40,
+        49.2,
+        520,
+        341
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(26-28)At 5 o’clock every morning, while most people are sleeping,16-year-old Libby Larson is already up. She mops the floor, getsthe mail and the newspapers, and gets ready for visitors to RollingAcres.  Libby’s grandparents started Rolling Acres in 1970, andsince then all of the Larson family have been working there.Rolling Acres used to be just a sheep farm, but now, with its fruittrees, vegetable gardens, and many other kinds of animals, it hasbecome a popular place for families to go on vacation. Visitors canpick fruits, collect eggs, and feed the animals.  It is one of Libby’sjobs to show kids how to feed the baby sheep.For her work, Libby is paid $10 an hour. This summer, she expects to make about $1,200and plans to buy a cell phone. Her friends think it’s great to make that much money in asummer. However, for Libby, working at a family business also means making sacrifices.“I’d love to sleep until noon or go to summer camp like other kids. My friends stoppedinviting me on trips because I’m always busy in the summer.” However, Libby also said,“But it’s better to see both sides. Working with your family is great. You feel closer toeach other.”"
+   },
+   {
+    "a": 29,
+    "b": 31,
+    "s": [
+     [
+      7,
+      49.2,
+      760.8,
+      [
+       [
+        40,
+        49.2,
+        520,
+        711.6
+       ],
+       [
+        206,
+        155.8,
+        316.3,
+        595.6
+       ],
+       [
+        485.6,
+        129.9,
+        26.6,
+        24.7
+       ],
+       [
+        239.9,
+        92.6,
+        262.7,
+        29
+       ]
+      ],
+      []
+     ],
+     [
+      8,
+      52.1,
+      416.2,
+      [
+       [
+        40,
+        52.1,
+        520,
+        364.1
+       ],
+       [
+        246.1,
+        126.4,
+        277.1,
+        276.7
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(29-31)Around the year 400, people came to Easter Island.So many trees here!In their free time, they lovedThey used trees to make fire and             making statues with big rocks. Withbuild houses. Because of the trees,           the trees they cut down, they couldpeople had a great life on the island.        move the statues around easily.Trees were needed and used in every part of their life.Years passed, and there were fewer and fewer trees on Easter Island.Without enough trees to keep                                                     And I’m hungry.water under the ground, the land                                                     I’m thirsty.became dry, and plants didn’t grow.So many trees here!In their free time, they lovedke fire and             making statues with big rocks. Withe of the trees,           the trees they cut down, they couldon the island.        move the statues around easily.eded and used in every part of their life.nd there were fewer and fewer trees on Easter Island.ees to keep                                And I’m hungry.ound, the land                          I’m thirsty.ants didn’t grow.Around the year 400, people came to Easter Island.People began to fight for water and food. The statues were moved to fightinggrounds to show their power. The last trees were probably cut down at this time.Let’s not make Earth, our only home,Those who cut downanother Easter Island.the last trees surelyunderstood howimportant trees wereto them—but still,they did it. When thelast trees fell to theground, people on theisland fell, too.Let’s not make Earth, our only home,another Easter Island."
+   },
+   {
+    "a": 32,
+    "b": 34,
+    "s": [
+     [
+      9,
+      49.2,
+      543.7,
+      [
+       [
+        40,
+        49.2,
+        520,
+        494.5
+       ],
+       [
+        350.5,
+        502.1,
+        171.9,
+        27.6
+       ],
+       [
+        419.5,
+        106,
+        72.3,
+        76.9
+       ],
+       [
+        352.3,
+        503.8,
+        168.2,
+        28.8
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(32-34)Many years ago, Dan Ariely bought a cabinet from IKEA. IKEA is afamous furniture store that sells boxes of furniture parts. People whobuy them have to put all the parts together themselves.  It took Ariely hours to buildhis cabinet. Ariely didn’t really enjoy himself when he was trying to put all the partstogether. However, after he finished, he felt quite good about himself and his cabinet.Later, he found that he loved his cabinet more than any of his other furniture.Ariely wanted to know if anyone shared his feelings, so he dida fun origami study. He invited two groups of people to join hisstudy. He called one group “builders” and the other group “buyers.”Builders were told to make origami, like paper frogs or paper birds. When theyfinished, they were asked how much they would spend on their works. Ariely thenshowed the origami to buyers and asked them how much they would pay for them.The two groups gave very different answers. Though buyers would pay only fivecents for builders’ origami, builders would spend 25 cents!  Interestingly, buildersbelieved others would think their works were good enough to cost that much money!Ariely’s study showed that he was not alone in his IKEA experience — we just lovethings more, sometimes blindly, when we make them ourselves. Ariely called it “theIKEA effect.”  effect 效應　furniture 家具  effect 效應　furniture 家具  effect 效應　furniture 家具"
+   },
+   {
+    "a": 35,
+    "b": 37,
+    "s": [
+     [
+      11,
+      49.2,
+      652.7,
+      [
+       [
+        40,
+        49.2,
+        520,
+        603.5
+       ],
+       [
+        316.3,
+        613.8,
+        207.1,
+        27.6
+       ],
+       [
+        238.4,
+        82,
+        162.7,
+        225.1
+       ],
+       [
+        318.1,
+        615.5,
+        203.6,
+        28.8
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(35-37)In the picture is a UK electricity worker in the 1970s.  Pictures like this appeared inmany newspapers at the time. In 1972, electricity workers in the UK asked to be paid more,and they decided to stop working until their wish was answered. The government worriedthat there wouldn’t be enough electricity for the country if these workers didn’t go to work,so it agreed to give them the pay rise. However, the story didn’t end there.A year later, the electricity workers asked for another pay rise. To get what theywanted, they worked shorter hours and acted like they would walk away from their jobanytime. But this time, the government decided to fight. To save electricity, it made newrules for people to follow. For example, each family could turn on the heat in only oneroom; TV stations had to stop their shows at 10:30 p.m.; businesses could open only threedays a week.People’s lives were greatly changed. Without enough heat to keep the house warm,people covered themselves in blankets all the time.  Hospitals had to use candles becausethey couldn’t keep all the lights on. Factories couldn’t keep their machines working. Manypeople lost their jobs.  For months, people were paying the price while the electricityworkers were fighting for their wish. In the end, the government agreed to the second payrise. This picture shows what many people thought of the electricity workers during the“dark” time.  electricity 電力　government 政府  electricity 電力　government 政府  electricity 電力　government 政府"
+   },
+   {
+    "a": 38,
+    "b": 43,
+    "s": [
+     [
+      13,
+      49.2,
+      412.2,
+      [
+       [
+        40,
+        49.2,
+        520,
+        363
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "(38-43)Most kids want gifts from their parents on their birthdays, but Cameron doesn’t. On hisbirthday, he gives his mom a gift. He 　38　 doing this in his first year of junior highschool. That year, during one class, he watched a video about how a baby is pushed from itsmother’s body. After class, 　39　 . How brave a woman is to have a baby! Thank God I’llnever have to do that!When Cameron came home that day, he held his mom in his arms for a long time. Hedecided that his birthday 　40　 . During those nine months inside his mom, he just ate andslept while his mom was doing all the hard work. So why should he get a birthday gift fordoing nothing?  If anyone should get a gift on his birthday, it should be his mom.The 　41　 “birthday gift” Cameron prepared was a bag of cookies he baked. The cookiestasted so bad, but his mom said they were the best thing she ever got. Hearing that 　42　 .It was so much better than getting a gift. Now, on his birthday every year, Cameron makesa gift for his mother to thank her for giving him life.This year, Cameron 　43　 his mom a nice dress. A few months ago, he learned to makedresses at school and decided to make one for his mom. Now the dress is finished andhanging behind Cameron’s bedroom door. He believes the gift will tell his mother howmuch he loves her."
+   }
+  ],
+  "single": 19
+ },
+ "json:exL": {
+  "w": 595.3,
+  "h": 822,
+  "x0": 40,
+  "xw": 520,
+  "q": [
+   {
+    "n": 1,
+    "s": [
+     [
+      1,
+      346.8,
+      546.3,
+      [
+       [
+        40,
+        346.8,
+        520,
+        199.5
+       ],
+       [
+        222.8,
+        383.6,
+        150.2,
+        150.2
+       ],
+       [
+        382.9,
+        383.6,
+        150.2,
+        150.2
+       ],
+       [
+        382.9,
+        365.7,
+        23.3,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第1 題\n(A)                            (B)                            (C)\n(  )\n(  )\n(C)"
+   },
+   {
+    "n": 2,
+    "s": [
+     [
+      1,
+      544.3,
+      731.3,
+      [
+       [
+        40,
+        544.3,
+        520,
+        184.5
+       ],
+       [
+        222.8,
+        581.1,
+        150.3,
+        150.2
+       ],
+       [
+        382.9,
+        581.1,
+        150.3,
+        150.2
+       ],
+       [
+        382.9,
+        563.2,
+        24,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第2 題\n(A)                           (B)                           (C)\n(  )\n(  )\n(C)"
+   },
+   {
+    "n": 3,
+    "s": [
+     [
+      2,
+      48.8,
+      276.3,
+      [
+       [
+        40,
+        48.8,
+        520,
+        227.5
+       ],
+       [
+        223,
+        85.9,
+        150.2,
+        150.2
+       ],
+       [
+        383.3,
+        85.9,
+        150.2,
+        150.2
+       ],
+       [
+        382.9,
+        67.7,
+        24,
+        24.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第3 題\n(A)                           (B)                           (C)\n(  )\n(  )\n(C)"
+   },
+   {
+    "n": 4,
+    "s": [
+     [
+      2,
+      469.8,
+      559.3,
+      [
+       [
+        40,
+        469.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第4 題\n(A) I love my job.\n(B) Usually by metro.\n(C) Usually at six thirty."
+   },
+   {
+    "n": 5,
+    "s": [
+     [
+      2,
+      557.3,
+      646.8,
+      [
+       [
+        40,
+        557.3,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第5 題\n(A) Just leave them on the table.\n(B) They’re in the wrong drawer.\n(C) I need them for tomorrow’s test."
+   },
+   {
+    "n": 6,
+    "s": [
+     [
+      2,
+      644.8,
+      720.3,
+      [
+       [
+        40,
+        644.8,
+        520,
+        75.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第6 題\n(A) Yes, a dress.\n(B) Your favorite apple pie.\n(C) I bought some new plates."
+   },
+   {
+    "n": 7,
+    "s": [
+     [
+      3,
+      48.8,
+      138.3,
+      [
+       [
+        40,
+        48.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第7 題\n(A) Sure, what is it?\n(B) Really? That’s crazy.\n(C) I haven’t heard of it before."
+   },
+   {
+    "n": 8,
+    "s": [
+     [
+      3,
+      136.3,
+      225.8,
+      [
+       [
+        40,
+        136.3,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第8 題\n(A) Hurry up! Let’s run for it.\n(B) Don’t worry.  I can give you a ride.\n(C) Sorry. Please come again some other time."
+   },
+   {
+    "n": 9,
+    "s": [
+     [
+      3,
+      223.8,
+      313.3,
+      [
+       [
+        40,
+        223.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第9 題\n(A) Yes, it tastes delicious.\n(B) OK. See you at seven.\n(C) No, I’m not really hungry."
+   },
+   {
+    "n": 10,
+    "s": [
+     [
+      3,
+      311.3,
+      400.8,
+      [
+       [
+        40,
+        311.3,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第10 題\n(A) I taught myself.\n(B) I won a prize once.\n(C) I take lessons twice a week."
+   },
+   {
+    "n": 11,
+    "s": [
+     [
+      3,
+      398.8,
+      514.8,
+      [
+       [
+        40,
+        398.8,
+        520,
+        116
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第11 題\n(A) I’m not sure if he’s with me.\n(B) No, have you tried calling him?\n(C) Yes, you can ask him by yourself."
+   },
+   {
+    "n": 12,
+    "s": [
+     [
+      3,
+      673.8,
+      749.3,
+      [
+       [
+        40,
+        673.8,
+        520,
+        75.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第12 題\n(A) Make him a card.\n(B) Cook him a nice dinner.\n(C) Take him to a restaurant."
+   },
+   {
+    "n": 13,
+    "s": [
+     [
+      4,
+      48.8,
+      138.3,
+      [
+       [
+        40,
+        48.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第13 題\n(A) Cookies, milk, and tomatoes.\n(B) Cookies, milk, ice cream, and tomatoes.\n(C) Cookies, milk, tomatoes, and sandwiches."
+   },
+   {
+    "n": 14,
+    "s": [
+     [
+      4,
+      136.3,
+      225.8,
+      [
+       [
+        40,
+        136.3,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第14 題\n(A) In a gift shop.\n(B) In a bookstore.\n(C) In a clothes shop."
+   },
+   {
+    "n": 15,
+    "s": [
+     [
+      4,
+      223.8,
+      313.3,
+      [
+       [
+        40,
+        223.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第15 題\n(A) He almost hit someone.\n(B) He drove around a corner.\n(C) He was trying to answer a call."
+   },
+   {
+    "n": 16,
+    "s": [
+     [
+      4,
+      311.3,
+      400.8,
+      [
+       [
+        40,
+        311.3,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第16 題\n(A) The man’s class.\n(B) The woman’s class.\n(C) Lily’s class."
+   },
+   {
+    "n": 17,
+    "s": [
+     [
+      4,
+      398.8,
+      488.3,
+      [
+       [
+        40,
+        398.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第17 題\n(A) She tries to make him feel bad.\n(B) She wants him to enjoy his birthday.\n(C) She can deal with dirty plates herself."
+   },
+   {
+    "n": 18,
+    "s": [
+     [
+      4,
+      486.3,
+      575.8,
+      [
+       [
+        40,
+        486.3,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第18 題\n(A) Because she wants a better job.\n(B) Because she already found a job.\n(C) Because she lied in the job interview."
+   },
+   {
+    "n": 19,
+    "s": [
+     [
+      4,
+      573.8,
+      663.3,
+      [
+       [
+        40,
+        573.8,
+        520,
+        89.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第19 題\n(A) What days the garbage truck comes.\n(B) How garbage is collected in Taiwan.\n(C) Which music garbage trucks in Taiwan play."
+   },
+   {
+    "n": 20,
+    "s": [
+     [
+      4,
+      661.3,
+      736.8,
+      [
+       [
+        40,
+        661.3,
+        520,
+        75.5
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第20 題\n(A) She thinks the man knows Alan well.\n(B) She does not think Alan will move to America.\n(C) She thinks Alan will move to America next year."
+   },
+   {
+    "n": 21,
+    "s": [
+     [
+      5,
+      48.8,
+      355.1,
+      [
+       [
+        40,
+        48.8,
+        520,
+        306.2
+       ]
+      ],
+      []
+     ]
+    ],
+    "t": "第21 題\n(A) The game will begin soon.\n(B) The snacks at the food stands are free.\n(C) People have to wait until the rain stops."
+   }
+  ],
+  "g": [],
+  "single": 21
+ },
+ "js:STRUCT": [
+  19,
+  12,
+  7,
+  18,
+  6
+ ],
+ "js:SCRIPTS": [
+  [
+   12,
+   "M: Hey, Lisa. Are you ready for Father's Day?\nW: Well, I'm thinking to make Dad a card. What do you think?\nM: But he already has a lot of cards. We make him cards every year. Any other ideas?\nW: Mmm…why don't we take him to that new restaurant? I heard it's very good.\nM: Yeah, it is. But I'm afraid everyone wants to take their dad there. And Father's Day's tomorrow. It's too late to get a table now.\nW: Hmm…maybe we could cook a nice dinner for him. It's more comfortable at home, isn't it?\nM: Yeah, that's a good idea.\nQuestion: What are the man and the woman going to do for their father?"
+  ],
+  [
+   4,
+   "How do you usually go to work?"
+  ],
+  [
+   2,
+   "The girl is eating popcorn and watching a movie on her computer."
+  ]
+ ]
+}

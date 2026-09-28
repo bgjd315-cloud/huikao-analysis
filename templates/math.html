@@ -1,0 +1,523 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>會考數學命題解剖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --card-red:#C23B4E; --card-red-soft:#F7E3E6;
+  --K:#8A8F98; --B:#2F6DB5; --P:#8FB3E0; --N:#2E9384; --W:#C23B4E; --C:#E8929E;
+  --dim1:#8A8F98; --dim2:#2F6DB5; --dim3:#D08A2C;
+  --focus:#2F6DB5;
+  --mN:#2F6DB5; --mA:#7A5AB8; --mF:#C23B4E; --mG:#D08A2C; --mS:#2E9384; --mD:#8A8F98; --a1:#8FB3E0; --a2:#2F6DB5; --a3:#2E9384; --a4:#C23B4E; --g0:#B9BEC5; --g1:#E8929E; --g2:#D08A2C; --g3:#2E9384;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+    --K:#9CA1AA; --B:#5B93D6; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+    --dim1:#9CA1AA; --dim2:#5B93D6; --dim3:#E3A450; --focus:#8FB3E0; --mN:#5B93D6; --mA:#A58BE0; --mF:#E8687A; --mG:#E3A450; --mS:#3FB3A2; --mD:#9CA1AA; --a1:#9DBDE6; --a2:#5B93D6; --a3:#3FB3A2; --a4:#E8687A; --g0:#5A6068; --g1:#C9475B; --g2:#B97A2E; --g3:#2E9384;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+  --K:#9CA1AA; --B:#5B93D6; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+  --dim1:#9CA1AA; --dim2:#5B93D6; --dim3:#E3A450; --focus:#8FB3E0; --mN:#5B93D6; --mA:#A58BE0; --mF:#E8687A; --mG:#E3A450; --mS:#3FB3A2; --mD:#9CA1AA; --a1:#9DBDE6; --a2:#5B93D6; --a3:#3FB3A2; --a4:#E8687A; --g0:#5A6068; --g1:#C9475B; --g2:#B97A2E; --g3:#2E9384;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB","BiauKai",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:26px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--B)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+header.top{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--card-red);font-weight:700}
+.lede{max-width:62ch;color:var(--ink-2);font-size:16.5px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-3)}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 16px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:14px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--card-red)}
+
+section{padding-block:44px 8px;display:grid;gap:18px}
+.sec-head{display:grid;gap:6px}
+.sec-head .kicker{font-size:12.5px;letter-spacing:.1em;color:var(--ink-3);font-weight:500}
+.sec-head p{color:var(--ink-2);max-width:66ch}
+
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.findings li{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.findings b{font-family:"LXGW WenKai TC",serif;font-size:19px;color:var(--card-red);font-weight:700;line-height:1.4}
+@media (max-width:560px){.findings li{grid-template-columns:1fr;gap:2px}}
+
+/* answer card */
+.card-panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px;display:grid;gap:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.legend button{font:inherit;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 8px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.legend button[aria-pressed="true"]{border-color:var(--ink);background:var(--rule-2)}
+.legend .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.legend .ct{color:var(--ink-3);font-size:12px}
+.sheet{overflow-x:auto}
+.sheet-inner{min-width:760px;display:grid;gap:8px}
+.row{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px}
+.row .yr{font-weight:700;font-size:14px;color:var(--ink-2)}
+.bubbles{display:flex;gap:3px;align-items:center}
+.bubbles .gap{width:10px;flex:none;align-self:stretch;border-left:1px dashed var(--rule);margin-left:4px}
+.bub{flex:1 1 0;min-width:0;aspect-ratio:1/1.35;max-height:30px;border-radius:40%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;font-size:9.5px;color:#fff;font-variant-numeric:tabular-nums;transition:opacity .15s}
+.bub.dim{opacity:.14}
+.bub[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.scale{display:grid;grid-template-columns:44px 1fr;gap:10px;font-size:11.5px;color:var(--ink-3)}
+.scale .ticks{display:flex;justify-content:space-between}
+.detail{min-height:48px;border-top:1px solid var(--rule);padding-top:10px;font-size:14.5px;color:var(--ink-2)}
+.detail strong{color:var(--ink)}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:44px 1fr 64px;gap:10px;align-items:center;font-size:13.5px}
+.bar{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
+.bar span{display:grid;place-items:center;color:#fff;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.bar-row .yr{font-weight:700;color:var(--ink-2)}
+.bar-row .note{color:var(--ink-3);font-size:12.5px;text-align:right}
+.mini-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.mini-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center}
+.q{font-variant-numeric:tabular-nums;color:var(--card-red);font-weight:500}
+.miss{color:var(--ink-3)}
+.tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:3px;margin:1px 3px 1px 0;border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.tag.x{border-color:var(--B);color:var(--B)}
+.tag.g{border-color:var(--N);color:var(--N)}
+.tag.w{border-color:var(--W);color:var(--W)}
+.tag.p{border-color:var(--P);color:var(--ink-2)}
+.hit{background:var(--card-red-soft)}
+
+.year-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.year-tabs button{font:inherit;font-size:14px;padding:4px 14px;border-radius:4px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer}
+.year-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);border-radius:6px;background:var(--surface);overflow:hidden}
+.levels > div{padding:16px 18px;display:grid;gap:8px;align-content:start;border-right:1px solid var(--rule)}
+.levels > div:last-child{border-right:0}
+.levels h3{display:flex;align-items:baseline;gap:8px}
+.levels .grade{font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:500;color:var(--ink-3)}
+.levels ul{margin:0;padding-left:1.1em;font-size:13.5px;color:var(--ink-2);display:grid;gap:3px}
+.levels .sum{font-size:14px}
+@media (max-width:760px){.levels{grid-template-columns:1fr}.levels > div{border-right:0;border-bottom:1px solid var(--rule)}.levels > div:last-child{border-bottom:0}}
+
+.prompts{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.prompts li{display:grid;grid-template-columns:56px 1fr auto;gap:14px;padding:10px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.prompts .y{font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.prompts .t{font-family:"LXGW WenKai TC",serif;font-size:17px}
+.prompts .t small{display:block;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:var(--ink-3)}
+.prompts .k{font-size:12px;color:var(--ink-3);white-space:nowrap}
+.prompts li.new .k{color:var(--card-red)}
+@media (max-width:560px){.prompts li{grid-template-columns:48px 1fr}.prompts .k{grid-column:2}}
+
+.advice{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.advice > div{padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.advice h3{font-size:17px}
+.advice p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.advice{grid-template-columns:1fr}}
+
+/* question bank */
+.bank-ctl{display:grid;gap:10px}
+.bank-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bank-row select,.bank-row input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink)}
+.bank-row input{flex:1 1 220px;min-width:0}
+.bank-count{font-size:13px;color:var(--ink-3)}
+.qlist{display:grid;border-top:1px solid var(--rule)}
+.qitem{border-bottom:1px solid var(--rule)}
+.qitem > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:78px 1fr;gap:12px;padding:10px 4px;align-items:baseline}
+.qitem > summary::-webkit-details-marker{display:none}
+.qitem > summary:hover{background:var(--rule-2)}
+.qid{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.qid .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.qsum{display:grid;gap:2px;min-width:0}
+.qsum .lab{font-size:14.5px}
+.qsum .lab small{color:var(--ink-3);font-size:12.5px;margin-left:6px}
+.qsum .snip{font-size:13px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qitem[open] > summary{background:var(--rule-2)}
+.qbody{padding:12px 4px 18px;display:grid;gap:10px}
+.paper{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:6px 4px;display:grid;gap:0}
+.paper svg{display:block;width:100%;height:auto}
+.passage > summary{cursor:pointer;font-size:13.5px;color:var(--ink-2);padding:4px 0}
+.qtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qtools button{font:inherit;font-size:13px;padding:4px 12px;border-radius:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+.qtools .msg{font-size:12.5px;color:var(--ink-3)}
+.qtext{white-space:pre-wrap;font-size:14px;line-height:1.8;background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;margin:0;max-height:360px;overflow:auto;font-family:inherit}
+mark{background:var(--card-red-soft);color:inherit}
+.ans-toggle{font-size:14px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.ans-toggle input{flex:none;width:16px;height:16px;accent-color:var(--card-red)}
+.qitem > summary{grid-template-columns:78px 1fr auto}
+.ans{font-weight:700;font-size:13px;color:var(--card-red);border:1.5px solid var(--card-red);border-radius:4px;padding:0 7px;align-self:center;font-variant-numeric:tabular-nums}
+.ans-reveal{font-size:14px;font-weight:700;color:var(--card-red)}
+.more{font:inherit;font-size:14px;padding:8px;border:1px dashed var(--rule);background:transparent;color:var(--ink-2);border-radius:4px;cursor:pointer}
+
+.source{font-size:13px;color:var(--ink-3);display:grid;gap:6px}
+.source ul{margin:0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.sheet-inner.mid{min-width:620px}
+.bub.ns{font-size:8.5px;flex:1.4 1 0}
+.dotlab{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.dotlab .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.qlink{text-decoration:none}
+.qlink:hover{text-decoration:underline}
+.nsbox{display:grid;gap:8px;font-size:14px;color:var(--ink-2);background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:10px 12px}
+.nsbox b{color:var(--ink)}
+.nsbar{display:flex;height:24px;border-radius:3px;overflow:hidden}
+.nsbar span{display:grid;place-items:center;color:#fff;font-size:11.5px;white-space:nowrap;overflow:hidden;font-variant-numeric:tabular-nums}
+.note-p{font-size:13.5px;color:var(--ink-2);max-width:70ch}
+</style>
+
+<div class="wrap">
+<a class="home-link" href="../" style="display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none">← 五科總覽</a>
+<header class="top">
+  <div class="eyebrow">國中教育會考 · 數學科 · 111–115 年</div>
+  <h1>會考數學命題解剖</h1>
+  <p class="lede">依心測中心公布的 111–115 年數學科試題本、試題說明、參考答案與非選擇題閱卷資料，把五年共 135 題逐題分類：六大主題各考多少、哪些考點年年出現、非選擇題怎麼評分，並附可搜尋、含答案的原題試題庫。</p>
+  <div class="meta"><span>資料來源：國中教育會考官網「歷屆試題」</span><span>整理日期：2026-09-27</span><span>能力向度與非選擇題級分為官方數據；主題與考點為本頁逐題分類</span></div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#findings">五年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#structure">試題本結構</a><a href="#strands">主題分布</a><a href="#repeat">重複考點</a><a href="#ns">非選擇題</a><a href="#levels">等級分界</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
+</nav>
+
+<section id="findings">
+  <div class="sec-head"><span class="kicker">重點</span><h2>五年結論</h2></div>
+  <ul class="findings">
+    <li><b>結構固定</b><p>每年 25 題選擇題加 2 題非選擇題，80 分鐘。選擇題最後 2–3 題是共用一篇選文的題組。</p></li>
+    <li><b>幾何最多</b><p>五年 125 題選擇題中，幾何（空間與形狀）39 題、數與量 35 題、代數 27 題，資料與不確定性每年固定 2 題。</p></li>
+    <li><b>年年必考</b><p>二次函數圖形、根式、機率、統計圖表判讀每年各出 1 題以上；圓、摺紙幾何、不等式應用也幾乎每年出現。</p></li>
+    <li><b>應用題變多</b><p>官方「解題應用」題數從 111 年的 8 題增加到 114、115 年的 10 題，「概念理解」從 7 題降到 6 題。</p></li>
+    <li><b>非選擇題重說明</b><p>兩題各 0–3 級分，要求「完整寫出解題過程並詳細解釋」。五年 10 題中有 9 題以 1 級分的考生最多（47–67%），拿滿 3 級分的只有 13–37%。</p></li>
+    <li><b>非選擇題常考比例推理</b><p>112 疫苗效力、113 健康餐盤、114 紙片組合包都要用比例關係推論「不可能」或「不一定」；另一題常是結合特殊直角三角形或相似形的生活幾何。</p></li>
+    <li><b>精熟看幾何推論</b><p>五年的精熟示例全是幾何題（第 19 或 20 題），要結合多個性質推論角度或長度關係。</p></li>
+  </ul>
+</section>
+
+<section id="sheet">
+  <div class="sec-head"><span class="kicker">互動</span><h2>題目地圖</h2><p>每一列是一年的 27 題，排列方式像答案卡。顏色代表主題，虛線右邊是 2 題非選擇題。點選圓點會在試題庫打開原題。</p></div>
+  <div class="card-panel">
+    <div class="legend" id="legend" role="group" aria-label="篩選主題"></div>
+    <div class="sheet"><div class="sheet-inner mid" id="sheetRows"></div></div>
+    <div class="detail" id="detail" aria-live="polite">點選任一題，會在下方試題庫打開原題。</div>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="sec-head"><span class="kicker">原試題</span><h2>試題庫</h2><p>五年 135 題的原始題目，圖片直接裁切自官方試題本。可以依年度、題型、主題篩選，或用關鍵字搜尋。選擇題附參考答案，非選擇題附官方閱卷說明與各級分人數比例。</p></div>
+  <div class="bank-ctl">
+    <div class="bank-row">
+      <label for="bYear" class="bank-count">年度</label>
+      <select id="bYear"><option value="all">全部</option></select>
+      <label for="bType" class="bank-count">題型</label>
+      <select id="bType"><option value="all">全部</option><option value="MC">選擇題</option><option value="NS">非選擇題</option></select>
+      <label for="bCat" class="bank-count">主題</label>
+      <select id="bCat"><option value="all">全部</option></select>
+    </div>
+    <div class="bank-row">
+      <input id="bSearch" type="search" placeholder="搜尋：例如 二次函數、機率、重心、摺、不等式">
+      <label class="ans-toggle" for="bAns"><input type="checkbox" id="bAns"> 列表顯示答案</label>
+    </div>
+    <div class="bank-count" id="bCount" aria-live="polite"></div>
+  </div>
+  <div class="qlist" id="qlist"></div>
+</section>
+
+<section id="structure">
+  <div class="sec-head"><span class="kicker">官方數據</span><h2>試題本結構</h2><p>試題說明公布的評量能力題數分配（選擇題 25 題）與非選擇題評量能力。</p></div>
+  <div class="mini-legend" id="abLegend"></div>
+  <div class="bars" id="abBars"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th class="c">概念理解</th><th class="c">程序執行</th><th class="c">解題應用</th><th class="c">分析思考</th><th>非選擇題（2 題）</th><th>題組</th></tr></thead>
+    <tbody id="abTable"></tbody>
+  </table></div>
+</section>
+
+<section id="strands">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>主題分布</h2><p>依 108 課綱學習內容的主題類別逐題歸類（數列歸入數與量）。上方是選擇題，括號內為非選擇題。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>主題</th><th class="c">111</th><th class="c">112</th><th class="c">113</th><th class="c">114</th><th class="c">115</th><th class="c">選擇題合計</th></tr></thead>
+    <tbody id="strandTable"></tbody>
+  </table></div>
+</section>
+
+<section id="repeat">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>重複考點</h2><p>五年內出現四次以上的考點，數字是選擇題題號，點題號可直接看原題。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>考點</th><th class="c">111</th><th class="c">112</th><th class="c">113</th><th class="c">114</th><th class="c">115</th></tr></thead>
+    <tbody id="repTable"></tbody>
+  </table></div>
+</section>
+
+<section id="ns">
+  <div class="sec-head"><span class="kicker">官方閱卷資料</span><h2>非選擇題</h2><p>每題 0–3 級分，兩題合計 0–6 級分。下表比例以有效作答人數計算（扣除缺考、重大違規、點字卷及空白卷），來源為各年「數學非選擇題各級分人數百分比統計表」。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th>題目</th><th>主題</th><th class="c">0 級分</th><th class="c">1 級分</th><th class="c">2 級分</th><th class="c">3 級分</th></tr></thead>
+    <tbody id="nsTable"></tbody>
+  </table></div>
+  <p class="note-p">官方閱卷說明強調：策略適切且表達合理時，即使計算有誤仍可能給分；未恰當表達解題策略與過程合理性者不給 3 級分。</p>
+</section>
+
+<section id="levels">
+  <div class="sec-head"><span class="kicker">試題說明「能力等級示例」</span><h2>等級分界</h2><p>五年示例的題號位置非常固定：精熟在第 19–20 題、基礎在第 8–13 題、待加強在第 1–5 題。</p></div>
+  <div class="levels">
+    <div>
+      <h3>精熟 <span class="grade">A++／A+／A</span></h3>
+      <p class="sum">答對者較可能是精熟</p>
+      <ul>
+        <li>111 #20 正三角形摺紙與相似形</li>
+        <li>112 #20 中垂線與外角推論角度</li>
+        <li>113 #20 內角和推論角度大小</li>
+        <li>114 #20 摺紙與大邊對大角</li>
+        <li>115 #19 圓周角推論頂點位置</li>
+      </ul>
+      <p class="sum">全是幾何推論，要結合兩個以上的性質才能判斷。</p>
+    </div>
+    <div>
+      <h3>基礎 <span class="grade">B++／B+／B</span></h3>
+      <p class="sum">答對者較可能是基礎以上</p>
+      <ul>
+        <li>111 #12 科學記號的意義</li>
+        <li>112 #12 樹狀圖求機率</li>
+        <li>113 #8 科學記號大小比較</li>
+        <li>114 #10 乘法公式</li>
+        <li>115 #13 平行 x 軸的直線方程式</li>
+      </ul>
+      <p class="sum">理解一個基本概念或套用一個方法即可作答。</p>
+    </div>
+    <div>
+      <h3>待加強 <span class="grade">C</span></h3>
+      <p class="sum">答錯者較可能是待加強</p>
+      <ul>
+        <li>111 #3 質因數</li>
+        <li>112 #5 點在一次函數圖形上</li>
+        <li>113 #3 代入消去法</li>
+        <li>114 #1 指數律</li>
+        <li>115 #3 根式化簡</li>
+      </ul>
+      <p class="sum">單一步驟的基本運算或定義判斷。</p>
+    </div>
+  </div>
+</section>
+
+<section id="advice">
+  <div class="sec-head"><span class="kicker">依上面數據推論</span><h2>教學建議</h2></div>
+  <div class="advice">
+    <div><h3>前 10 題要穩拿</h3><p>待加強示例都在第 1–5 題，是指數律、根式、聯立方程式、因數這類一步驟運算。先確保學生這些題目零失誤。</p></div>
+    <div><h3>每年必考的清單</h3><p>二次函數圖形、根式、機率、統計圖表每年都出，數列、不等式應用、圓也幾乎年年出現，可做成固定複習清單。</p></div>
+    <div><h3>幾何推論是精熟門檻</h3><p>精熟示例全是角度、長度關係的推論，常搭配摺紙或圓。練習時要求學生寫出「用了哪個性質」，而不只算出答案。</p></div>
+    <div><h3>讀懂選文情境</h3><p>每年最後 2–3 題共用一篇生活選文（燈管、高齡化、理想體重、齒輪比、時速錶），要先從文字中找出定義與數量關係。</p></div>
+    <div><h3>非選擇題練「說明」</h3><p>大多數題目以 1 級分的考生最多。練習時要求完整寫出算式、每一步的理由與最後結論，尤其是「為什麼不可能」這類推論題。</p></div>
+    <div><h3>比例推理單獨練</h3><p>非選擇題連續幾年考比例推理，選擇題也常用比與比值包裝生活情境，值得當成一個單元反覆練習。</p></div>
+  </div>
+</section>
+
+<section id="source">
+  <div class="sec-head"><span class="kicker">說明</span><h2>資料與方法</h2></div>
+  <div class="source">
+    <ul>
+      <li>原始資料：心測中心國中教育會考官網「歷屆試題」頁所連結的 111–115 年數學科試題本、試題說明、選擇題參考答案一覽表、數學非選擇題各級分人數百分比統計表，以及「各科計分與閱卷結果說明」中的數學非選擇題閱卷說明。</li>
+      <li>評量能力題數、能力等級示例與非選擇題級分比例取自官方文件；參考答案已用試題說明中的示例題逐一核對，全部相符。</li>
+      <li>主題與考點是本頁逐題判讀的結果，不是官方分類。主題名稱依 108 課綱學習內容類別：數與量、代數、函數、坐標幾何、空間與形狀（本頁稱幾何）、資料與不確定性。</li>
+      <li>「試題庫」的題目圖片裁切自官方試題本 PDF，未經改動；「文字版」由 PDF 自動擷取，數學式與圖形常無法正確呈現，引用時請以圖片為準。</li>
+    </ul>
+    <p>官網：<a href="https://cap.rcpet.edu.tw/examination.html" target="_blank" rel="noopener">cap.rcpet.edu.tw/examination.html</a></p>
+  </div>
+</section>
+</div>
+
+<script id="clsData" type="application/json">{{json:clsData}}</script>
+<script id="ansData" type="application/json">{{json:ansData}}</script>
+<script id="examData" type="application/json">{{json:examData}}</script>
+<script>
+const YEARS={{years}};
+const CLS=JSON.parse(document.getElementById("clsData").textContent);
+const ANS=JSON.parse(document.getElementById("ansData").textContent);
+const EX=JSON.parse(document.getElementById("examData").textContent);
+const ST={N:{name:"數與量",v:"--mN"},A:{name:"代數",v:"--mA"},F:{name:"函數",v:"--mF"},G:{name:"坐標幾何",v:"--mG"},S:{name:"幾何",v:"--mS"},D:{name:"資料與不確定性",v:"--mD"}};
+const SORD=["N","A","F","G","S","D"];
+const ABIL={{js:ABIL}};
+const NSAB={{js:NSAB}};
+const GROUPQ={{js:GROUPQ}};
+const NSD={{js:NSD}};
+const NSNOTE={{js:NSNOTE}};
+const REPEAT=[
+ ["F","二次函數圖形",{111:[22],112:[14],113:[12],114:[21],115:[14]}],
+ ["N","根式化簡與運算",{111:[6],112:[4],113:[11],114:[8],115:[3]}],
+ ["D","機率",{111:[9],112:[12],113:[6],114:[11],115:[4]}],
+ ["D","統計圖表判讀",{111:[14],112:[24],113:[9],114:[7],115:[6]}],
+ ["A","不等式應用",{111:[25],112:[11,18],113:[14],114:[19],115:[23]}],
+ ["S","圓的性質",{111:[13,21],112:[19],113:[17,21],114:[23],115:[18,19]}],
+ ["A","多項式與因式分解",{111:[2,8],112:[2],113:[10],114:[2,10],115:[7]}],
+ ["A","二元一次聯立方程式",{112:[16],113:[3],114:[4,14],115:[1]}],
+ ["A","一元二次方程式",{111:[10],112:[10],114:[13],115:[9]}],
+ ["N","數列",{112:[15],113:[5],114:[9],115:[17]}],
+ ["N","科學記號與指數律",{111:[12],112:[1],113:[8],114:[1]}],
+ ["N","數線",{111:[1],113:[19],114:[15],115:[11]}],
+ ["S","摺紙幾何",{111:[20],112:[19],113:[23],114:[20]}],
+ ["S","三角形重心",{111:[19],113:[22],114:[22]}]
+];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const qname=n=>n<=25?`${n}`:`非${n-25}`;
+
+/* items */
+const ITEMS=[];
+YEARS.forEach(y=>EX[y].q.forEach(q=>{
+  const [s,lab]=CLS[y][q.n-1]; const g=EX[y].g.find(g=>q.n>=g.a&&q.n<=g.b)||null; const ns=q.n>25;
+  ITEMS.push({y,n:q.n,s,lab,q,g,ns,part:ns?"非選擇題":(g?"選擇題・題組":"選擇題"),ans:ns?null:ANS[y][q.n-1],
+    hay:(lab+" "+ST[s].name+" "+q.t+" "+(g?g.t:"")+(ns?" 非選擇題 "+NSD[y][q.n-26][0]:"")).replace(/\s+/g,"")});
+}));
+
+/* sheet */
+let filter=null,picked=null;
+const legend=document.getElementById("legend");
+SORD.forEach(k=>{
+  const cnt=ITEMS.filter(i=>i.s===k).length;
+  const b=document.createElement("button");b.type="button";b.id="lg-"+k;b.dataset.k=k;b.setAttribute("aria-pressed","false");
+  b.innerHTML=`<span class="sw" style="background:var(${ST[k].v})"></span>${ST[k].name}<span class="ct num">${cnt}</span>`;
+  b.addEventListener("click",()=>{filter=filter===k?null:k;renderFilter();});legend.appendChild(b);
+});
+const rows=document.getElementById("sheetRows");
+YEARS.forEach(y=>{
+  const r=document.createElement("div");r.className="row";r.innerHTML=`<span class="yr num">${y}</span>`;
+  const bb=document.createElement("div");bb.className="bubbles";
+  ITEMS.filter(i=>i.y===y).forEach(it=>{
+    if(it.n===26){const g=document.createElement("span");g.className="gap";g.setAttribute("aria-hidden","true");bb.appendChild(g);}
+    const b=document.createElement("button");b.type="button";b.className="bub"+(it.ns?" ns":"");b.id=`q-${y}-${it.n}`;b.dataset.k=it.s;
+    b.style.background=`var(${ST[it.s].v})`;b.textContent=qname(it.n);
+    b.setAttribute("aria-label",`${y}年${it.ns?"非選擇題第"+(it.n-25):"第"+it.n}題，${ST[it.s].name}，${it.lab}`);b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",()=>{
+      if(picked)picked.setAttribute("aria-pressed","false");picked=b;b.setAttribute("aria-pressed","true");
+      document.getElementById("detail").innerHTML=`<strong>${y} 年${it.ns?"非選擇題第 "+(it.n-25):"第 "+it.n} 題</strong>　${ST[it.s].name}　｜　${esc(it.lab)}　<a href="#qi-${y}-${it.n}">看原題 ↓</a>`;
+      openInBank(y,it.n);
+    });
+    bb.appendChild(b);
+  });
+  r.appendChild(bb);rows.appendChild(r);
+});
+function renderFilter(){
+  document.querySelectorAll(".legend button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===filter)));
+  document.querySelectorAll(".bub").forEach(b=>b.classList.toggle("dim",!!filter&&b.dataset.k!==filter));
+}
+
+/* ability */
+const AC=["--a1","--a2","--a3","--a4"],AN=["概念理解","程序執行","解題應用","分析思考"];
+document.getElementById("abLegend").innerHTML=AN.map((n,i)=>`<span><i style="background:var(${AC[i]})"></i>${n}</span>`).join("");
+YEARS.forEach(y=>{
+  const v=ABIL[y];
+  document.getElementById("abBars").insertAdjacentHTML("beforeend",`<div class="bar-row"><span class="yr num">${y}</span><div class="bar" role="img" aria-label="${y}年 ${AN.map((n,i)=>n+v[i]).join(" ")}">${v.map((n,i)=>`<span style="width:${n/25*100}%;background:var(${AC[i]})">${n}</span>`).join("")}</div><span class="note num">選擇 25 題</span></div>`);
+  document.getElementById("abTable").insertAdjacentHTML("beforeend",`<tr><td class="num"><b>${y}</b></td>${v.map(n=>`<td class="c num">${n}</td>`).join("")}<td>${NSAB[y]}</td><td>${GROUPQ[y]}</td></tr>`);
+});
+
+/* strands */
+const sT=document.getElementById("strandTable");
+SORD.forEach(k=>{
+  const per=YEARS.map(y=>[CLS[y].slice(0,25).filter(([s])=>s===k).length,CLS[y].slice(25).filter(([s])=>s===k).length]);
+  const sum=per.reduce((a,[m])=>a+m,0);
+  sT.insertAdjacentHTML("beforeend",`<tr><td><span class="dotlab"><span class="dot" style="background:var(${ST[k].v})"></span>${ST[k].name}</span></td>${per.map(([m,n])=>`<td class="c num">${m}${n?`<span class="miss">（${n}）</span>`:""}</td>`).join("")}<td class="c num"><b>${sum}</b><span class="miss">｜${Math.round(sum/125*100)}%</span></td></tr>`);
+});
+
+/* repeat */
+const rT=document.getElementById("repTable");
+REPEAT.forEach(([s,name,map])=>{
+  rT.insertAdjacentHTML("beforeend",`<tr><td><span class="dotlab"><span class="dot" style="background:var(${ST[s].v})"></span>${name}</span></td>${YEARS.map(y=>{const q=map[y]||[];return q.length?`<td class="c hit">${q.map(n=>`<a class="q qlink" href="#qi-${y}-${n}" data-y="${y}" data-n="${n}">${n}</a>`).join("、")}</td>`:`<td class="c miss">—</td>`;}).join("")}</tr>`);
+});
+rT.addEventListener("click",e=>{const a=e.target.closest(".qlink");if(!a)return;e.preventDefault();openInBank(+a.dataset.y,+a.dataset.n);});
+
+/* non-choice table */
+const nT=document.getElementById("nsTable");
+YEARS.forEach(y=>NSD[y].forEach(([t,p],i)=>{
+  const s=CLS[y][25+i][0]; const mx=Math.max(...p);
+  nT.insertAdjacentHTML("beforeend",`<tr>${i===0?`<td rowspan="2" class="num" style="vertical-align:middle"><b>${y}</b></td>`:""}<td><a class="qlink" href="#qi-${y}-${26+i}" data-y="${y}" data-n="${26+i}">第 ${i+1} 題</a>　${esc(t)}</td><td><span class="dotlab"><span class="dot" style="background:var(${ST[s].v})"></span>${ST[s].name}</span></td>${p.map(v=>`<td class="c num${v===mx?" hit":""}">${v.toFixed(2)}%</td>`).join("")}</tr>`);
+}));
+nT.addEventListener("click",e=>{const a=e.target.closest(".qlink");if(!a)return;e.preventDefault();openInBank(+a.dataset.y,+a.dataset.n);});
+
+/* bank */
+let uid=0;
+function paperHTML(y,slices,label){
+  const W=EX[y].w,H=EX[y].h,X0=EX[y].x0,XW=EX[y].xw;
+  return `<div class="paper">${slices.map(([p,a,b,clips,masks])=>{const id=`cp${uid++}`;
+    return `<svg viewBox="${X0} ${a} ${XW} ${(b-a).toFixed(1)}" role="img" aria-label="${label}"><defs><clipPath id="${id}">${clips.map(([x,yy,w,h])=>`<rect x="${x}" y="${yy}" width="${w}" height="${h}"/>`).join("")}</clipPath></defs><g clip-path="url(#${id})"><image href="math-pages/${y}-${p}.webp" x="0" y="0" width="${W}" height="${H}"/>${masks.map(([x,yy,w,h])=>`<rect x="${x}" y="${yy}" width="${w}" height="${h}" fill="#fff"/>`).join("")}</g></svg>`;}).join("")}</div>`;
+}
+const bYear=document.getElementById("bYear"),bType=document.getElementById("bType"),bCat=document.getElementById("bCat"),bSearch=document.getElementById("bSearch"),bAns=document.getElementById("bAns");
+YEARS.forEach(y=>bYear.insertAdjacentHTML("beforeend",`<option value="${y}">${y} 年</option>`));
+SORD.forEach(k=>bCat.insertAdjacentHTML("beforeend",`<option value="${k}">${ST[k].name}</option>`));
+function snippet(it,kw){
+  const t=it.q.t.replace(/^\d{1,2}[\.．]\s*/,"").replace(/\s+/g," ");
+  if(kw){const i=it.hay.indexOf(kw);if(i>=0&&!it.lab.includes(kw)){const st=Math.max(0,i-18);return esc(it.hay.slice(st,i))+"<mark>"+esc(kw)+"</mark>"+esc(it.hay.slice(i+kw.length,i+kw.length+40));}}
+  return esc(t.slice(0,80));
+}
+let LIMIT=60;
+function renderBank(openId){
+  const y=bYear.value,tp=bType.value,c=bCat.value,kw=bSearch.value.replace(/\s+/g,"");
+  const hits=ITEMS.filter(it=>(y==="all"||it.y==+y)&&(tp==="all"||(tp==="NS")===it.ns)&&(c==="all"||it.s===c)&&(!kw||it.hay.includes(kw)));
+  const list=document.getElementById("qlist");
+  const shown=hits.slice(0,Math.max(LIMIT,openId?hits.findIndex(h=>`${h.y}-${h.n}`===openId)+1:0));
+  list.innerHTML=shown.map(it=>`<details class="qitem" id="qi-${it.y}-${it.n}" data-y="${it.y}" data-n="${it.n}">
+    <summary><span class="qid"><span class="dot" style="background:var(${ST[it.s].v})"></span>${it.y}-${it.ns?"非"+(it.n-25):String(it.n).padStart(2,"0")}</span>
+    <span class="qsum"><span class="lab">${esc(it.lab)}<small>${it.part}・${ST[it.s].name}</small></span><span class="snip">${snippet(it,kw)}</span></span>${bAns.checked&&!it.ns?`<span class="ans" aria-label="參考答案 ${it.ans}">${it.ans}</span>`:"<span></span>"}</summary>
+    <div class="qbody"></div></details>`).join("")+
+    (hits.length>shown.length?`<button type="button" class="more" id="moreBtn">再顯示 ${Math.min(60,hits.length-shown.length)} 題（共 ${hits.length} 題）</button>`:"");
+  document.getElementById("bCount").textContent=`符合 ${hits.length} 題`;
+  const mb=document.getElementById("moreBtn");if(mb)mb.addEventListener("click",()=>{LIMIT+=60;renderBank();});
+  list.querySelectorAll("details.qitem").forEach(d=>d.addEventListener("toggle",()=>{if(d.open)fillBody(d);}));
+}
+function fillBody(d){
+  const body=d.querySelector(".qbody");if(body.dataset.done)return;
+  const it=ITEMS.find(i=>i.y==+d.dataset.y&&i.n==+d.dataset.n);
+  let h="";
+  if(it.g)h+=`<details class="passage" ${it.n===it.g.a?"open":""}><summary>題組選文（第 ${it.g.a}–${it.g.b} 題共用）</summary>${paperHTML(it.y,it.g.s,`${it.y}年第${it.g.a}至${it.g.b}題選文`)}</details>`;
+  h+=paperHTML(it.y,it.q.s,`${it.y}年第${qname(it.n)}題原題`);
+  if(it.ns){
+    const [t,p]=NSD[it.y][it.n-26]; const note=(NSNOTE[it.y]||[])[it.n-26];
+    h+=`<div class="nsbox"><div><b>官方說明的評量重點</b>：${esc(t)}（每題 0–3 級分）</div>${note?`<div>${esc(note)}</div>`:""}<div class="nsbar" role="img" aria-label="級分比例 ${p.map((v,i)=>i+"級分"+v+"%").join(" ")}">${p.map((v,i)=>`<span style="width:${v}%;background:var(--g${i})" title="${i} 級分 ${v}%">${v>=8?i+"級 "+Math.round(v)+"%":""}</span>`).join("")}</div></div>`;
+    h+=`<div class="qtools"><button type="button" class="cp">複製題目文字</button><button type="button" class="tx">顯示文字版</button><span class="msg" aria-live="polite"></span></div>`;
+  } else {
+    h+=`<div class="qtools"><button type="button" class="an">看答案</button><button type="button" class="cp">複製題目文字</button><button type="button" class="tx">顯示文字版</button><span class="msg" aria-live="polite"></span></div>`;
+  }
+  h+=`<pre class="qtext" hidden></pre>`;
+  body.innerHTML=h;body.dataset.done="1";
+  const txt=(it.g?it.g.t+"\n\n":"")+it.q.t;const pre=body.querySelector(".qtext");pre.textContent=txt;
+  const an=body.querySelector(".an");
+  if(an)an.addEventListener("click",e=>{const b=e.currentTarget;if(b.dataset.on){b.textContent="看答案";delete b.dataset.on;}else{b.innerHTML=`參考答案：<span class="ans-reveal">(${it.ans})</span>`;b.dataset.on="1";}});
+  body.querySelector(".tx").addEventListener("click",e=>{pre.hidden=!pre.hidden;e.currentTarget.textContent=pre.hidden?"顯示文字版":"隱藏文字版";});
+  body.querySelector(".cp").addEventListener("click",()=>{
+    const msg=body.querySelector(".qtools .msg");
+    const fallback=()=>{pre.hidden=false;const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent="已選取文字，請按 Ctrl+C 複製";};
+    try{navigator.clipboard.writeText(txt).then(()=>msg.textContent="已複製（數學式請以原題圖片為準）",fallback);}catch(e){fallback();}
+  });
+}
+function openInBank(y,n){
+  bYear.value=String(y);bType.value="all";bCat.value="all";bSearch.value="";
+  renderBank(`${y}-${n}`);
+  const d=document.getElementById(`qi-${y}-${n}`);
+  if(d){d.open=true;fillBody(d);d.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}
+}
+bAns.addEventListener("change",()=>{const open=[...document.querySelectorAll("details.qitem[open]")].map(d=>d.id);renderBank();open.forEach(id=>{const d=document.getElementById(id);if(d){d.open=true;fillBody(d);}});});
+[bYear,bType,bCat].forEach(el=>el.addEventListener("change",()=>{LIMIT=60;renderBank();}));
+let st;bSearch.addEventListener("input",()=>{clearTimeout(st);st=setTimeout(()=>{LIMIT=60;renderBank();},180);});
+bYear.value="115";renderBank();
+
+</script>
+
+</body></html>

@@ -1,0 +1,198 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>會考五科命題總覽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --red:#C23B4E;
+  --lvA:#C23B4E; --lvB:#D08A2C; --lvC:#8A8F98;
+  --zh:#C23B4E; --en:#2E9384; --ma:#2F6DB5; --so:#B8702A; --sc:#7A5AB8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --red:#E8687A;
+    --lvA:#E8687A; --lvB:#E3A450; --lvC:#9CA1AA;
+    --zh:#E8687A; --en:#3FB3A2; --ma:#5B93D6; --so:#E0954A; --sc:#A58BE0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --red:#E8687A;
+  --lvA:#E8687A; --lvB:#E3A450; --lvC:#9CA1AA;
+  --zh:#E8687A; --en:#3FB3A2; --ma:#5B93D6; --so:#E0954A; --sc:#A58BE0;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px)}
+h2{font-size:26px}
+h3{font-size:21px}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ma);outline-offset:2px}
+header{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--red);font-weight:700}
+.lede{max-width:64ch;color:var(--ink-2);font-size:16.5px}
+.meta{font-size:13px;color:var(--ink-3)}
+section{padding-block:40px 4px;display:grid;gap:16px}
+.sec-head{display:grid;gap:6px}
+.sec-head p{color:var(--ink-2);max-width:68ch}
+
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.subj{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--c);border-radius:6px;padding:18px 18px 16px;display:grid;gap:10px;align-content:start}
+.subj-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.subj .fmt{font-size:13px;color:var(--ink-3);text-align:right}
+.subj ul{margin:0;padding-left:1.1em;display:grid;gap:4px;font-size:14px;color:var(--ink-2)}
+.subj .go{justify-self:start;margin-top:4px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--c);text-decoration:none;border:1.5px solid var(--c);border-radius:4px;padding:5px 12px}
+.subj .go:hover{background:var(--rule-2)}
+
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+
+.plot{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;gap:10px}
+.plot-legend{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px;color:var(--ink-2)}
+.plot-legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.prow{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center}
+.prow .lab{font-size:14px;font-weight:700}
+.prow .lab small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-3)}
+.track{position:relative;height:30px;border-bottom:1px solid var(--rule)}
+.track .m{position:absolute;bottom:6px;width:11px;height:11px;border-radius:50%;transform:translateX(-50%);border:1.5px solid var(--surface)}
+.axis{display:grid;grid-template-columns:92px 1fr;gap:12px;font-size:11.5px;color:var(--ink-3)}
+.axis .ticks{display:flex;justify-content:space-between}
+
+.patterns{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule)}
+.patterns > div{padding:14px 20px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.patterns p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.patterns{grid-template-columns:1fr}}
+.source{font-size:13px;color:var(--ink-3)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">國中教育會考 · 111–115 年 · 五科</div>
+  <h1>會考五科命題總覽</h1>
+  <p class="lede">國文、英語、數學、社會、自然五科的命題分析入口。每一科都依心測中心公布的試題本、試題說明與參考答案逐題分類，並附可搜尋、含答案的原題試題庫。這頁整理五科的共同規律，點選下方卡片進入各科。</p>
+  <p class="meta">資料來源：國中教育會考官網「歷屆試題」｜整理日期：2026-09-27</p>
+</header>
+
+<section>
+  <div class="sec-head"><h2>各科分析</h2></div>
+  <div class="subjects">
+    <article class="subj" style="--c:var(--zh)">
+      <div class="subj-top"><h3>國文</h3><span class="fmt num">42 題・70 分鐘<br>寫作 50 分鐘</span></div>
+      <ul>
+        <li>文言文加古典詩詞曲每年約 3 成</li>
+        <li>字音、字形、標點、造字、書法、應用文每年各約 1 題</li>
+        <li>寫作 111 年起改為材料引導、不必訂題</li>
+      </ul>
+      <a class="go" href="guowen/">進入國文分析 →</a>
+    </article>
+    <article class="subj" style="--c:var(--en)">
+      <div class="subj-top"><h3>英語</h3><span class="fmt num">閱讀 43 題・60 分鐘<br>聽力 21 題・25 分鐘</span></div>
+      <ul>
+        <li>單題字彙 62 題、語法 40 題，語法多考時態</li>
+        <li>題組以「指出細節」最多，文本多為傳單、地圖、漫畫</li>
+        <li>試題庫可直接播放 105 題聽力音檔</li>
+      </ul>
+      <a class="go" href="english/">進入英語分析 →</a>
+    </article>
+    <article class="subj" style="--c:var(--ma)">
+      <div class="subj-top"><h3>數學</h3><span class="fmt num">選擇 25 題＋非選 2 題<br>80 分鐘</span></div>
+      <ul>
+        <li>幾何 39 題最多，其次數與量 35、代數 27</li>
+        <li>二次函數、根式、機率、統計圖表每年必考</li>
+        <li>非選擇題多數考生只拿 1 級分</li>
+      </ul>
+      <a class="go" href="math/">進入數學分析 →</a>
+    </article>
+    <article class="subj" style="--c:var(--so)">
+      <div class="subj-top"><h3>社會</h3><span class="fmt num">54 題・70 分鐘</span></div>
+      <ul>
+        <li>地理、歷史、公民五年各 90 題</li>
+        <li>每年約一半題目附圖或附表</li>
+        <li>地理的世界區域占一半，中國地理每年 2 題</li>
+      </ul>
+      <a class="go" href="social/">進入社會分析 →</a>
+    </article>
+    <article class="subj" style="--c:var(--sc)">
+      <div class="subj-top"><h3>自然</h3><span class="fmt num">50 題・70 分鐘</span></div>
+      <ul>
+        <li>理化每年 24–28 題，約占一半</li>
+        <li>遺傳每年必考，天氣圖、月相幾乎每年出現</li>
+        <li>探究活動題增加，題組常是一整個實驗</li>
+      </ul>
+      <a class="go" href="science/">進入自然分析 →</a>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>五科結構對照</h2></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>科目</th><th>題數與時間</th><th>題組</th><th>題數最多的類別</th><th>官方能力分類中最多的一類</th></tr></thead>
+    <tbody>
+      <tr><td><span class="dot" style="background:var(--zh)"></span><b>國文</b></td><td class="num">42 題・70 分</td><td>8 組 17–19 題，最後 2 組為文言文</td><td>白話文閱讀</td><td>文意理解（每年 22–24 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--en)"></span><b>英語</b></td><td class="num">閱讀 43＋聽力 21</td><td>閱讀 8 篇 20–24 題，末篇克漏字</td><td>篇章理解</td><td>篇章理解（每年 18–20 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--ma)"></span><b>數學</b></td><td class="num">25＋2 題・80 分</td><td>選文 1 組 2–3 題</td><td>幾何</td><td>解題應用（每年 8–10 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--so)"></span><b>社會</b></td><td class="num">54 題・70 分</td><td>4 組 11–12 題，多跨科</td><td>三科均分</td><td>覺察說明（每年 17–25 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--sc)"></span><b>自然</b></td><td class="num">50 題・70 分</td><td>4 組 8–9 題</td><td>生物、物理</td><td>推論與應用（每年 21–28 題）</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>等級示例都在固定位置</h2><p>心測中心每年每科會挑 3 題說明精熟、基礎、待加強的典型題目。把五年的示例題號標在題本位置上，五科都呈現同樣的規律：待加強在最前面，精熟在後半段。</p></div>
+  <div class="plot">
+    <div class="plot-legend"><span><i style="background:var(--lvA)"></i>精熟示例</span><span><i style="background:var(--lvB)"></i>基礎示例</span><span><i style="background:var(--lvC)"></i>待加強示例</span></div>
+    <div id="plot"></div>
+    <div class="axis"><span></span><div class="ticks"><span>題本開頭</span><span>中段</span><span>最後一題</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>五科共同規律</h2></div>
+  <div class="patterns">
+    <div><h3>前段題目決定是否待加強</h3><p>五科的待加強示例幾乎都在前 10 題，是單一步驟的基本概念題。確保學生前段零失誤，是脫離 C 等級最直接的方法。</p></div>
+    <div><h3>精熟要統整推論</h3><p>精熟示例都要結合兩個以上的概念或整篇資訊：國文是長篇文言，數學與自然是幾何或理化推論，社會與英語是整合圖表與文本。</p></div>
+    <div><h3>圖表與情境是共同語言</h3><p>社會約一半題目附圖表，自然、數學的題組都用生活情境或實驗數據，國文、英語也大量使用海報、傳單、統計圖等不連續文本。</p></div>
+    <div><h3>題組放在最後</h3><p>五科都把題組放在題本後段，且閱讀量大。考試時間分配要預留給最後的題組。</p></div>
+    <div><h3>年年必考的清單</h3><p>每科都有幾乎每年出現的考點，例如國文的六項語文知識、數學的二次函數與機率、自然的遺傳、社會的地圖技能。各科頁面的「重複考點」表可以直接拿來排複習。</p></div>
+    <div><h3>表達與論證變重要</h3><p>數學非選擇題要求詳細解釋，國文寫作要求詮釋材料，自然與社會也出現評估他人說法的題目。練習時要讓學生說出理由，而不只選出答案。</p></div>
+  </div>
+</section>
+
+<section class="source">
+  <p>各科頁面的分類方式與資料說明，請見各頁最後的「資料與方法」。主題與考點分類為逐題判讀的結果，不是官方分類；題數分配、等級示例與參考答案均取自官方文件。</p>
+</section>
+</div>
+
+<script>
+const LV=[
+ ["國文","42 題","--zh",42,{A:[24,24,24,24,20],B:[20,15,12,17,12],C:[1,1,1,1,2]}],
+ ["英語閱讀","43 題","--en",43,{A:[24,33,33,29,32],B:[21,26,22,21,21],C:[6,3,2,2,2]}],
+ ["數學","選擇 25 題","--ma",25,{A:[20,20,20,20,19],B:[12,12,8,10,13],C:[3,5,3,1,3]}],
+ ["社會","54 題","--so",54,{A:[41,28,40,41,40],B:[39,38,27,35,3],C:[2,9,5,6,10]}],
+ ["自然","50 題","--sc",50,{A:[41,33,38,40,41],B:[20,14,29,12,13],C:[2,2,3,6,2]}]
+];
+const YRS=[111,112,113,114,115], NAME={A:"精熟",B:"基礎",C:"待加強"}, COL={A:"--lvA",B:"--lvB",C:"--lvC"};
+document.getElementById("plot").innerHTML=LV.map(([name,sub,c,n,d])=>{
+  const marks=["C","B","A"].flatMap(k=>d[k].map((q,i)=>{
+    const x=(q-1)/(n-1)*100;
+    return `<span class="m" style="left:${x}%;background:var(${COL[k]})" title="${YRS[i]} 年第 ${q} 題（${NAME[k]}示例）"></span>`;
+  })).join("");
+  return `<div class="prow"><span class="lab" style="color:var(${c})">${name}<small>${sub}</small></span><div class="track" role="img" aria-label="${name}的等級示例位置：精熟 ${d.A.join("、")} 題；基礎 ${d.B.join("、")} 題；待加強 ${d.C.join("、")} 題">${marks}</div></div>`;
+}).join("");
+</script>
+
+</body></html>
