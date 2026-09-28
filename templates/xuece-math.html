@@ -1,0 +1,433 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>學測數學命題解剖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --card-red:#C23B4E; --card-red-soft:#F7E3E6;
+  --K:#8A8F98; --L:#B08A3E; --B:#2F6DB5; --I:#7B61B8; --P:#8FB3E0; --N:#2E9384; --W:#C23B4E; --C:#E8929E;
+  --t1:#8A8F98; --t2:#2F6DB5; --t3:#2E9384; --t4:#D08A2C;
+  --focus:#2F6DB5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+    --K:#9CA1AA; --L:#D2AA5C; --B:#5B93D6; --I:#A58BE0; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+    --t1:#9CA1AA; --t2:#5B93D6; --t3:#3FB3A2; --t4:#E3A450; --focus:#8FB3E0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+  --K:#9CA1AA; --L:#D2AA5C; --B:#5B93D6; --I:#A58BE0; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+  --t1:#9CA1AA; --t2:#5B93D6; --t3:#3FB3A2; --t4:#E3A450; --focus:#8FB3E0;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB","BiauKai",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:26px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--B)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+header.top{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--card-red);font-weight:700}
+.lede{max-width:62ch;color:var(--ink-2);font-size:16.5px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-3)}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 16px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:14px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--card-red)}
+
+section{padding-block:44px 8px;display:grid;gap:18px}
+.sec-head{display:grid;gap:6px}
+.sec-head .kicker{font-size:12.5px;letter-spacing:.1em;color:var(--ink-3);font-weight:500}
+.sec-head p{color:var(--ink-2);max-width:66ch}
+
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.findings li{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.findings b{font-family:"LXGW WenKai TC",serif;font-size:19px;color:var(--card-red);font-weight:700;line-height:1.4}
+@media (max-width:560px){.findings li{grid-template-columns:1fr;gap:2px}}
+
+/* answer card */
+.card-panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px;display:grid;gap:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.legend button{font:inherit;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 8px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.legend button[aria-pressed="true"]{border-color:var(--ink);background:var(--rule-2)}
+.legend .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.legend .ct{color:var(--ink-3);font-size:12px}
+.shape-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12.5px;color:var(--ink-3);align-items:center}
+.shape-key i{display:inline-block;width:12px;height:15px;margin-right:6px;vertical-align:-3px;background:var(--ink-3)}
+.shape-key .s1{border-radius:40%}.shape-key .s2{border-radius:2px}.shape-key .s3{border-radius:40%;background:transparent;border:2px solid var(--ink-3)}
+.sheet{overflow-x:auto}
+.sheet-inner{min-width:780px;display:grid;gap:8px}
+.row{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px}
+.row .yr{font-weight:700;font-size:14px;color:var(--ink-2)}
+.row .yr small{display:block;font-weight:400;font-size:10.5px;color:var(--ink-3);line-height:1.1}
+.bubbles{display:grid;grid-template-columns:repeat(44,1fr);gap:3px;align-items:center}
+.bubbles .gap{align-self:stretch;border-left:1px dashed var(--rule);margin-left:45%}
+.bub{min-width:0;aspect-ratio:1/1.35;max-height:30px;border-radius:40%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;font-size:9.5px;color:#fff;font-variant-numeric:tabular-nums;transition:opacity .15s}
+.bub.m{border-radius:3px}
+.bub.f{background:transparent!important;border:2.5px solid var(--c);color:var(--ink)}
+.bub.dim{opacity:.14}
+.bub[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.scale{display:grid;grid-template-columns:44px 1fr;gap:10px;font-size:11.5px;color:var(--ink-3)}
+.scale .ticks{display:flex;justify-content:space-between}
+.detail{min-height:48px;border-top:1px solid var(--rule);padding-top:10px;font-size:14.5px;color:var(--ink-2)}
+.detail strong{color:var(--ink)}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:44px 1fr 86px;gap:10px;align-items:center;font-size:13.5px}
+.bar{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
+.bar span{display:grid;place-items:center;color:#fff;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.bar-row .yr{font-weight:700;color:var(--ink-2)}
+.bar-row .note{color:var(--ink-3);font-size:12.5px;text-align:right}
+.mini-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.mini-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center}
+.q{font-variant-numeric:tabular-nums;color:var(--card-red);font-weight:500}
+.miss{color:var(--ink-3)}
+.tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:3px;margin:1px 3px 1px 0;border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.tag.x{border-color:var(--B);color:var(--B)}
+.tag.g{border-color:var(--N);color:var(--N)}
+.tag.w{border-color:var(--W);color:var(--W)}
+.tag.p{border-color:var(--C);color:var(--ink-2)}
+.tag.n{border-color:var(--t4);color:var(--t4)}
+.hit{background:var(--card-red-soft)}
+
+.year-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.year-tabs button{font:inherit;font-size:14px;padding:4px 14px;border-radius:4px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer}
+.year-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.mixed{display:grid;gap:0;border-top:1px solid var(--rule)}
+.mixed > div{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.mixed .y{font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.mixed .src{font-family:"LXGW WenKai TC",serif;font-size:17px}
+.mixed ul{margin:4px 0 0;padding-left:1.1em;font-size:13.5px;color:var(--ink-2);display:grid;gap:2px}
+.mixed .pts{color:var(--t4);font-weight:700;font-variant-numeric:tabular-nums}
+
+.advice{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.advice > div{padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.advice h3{font-size:17px}
+.advice p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.advice{grid-template-columns:1fr}}
+
+/* question bank */
+.bank-ctl{display:grid;gap:10px}
+.bank-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bank-row select,.bank-row input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink)}
+.bank-row input{flex:1 1 220px;min-width:0}
+.bank-count{font-size:13px;color:var(--ink-3)}
+.qlist{display:grid;border-top:1px solid var(--rule)}
+.qitem{border-bottom:1px solid var(--rule)}
+.qitem > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:78px 1fr auto;gap:12px;padding:10px 4px;align-items:baseline}
+.qitem > summary::-webkit-details-marker{display:none}
+.qitem > summary:hover{background:var(--rule-2)}
+.qid{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.qid .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.qsum{display:grid;gap:2px;min-width:0}
+.qsum .lab{font-size:14.5px}
+.qsum .lab small{color:var(--ink-3);font-size:12.5px;margin-left:6px}
+.qsum .snip{font-size:13px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qitem[open] > summary{background:var(--rule-2)}
+.qbody{padding:12px 4px 18px;display:grid;gap:10px}
+.paper{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:6px 4px;display:grid;gap:0}
+.paper svg{display:block;width:100%;height:auto}
+.passage > summary{cursor:pointer;font-size:13.5px;color:var(--ink-2);padding:4px 0}
+.qtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qtools button{font:inherit;font-size:13px;padding:4px 12px;border-radius:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+.qtools .msg{font-size:12.5px;color:var(--ink-3)}
+.qtext{white-space:pre-wrap;font-size:14px;line-height:1.8;background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;margin:0;max-height:360px;overflow:auto;font-family:inherit}
+.nsref{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--t4);border-radius:4px;padding:10px 12px;font-size:14px;display:grid;gap:6px}
+.nsref h4{margin:0;font-size:13.5px;color:var(--t4)}
+.nsref pre{white-space:pre-wrap;margin:0;font-family:inherit;line-height:1.8}
+.nsref .parts{font-size:12.5px;color:var(--ink-3)}
+mark{background:var(--card-red-soft);color:inherit}
+.ans-toggle{font-size:14px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.ans-toggle input{flex:none;width:16px;height:16px;accent-color:var(--card-red)}
+.ans{font-weight:700;font-size:13px;color:var(--card-red);border:1.5px solid var(--card-red);border-radius:4px;padding:0 7px;align-self:center;font-variant-numeric:tabular-nums}
+.ans.f{color:var(--t4);border-color:var(--t4)}
+.ans-reveal{font-size:14px;font-weight:700;color:var(--card-red)}
+.more{font:inherit;font-size:14px;padding:8px;border:1px dashed var(--rule);background:transparent;color:var(--ink-2);border-radius:4px;cursor:pointer}
+
+.source{font-size:13px;color:var(--ink-3);display:grid;gap:6px}
+.source ul{margin:0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+:root{ --uN:#8A8F98; --uF:#2F6DB5; --uX:#5B9BD5; --uQ:#2E9384; --uC:#D08A2C; --uP:#C23B4E; --uD:#E07A8A; --uT:#7B61B8; --uL:#5E8F2E; --uV:#B08A3E; --uS:#3D4F7C; --uM:#9C5B8F; --uK:#1A9A9A; --t5:#7B61B8; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --uN:#9CA1AA; --uF:#5B93D6; --uX:#8CBDE8; --uQ:#3FB3A2; --uC:#E3A450; --uP:#E8687A; --uD:#F0A0AC; --uT:#A58BE0; --uL:#8CC063; --uV:#D2AA5C; --uS:#7F95C9; --uM:#C98DBB; --uK:#45C4C4; --t5:#A58BE0; } }
+:root[data-theme="dark"]{ --uN:#9CA1AA; --uF:#5B93D6; --uX:#8CBDE8; --uQ:#3FB3A2; --uC:#E3A450; --uP:#E8687A; --uD:#F0A0AC; --uT:#A58BE0; --uL:#8CC063; --uV:#D2AA5C; --uS:#7F95C9; --uM:#C98DBB; --uK:#45C4C4; --t5:#A58BE0; }
+.bubbles{grid-template-columns:repeat(24,1fr)}
+.sheet-inner{min-width:600px}
+.bub.t{border-radius:50%}
+.shape-key .s4{border-radius:50%}
+.bar-row .yr{line-height:1.15}
+</style>
+
+<div class="wrap">
+<a class="home-link" href="../" style="display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none">← 回總覽</a>
+<header class="top">
+  <div class="eyebrow">大學學科能力測驗 · 數學考科 · 107–115 年</div>
+  <h1>學測數學命題解剖</h1>
+  <p class="lede">依大考中心公布的 107–110 年「數學」與 111–115 年「數學A」「數學B」試卷及答案，把 14 份試卷共 <span class="num" id="totalQ"></span> 題逐題歸入單元：數A、數B 各考哪些單元、題型與配分怎麼變、混合題怎麼出。</p>
+  <div class="meta"><span>資料來源：大考中心「學科能力測驗 歷年試題」</span><span>整理日期：2026-09-28</span><span>題型與配分依官方試卷；單元與考點為本頁逐題分類</span></div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#findings">九年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#structure">試卷結構</a><a href="#units">單元分布</a><a href="#unitTable">逐年單元</a><a href="#mixed">混合題</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
+</nav>
+
+<section id="findings">
+  <div class="sec-head"><span class="kicker">重點</span><h2>九年結論</h2></div>
+  <ul class="findings">
+    <li><b>111 年分成 A、B</b><p>107–110 年只有一科「數學」，選擇 12–13 題加選填 7–8 題，全部 5 分一格。111 年起分為數學A、數學B，都是單選、多選、選填共 17 題（85 分）加 1 組混合題（15 分）。</p></li>
+    <li><b>數A 重空間與坐標</b><p>數A 五年 100 題中，三角與空間向量各 15 題、直線與圓 13 題、指數對數 10 題；矩陣 9 題也比數B 多。五年都沒有考圓錐曲線。</p></li>
+    <li><b>數B 重應用情境</b><p>數B 以三角（14 題）、直線與圓（12 題）、多項式函數（10 題）為主，數與式、排列組合、數據分析的比例比數A 高；燈號週期、斜塔、航行、稀釋這類生活情境題明顯較多。</p></li>
+    <li><b>三角與機率年年考</b><p>不論哪一科，三角每年 2–4 題、機率每年 2–3 題，幾乎是固定配額；機率常以條件機率或期望值出現（快篩、篩檢、福袋、抽卡）。</p></li>
+    <li><b>混合題是一個情境</b><p>111 年起混合題都是 1 組題組：先 1 題選擇或選填（3–5 分），再 2 題非選擇（共 10–12 分），要寫出計算過程或作圖，主題多為坐標幾何或空間（星軌、斜塔、掃描棒、平行六面體）。</p></li>
+    <li><b>選填占四分之一</b><p>選填題九年都是每題 5 分、合計 25–40 分，答案要逐格畫記，常要求「化為最簡分數」或「最簡根式」，沒有部分給分。</p></li>
+  </ul>
+</section>
+
+<section id="sheet">
+  <div class="sec-head"><span class="kicker">互動</span><h2>題目地圖</h2><p>每一列是一份試卷，顏色代表單元，形狀代表題型。點選圖例可以只看某個單元；點選圓點會在下方試題庫打開原題。</p></div>
+  <div class="card-panel">
+    <div class="legend" id="legend" role="group" aria-label="篩選單元"></div>
+    <div class="shape-key"><span><i class="s1"></i>單選</span><span><i class="s2"></i>多選</span><span><i class="s4"></i>選填</span><span><i class="s3"></i>非選擇</span></div>
+    <div class="sheet"><div class="sheet-inner" id="sheetRows"></div></div>
+    <div class="detail" id="detail" aria-live="polite">點選任一題，會在下方試題庫打開原題。</div>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="sec-head"><span class="kicker">原試題</span><h2>試題庫</h2><p>題目圖片直接裁切自官方試卷，含圖形與示意圖。可以依年度、科目、單元、題型篩選，或用關鍵字搜尋題幹與考點；答案預設隱藏。選填題答案依答案卡格序列出（例如「9 1 0」代表三格依序填 9、1、0）。</p></div>
+  <div class="bank-ctl">
+    <div class="bank-row">
+      <label for="bYear" class="bank-count">年度</label>
+      <select id="bYear"><option value="all">全部</option></select>
+      <label for="bTest" class="bank-count">科目</label>
+      <select id="bTest"><option value="all">全部</option><option value="m">數學（107–110）</option><option value="ma">數學A</option><option value="mb">數學B</option></select>
+      <label for="bUnit" class="bank-count">單元</label>
+      <select id="bUnit"><option value="all">全部</option></select>
+      <label for="bKind" class="bank-count">題型</label>
+      <select id="bKind"><option value="all">全部</option></select>
+    </div>
+    <div class="bank-row">
+      <input id="bSearch" type="search" placeholder="搜尋：例如 條件機率、橢圓、矩陣、期望值">
+      <label class="ans-toggle" for="bAns"><input type="checkbox" id="bAns"> 列表顯示答案</label>
+    </div>
+    <div class="bank-count" id="bCount" aria-live="polite"></div>
+  </div>
+  <div class="qlist" id="qlist"></div>
+</section>
+
+<section id="structure">
+  <div class="sec-head"><span class="kicker">官方試卷</span><h2>試卷結構</h2><p>各題型題數與配分。選擇與選填題每題 5 分；混合題依題末配分。</p></div>
+  <div class="mini-legend"><span><i style="background:var(--t2)"></i>單選</span><span><i style="background:var(--t3)"></i>多選</span><span><i style="background:var(--t5)"></i>選填</span><span><i style="background:var(--t4)"></i>混合題</span></div>
+  <div class="bars" id="kBars"></div>
+</section>
+
+<section id="units">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>單元分布</h2><p>三種試卷的單元題數合計（舊制數學 4 年 80 題；數A、數B 各 5 年 100 題）。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>單元</th><th>數學（107–110）</th><th>數學A（111–115）</th><th>數學B（111–115）</th></tr></thead>
+    <tbody id="uTable"></tbody>
+  </table></div>
+</section>
+
+<section id="unitTable">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>逐年單元</h2><p>選一種試卷，看每年每個單元考了哪幾題（表中為題號，點題號可打開原題）。</p></div>
+  <div class="year-tabs" role="tablist" aria-label="選擇試卷" id="uTabs"></div>
+  <div class="tbl-wrap"><table>
+    <thead id="yHead"></thead>
+    <tbody id="yTable"></tbody>
+  </table></div>
+</section>
+
+<section id="mixed">
+  <div class="sec-head"><span class="kicker">111 年起 · 第貳部分</span><h2>混合題</h2><p>每份試卷 1 組題組、共 15 分，非選擇題需寫出計算過程或作圖。官方參考答案與評分原則請見大考中心網站。</p></div>
+  <div class="mixed" id="mixedList"></div>
+</section>
+
+<section id="advice">
+  <div class="sec-head"><span class="kicker">依上面數據推論</span><h2>教學建議</h2></div>
+  <div class="advice">
+    <div><h3>三角與機率當作固定分數</h3><p>兩者每年都有 2–4 題，且題型重複度高：三角多是正餘弦定理、三角函數圖形、經緯度弧長；機率多是條件機率與期望值。這兩個單元的熟練度直接影響基本分。</p></div>
+    <div><h3>數A 加強空間與矩陣</h3><p>數A 的空間向量（平面方程式、投影、體積）與矩陣（旋轉、鏡射、方程組）題數明顯較多，混合題也常出現在空間，準備數A 的學生要把空間坐標練熟。</p></div>
+    <div><h3>數B 練讀情境</h3><p>數B 常把數學藏在生活情境裡（燈號週期、稀釋紅茶、斜塔傾斜、領海基線）。練習時先圈出題目給的數量關係，再判斷對應的單元與公式。</p></div>
+    <div><h3>選填要算到最簡</h3><p>選填題沒有部分給分，常要求最簡分數或最簡根式，負號也要占格。平時練習就要求完整化簡並自我檢查格數。</p></div>
+    <div><h3>非選擇題寫出理由</h3><p>混合題的非選擇題要寫出計算過程或理由，常要求「說明點在直線上」「求座標並求面積」。練習寫出清楚的步驟與結論句，避免只寫答案被扣分。</p></div>
+    <div><h3>讀圖與作圖</h3><p>許多題附示意圖（積木、摺紙、燈罩、星軌），混合題還有作圖區。練習從圖中讀出坐標與長度，並能在坐標平面上正確標示區域。</p></div>
+  </div>
+</section>
+
+<section id="source">
+  <div class="sec-head"><span class="kicker">說明</span><h2>資料與方法</h2></div>
+  <div class="source">
+    <ul>
+      <li>原始資料：大考中心「學科能力測驗 歷年試題及答題卷」頁公布的 107–110 年數學考科、111–115 年數學A 與數學B 考科試卷及選擇（填）題答案。</li>
+      <li>題型範圍與配分直接取自試卷；混合題非選擇題的參考答案含大量數學式，本頁未轉錄，請見官網「非選擇題參考答案與評分原則」。</li>
+      <li>單元與考點是本頁逐題判讀的結果，不是官方分類；跨單元的題目依主要解題工具歸類，建議教學使用前再核對。</li>
+      <li>「試題庫」的題目圖片直接裁切自官方試卷 PDF，未經改動；「文字版」由 PDF 自動擷取，數學式可能錯亂，請以圖片為準。</li>
+    </ul>
+    <p>官網：<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634" target="_blank" rel="noopener">大考中心・學測歷年試題</a></p>
+  </div>
+</section>
+</div>
+
+<script id="examData" type="application/json">{{json:examData}}</script>
+<script>
+const UNITS = {N:"數與式",F:"多項式與函數",X:"指數與對數",Q:"數列與級數",C:"排列組合",P:"機率",D:"數據分析",T:"三角",L:"直線與圓",V:"平面向量",S:"空間向量與幾何",M:"矩陣",K:"圓錐曲線"};
+const UORDER = Object.keys(UNITS);
+const TESTS = {m:"數學",ma:"數學A",mb:"數學B"};
+const KINDS = ["單選題","多選題","選填題","非選擇題"];
+const YEARS = {{years}};
+const Q = {{js:Q}};
+const EX = JSON.parse(document.getElementById("examData").textContent);
+const X0=56, XW=486;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const PAPERS=[]; YEARS.forEach(y=>Object.keys(Q[y]).forEach(t=>PAPERS.push([y,t])));
+const pname=(y,t)=>`${y} ${TESTS[t]}`;
+const ansFmt=(r)=>r[4]==="／"||r[4]==="/"?"非選":r[1]==="多選題"?r[4].split(",").map(x=>`(${x})`).join(""):r[1]==="單選題"||(r[0]==="混合題"&&r[1]==="單選題")?`(${r[4]})`:r[4];
+document.getElementById("totalQ").textContent=PAPERS.reduce((a,[y,t])=>a+Q[y][t].length,0);
+
+/* sheet */
+let filter=null, picked=null;
+const legend=document.getElementById("legend");
+UORDER.forEach(k=>{
+  const tot=PAPERS.reduce((a,[y,t])=>a+Q[y][t].filter(r=>r[2]===k).length,0);
+  const b=document.createElement("button"); b.type="button"; b.setAttribute("aria-pressed","false"); b.dataset.k=k;
+  b.innerHTML=`<span class="sw" style="background:var(--u${k})"></span>${UNITS[k]}<span class="ct num">${tot}</span>`;
+  b.addEventListener("click",()=>{filter=filter===k?null:k; document.querySelectorAll("#legend button").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.k===filter))); document.querySelectorAll(".bub").forEach(x=>x.classList.toggle("dim",!!filter&&x.dataset.k!==filter));});
+  legend.appendChild(b);
+});
+const rows=document.getElementById("sheetRows");
+PAPERS.forEach(([y,t])=>{
+  const r=document.createElement("div"); r.className="row";
+  r.innerHTML=`<span class="yr num">${y}<small>${TESTS[t]}</small></span>`;
+  const bb=document.createElement("div"); bb.className="bubbles";
+  Q[y][t].forEach((row,i)=>{
+    const lab=EX[y][t].q[i].lab;
+    if(i>0 && Q[y][t][i-1][0]!==row[0]){const g=document.createElement("span");g.className="gap";g.setAttribute("aria-hidden","true");bb.appendChild(g);}
+    const k=row[1];
+    const b=document.createElement("button"); b.type="button"; b.className="bub"+(k==="多選題"?" m":k==="非選擇題"?" f":k==="選填題"?" t":""); b.dataset.k=row[2];
+    b.style.background=`var(--u${row[2]})`; b.style.setProperty("--c",`var(--u${row[2]})`); b.textContent=lab;
+    b.setAttribute("aria-label",`${pname(y,t)}第${lab}題，${k}，${UNITS[row[2]]}，${row[3]}`); b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",()=>{ if(picked) picked.setAttribute("aria-pressed","false"); picked=b; b.setAttribute("aria-pressed","true");
+      document.getElementById("detail").innerHTML=`<strong>${pname(y,t)} 第 ${esc(lab)} 題</strong>　${k}・${UNITS[row[2]]}　｜　${esc(row[3])}　<a href="#qi-${y}${t}-${i}">看原題 ↓</a>`;
+      openInBank(y,t,i);});
+    bb.appendChild(b);
+  });
+  r.appendChild(bb); rows.appendChild(r);
+});
+
+/* structure */
+PAPERS.forEach(([y,t])=>{
+  const rs=Q[y][t], sum=f=>rs.filter(f).reduce((a,r)=>a+r[5],0), cnt=f=>rs.filter(f).length;
+  const parts=[["單選題",r=>r[0]==="單選題","--t2"],["多選題",r=>r[0]==="多選題","--t3"],["選填題",r=>r[0]==="選填題","--t5"],["混合題",r=>r[0]==="混合題","--t4"]];
+  document.getElementById("kBars").insertAdjacentHTML("beforeend",`<div class="bar-row"><span class="yr num" style="font-size:12.5px">${y}<br><small style="font-weight:400;color:var(--ink-3)">${TESTS[t]}</small></span><div class="bar" role="img" aria-label="${pname(y,t)} ${parts.map(([n,f])=>n+cnt(f)+"題"+sum(f)+"分").join(" ")}">${parts.filter(([,f])=>cnt(f)).map(([n,f,v])=>`<span style="width:${sum(f)}%;background:var(${v})">${cnt(f)} 題・${sum(f)}</span>`).join("")}</div><span class="note num">${rs.length} 題</span></div>`);
+});
+
+/* unit totals */
+document.getElementById("uTable").innerHTML=UORDER.map(k=>{
+  const c=t=>PAPERS.filter(p=>p[1]===t).reduce((a,[y])=>a+Q[y][t].filter(r=>r[2]===k).length,0);
+  const tot={m:80,ma:100,mb:100};
+  return `<tr><td style="white-space:nowrap"><span class="dot" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--u${k});margin-right:7px"></span><b>${UNITS[k]}</b></td>${["m","ma","mb"].map(t=>{const n=c(t);return n?`<td><div class="bar" style="height:20px"><span style="width:${n/tot[t]*100*3}%;max-width:100%;background:var(--u${k})">${n}</span></div></td>`:`<td class="miss">—</td>`;}).join("")}</tr>`;
+}).join("");
+
+/* per-year unit table */
+const uTabs=document.getElementById("uTabs");
+function showUnits(t){
+  uTabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.t===t)));
+  const ys=PAPERS.filter(p=>p[1]===t).map(p=>p[0]);
+  document.getElementById("yHead").innerHTML=`<tr><th>單元</th>${ys.map(y=>`<th class="c">${y}</th>`).join("")}</tr>`;
+  document.getElementById("yTable").innerHTML=UORDER.map(k=>{
+    const cells=ys.map(y=>{const hits=Q[y][t].map((r,i)=>r[2]===k?i:-1).filter(i=>i>=0);
+      return hits.length?`<td class="c hit">${hits.map(i=>`<a class="q" href="#qi-${y}${t}-${i}" data-y="${y}" data-t="${t}" data-i="${i}" title="${esc(Q[y][t][i][3])}">${esc(EX[y][t].q[i].lab)}</a>`).join("、")}</td>`:`<td class="c miss">—</td>`;}).join("");
+    return `<tr><td style="white-space:nowrap"><b>${UNITS[k]}</b></td>${cells}</tr>`;}).join("");
+}
+Object.entries(TESTS).forEach(([t,n])=>{const b=document.createElement("button"); b.type="button"; b.role="tab"; b.dataset.t=t; b.textContent=t==="m"?"數學（107–110）":n; b.addEventListener("click",()=>showUnits(t)); uTabs.appendChild(b);});
+showUnits("ma");
+document.getElementById("yTable").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,a.dataset.t,+a.dataset.i);});
+
+/* mixed */
+document.getElementById("mixedList").innerHTML=PAPERS.filter(([y,t])=>Q[y][t].some(r=>r[0]==="混合題")).map(([y,t])=>{
+  const g=EX[y][t].g[0], stem=g?g.t.replace(/\s+/g,"").replace(/^.*?為題組/,"").slice(0,60):"";
+  const items=Q[y][t].map((r,i)=>r[0]==="混合題"?i:-1).filter(i=>i>=0);
+  return `<div><span class="y">${y}<br><small style="font-weight:400">${TESTS[t]}</small></span><div><div style="font-size:14px;color:var(--ink-2)">${esc(stem)}…</div><ul>${items.map(i=>{const r=Q[y][t][i];return `<li><a href="#qi-${y}${t}-${i}" data-y="${y}" data-t="${t}" data-i="${i}">第 ${esc(EX[y][t].q[i].lab)} 題</a>　${r[1]}　<span class="pts">${r[5]} 分</span>　${UNITS[r[2]]}・${esc(r[3])}</li>`;}).join("")}</ul></div></div>`;
+}).join("");
+document.getElementById("mixedList").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,a.dataset.t,+a.dataset.i);});
+
+/* question bank */
+const ITEMS=[];
+PAPERS.forEach(([y,t])=>EX[y][t].q.forEach((q,i)=>{
+  const r=Q[y][t][i], g=EX[y][t].g.find(g=>r[0]==="混合題")||null;
+  ITEMS.push({y,t,i,q,r,g,hay:(r[3]+" "+UNITS[r[2]]+" "+r[1]+" "+TESTS[t]+" "+q.t).replace(/\s+/g,"")});
+}));
+const bYear=document.getElementById("bYear"), bTest=document.getElementById("bTest"), bUnit=document.getElementById("bUnit"), bKind=document.getElementById("bKind"), bSearch=document.getElementById("bSearch"), bAns=document.getElementById("bAns");
+YEARS.forEach(y=>bYear.insertAdjacentHTML("beforeend",`<option value="${y}">${y} 年</option>`));
+UORDER.forEach(k=>bUnit.insertAdjacentHTML("beforeend",`<option value="${k}">${UNITS[k]}</option>`));
+KINDS.forEach(k=>bKind.insertAdjacentHTML("beforeend",`<option value="${k}">${k}</option>`));
+function paperOf(y,t,slices,label){const W=EX[y][t].w,H=EX[y][t].h;return `<div class="paper">${slices.map(([p,a,b])=>`<svg viewBox="${X0} ${a} ${XW} ${(b-a).toFixed(1)}" role="img" aria-label="${label}"><image href="pages/${y}${t}-${p}.webp" x="0" y="0" width="${W}" height="${H}"/></svg>`).join("")}</div>`;}
+let LIMIT=60;
+function renderBank(openId){
+  const y=bYear.value, t=bTest.value, u=bUnit.value, k=bKind.value, kw=bSearch.value.replace(/\s+/g,"");
+  const hits=ITEMS.filter(it=>(y==="all"||it.y==+y)&&(t==="all"||it.t===t)&&(u==="all"||it.r[2]===u)&&(k==="all"||it.r[1]===k)&&(!kw||it.hay.includes(kw)));
+  const shown=hits.slice(0,Math.max(LIMIT,openId?hits.findIndex(h=>`${h.y}${h.t}-${h.i}`===openId)+1:0));
+  const list=document.getElementById("qlist");
+  list.innerHTML=shown.map(it=>`<details class="qitem" id="qi-${it.y}${it.t}-${it.i}" data-y="${it.y}" data-t="${it.t}" data-i="${it.i}">
+    <summary><span class="qid"><span class="dot" style="background:var(--u${it.r[2]})"></span>${it.y}${TESTS[it.t].replace("數學","")||""}-${esc(it.q.lab)}</span>
+    <span class="qsum"><span class="lab">${esc(it.r[3])}<small>${TESTS[it.t]}・${it.r[1]}・${UNITS[it.r[2]]}</small></span><span class="snip">${esc(it.q.t.replace(/\s+/g," ").replace(/^[0-9A-H]{1,2}\s*[.．]\s*/,"").slice(0,70))}</span></span>${bAns.checked?`<span class="ans${it.r[1]==="非選擇題"?" f":""}">${esc(ansFmt(it.r))}</span>`:"<span></span>"}</summary>
+    <div class="qbody"></div></details>`).join("")+(hits.length>shown.length?`<button type="button" class="more" id="moreBtn">再顯示 ${Math.min(60,hits.length-shown.length)} 題（共 ${hits.length} 題）</button>`:"");
+  document.getElementById("bCount").textContent=`符合 ${hits.length} 題`;
+  const mb=document.getElementById("moreBtn"); if(mb) mb.addEventListener("click",()=>{LIMIT+=60;renderBank();});
+  list.querySelectorAll("details.qitem").forEach(d=>d.addEventListener("toggle",()=>{if(d.open) fillBody(d);}));
+}
+function fillBody(d){
+  const body=d.querySelector(".qbody"); if(body.dataset.done) return;
+  const it=ITEMS.find(x=>x.y==+d.dataset.y&&x.t===d.dataset.t&&x.i==+d.dataset.i);
+  let h="";
+  if(it.g) h+=`<details class="passage" ${it.r===Q[it.y][it.t].find(r=>r[0]==="混合題")?"open":""}><summary>題組題幹（混合題共用）</summary>${paperOf(it.y,it.t,it.g.s,`${pname(it.y,it.t)}混合題題幹`)}</details>`;
+  h+=paperOf(it.y,it.t,it.q.s,`${pname(it.y,it.t)}第${it.q.lab}題原題`);
+  const ns=it.r[1]==="非選擇題";
+  h+=`<div class="qtools">${ns?`<span class="bank-count">非選擇題 ${it.r[5]} 分・參考答案請見大考中心評分原則</span>`:`<button type="button" class="an">看答案</button>`}<button type="button" class="tx">顯示文字版</button></div><pre class="qtext" hidden></pre>`;
+  body.innerHTML=h; body.dataset.done="1";
+  body.querySelector(".qtext").textContent=(it.g?it.g.t+"\n\n":"")+it.q.t;
+  const an=body.querySelector(".an");
+  if(an) an.addEventListener("click",e=>{const b=e.target.closest("button"); if(b.dataset.on){b.textContent="看答案";delete b.dataset.on;}else{b.innerHTML=`答案：<span class="ans-reveal">${esc(ansFmt(it.r))}</span>`;b.dataset.on="1";}});
+  body.querySelector(".tx").addEventListener("click",e=>{const p=body.querySelector(".qtext"); p.hidden=!p.hidden; e.target.textContent=p.hidden?"顯示文字版":"隱藏文字版";});
+}
+function openInBank(y,t,i){
+  bYear.value=String(y); bTest.value=t; bUnit.value="all"; bKind.value="all"; bSearch.value="";
+  renderBank(`${y}${t}-${i}`);
+  const d=document.getElementById(`qi-${y}${t}-${i}`);
+  if(d){d.open=true; fillBody(d); d.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}
+}
+bAns.addEventListener("change",()=>{const open=[...document.querySelectorAll("details.qitem[open]")].map(d=>d.id);renderBank();open.forEach(id=>{const d=document.getElementById(id);if(d){d.open=true;fillBody(d);}});});
+[bYear,bTest,bUnit,bKind].forEach(el=>el.addEventListener("change",()=>{LIMIT=60;renderBank();}));
+let st; bSearch.addEventListener("input",()=>{clearTimeout(st);st=setTimeout(()=>{LIMIT=60;renderBank();},180);});
+bYear.value=String(YEARS[YEARS.length-1]); renderBank();
+</script>
+
+</body></html>
