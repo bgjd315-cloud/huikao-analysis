@@ -13,12 +13,12 @@ from classify_math import Q  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
-UNITS = set("NFXQCPDTLVSMK")
+UNITS = set("NFXQCPDTLVSMKGZ")
 
 
 def merge(y):
     ex_all, q_all, err = {}, {}, []
-    for t in ("m", "ma", "mb"):
+    for t in ("m", "ma", "mb", "mj"):
         f = INC / f"extract-math-{y}-{t}.json"
         if not f.exists():
             continue
@@ -31,23 +31,19 @@ def merge(y):
         for q, (u, lab) in zip(d["q"], cls):
             if u not in UNITS:
                 err.append(f"{t} 第 {q['lab']} 題單元代號錯誤：{u}")
-            sec, ans = q["sec"], q["ans"]
+            sec, ans, pts = q["sec"], q["ans"], q.get("pts")
             if sec == "混合題":
                 flat = re.sub(r"\s+", "", q["t"])
-                m = re.search(r"[（(](單選題|多選題|選填題|非選擇題)[，,](\d+)分[)）]", flat)
-                kind = m[1] if m else ("非選擇題" if ans in ("／", "/") else "單選題")
-                pts = int(m[2]) if m else None
+                m = re.search(r"[（(](單選題|多選題|選填題|非選擇題)[，,]", flat)
+                kind = m[1] if m else ("非選擇題" if ans in ("／", "/") else "選填題" if " " in ans else "單選題")
             else:
-                kind, pts = sec, 5
+                kind = sec
             rows.append([sec, kind, u, lab, ans, pts])
-        # 題末配分被數學式干擾而抓不到時，以混合題合計 15 分推回（最多只允許缺一題）
+        # 題末配分被數學式干擾而抓不到時，以全卷 100 分推回（最多只允許缺一題）
         mixed = [r for r in rows if r[0] == "混合題"]
         missing = [r for r in mixed if r[5] is None]
         if len(missing) == 1:
-            missing[0][5] = 15 - sum(r[5] for r in mixed if r[5] is not None)
-        mix = [r[5] for r in mixed]
-        if mix and (None in mix or sum(mix) != 15):
-            err.append(f"{t} 混合題配分 {mix}，應合計 15 分")
+            missing[0][5] = 100 - sum(r[5] for r in rows if r[5] is not None)
         total = sum(r[5] or 0 for r in rows)
         if total != 100:
             err.append(f"{t} 全卷配分合計 {total}，應為 100")

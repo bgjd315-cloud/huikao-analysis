@@ -23,8 +23,10 @@ INC = ROOT / "incoming" / "xuece"
 OUT = ROOT / "assets" / "xuece-math" / "pages"
 
 QRE = re.compile(r"^\s*(\d{1,2}|[A-H])\s*[.．]")
-SEC = re.compile(r"^\s*(?:[一二三]、\s*|第[壹貳參]部分[：:、]\s*)(單選題|多選題|選填題|混合題)")
-GRE = re.compile(r"^\s*第\s*(\d{1,2})\s*至\s*(\d{1,2})\s*題為題組")
+SEC = re.compile(r"^\s*(?:[一二三]、\s*|第[壹貳參]部分[：:、]\s*)(單選題|多選題|選填題|混合題|非選擇題)")
+GRE = re.compile(r"^\s*(?:第\s*)?(\d{1,2})\s*(?:至|-|–)\s*(\d{1,2})\s*題為題組")
+NSQ = re.compile(r"^\s*([一二三四])\s*[、.．]")  # 指考非選擇題大題（「一、」或「一.」）
+PTS = re.compile(r"占\s*(\d[\d\s]*)\s*分")
 
 
 def parse_answers(path):
@@ -87,6 +89,7 @@ def extract(key):
     boxes = {pn: content_boxes(doc[pn]) for pn in range(1, len(doc))}
     M = []
     seen = []
+    sec_total = {}
     for pn in range(1, len(doc)):
         page_lines = lines(doc[pn])
         if any("參考公式" in t for _, t in page_lines[:6]):   # 參考公式頁
@@ -95,14 +98,22 @@ def extract(key):
             if x0 > 80 or y0 < 75 or y0 > 785:
                 continue
             if m := SEC.match(t):
+                pts = PTS.search(t)
                 M.append(("S", pn, y0, m[1]))
+                if pts:
+                    sec_total[m[1]] = int(re.sub(r"\s", "", pts[1]))
+            elif M and any(x[0] == "S" and x[3] == "非選擇題" for x in M) and (m := NSQ.match(t)):
+                lab = "非選" + m[1]
+                seen.append(lab)
+                M.append(("Q", pn, y0, lab))
             elif m := GRE.match(t):
                 M.append(("G", pn, y0, (int(m[1]), int(m[2]))))
             elif m := QRE.match(t):
                 lab = m[1]
-                if lab.isdigit() and seen and seen[-1].isdigit() and int(lab) <= int(seen[-1]):
+                nums = [x for x in seen if x.isdigit()]
+                if lab.isdigit() and nums and int(lab) <= int(nums[-1]):
                     continue  # 題號倒退（附錄或公式），略過
-                if lab in seen:
+                if lab in seen or any(x.startswith("非選") for x in seen):
                     continue
                 seen.append(lab)
                 M.append(("Q", pn, y0, lab))
@@ -137,13 +148,30 @@ def extract(key):
         mixed = [q["lab"] for q in qs if sec_of[q["lab"]] == "混合題"]
         groups.append({"a": int(mixed[0]), "b": int(mixed[-1]), "s": s, "t": text_of(doc, s)})
     ans = parse_answers(INC / f"{key}-ans.pdf")
+    for q in qs:
+        if sec_of[q["lab"]] == "非選擇題":
+            ans.setdefault(q["lab"], "／")
     miss = [q["lab"] for q in qs if q["lab"] not in ans]
     extra = [k for k in ans if k not in {q["lab"] for q in qs}]
     if miss or extra:
         sys.exit(f"[錯誤] {key}：試卷與答案題號不符，缺答案 {miss}，多出 {extra}")
+    count = {}
     for q in qs:
-        q["sec"] = sec_of[q["lab"]]
+        count[sec_of[q["lab"]]] = count.get(sec_of[q["lab"]], 0) + 1
+    for q in qs:
+        sec = sec_of[q["lab"]]
+        q["sec"] = sec
         q["ans"] = ans[q["lab"]]
+        flat = re.sub(r"\s", "", q["t"])
+        own = [int(x) for x in re.findall(r"[（(](?:[^（）()]*?[，,])?(\d+)分[)）]", flat)]
+        if sec == "混合題":      # 每小題一個配分；切片可能多含下一題首行，只取第一個
+            q["pts"] = own[0] if own else None
+        elif sec == "非選擇題":  # 指考非選擇題含多個子題，配分加總
+            q["pts"] = sum(own) if own else None
+        elif sec in sec_total:
+            q["pts"] = sec_total[sec] // count[sec]
+        else:
+            q["pts"] = 5
     return {"w": round(doc[1].rect.width, 1), "h": round(doc[1].rect.height, 1), "q": qs, "g": groups}
 
 
