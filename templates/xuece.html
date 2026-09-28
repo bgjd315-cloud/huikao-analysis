@@ -180,12 +180,12 @@ mark{background:var(--card-red-soft);color:inherit}
 <header class="top">
   <div class="eyebrow">大學學科能力測驗 · 國文考科 · 107–115 年</div>
   <h1>學測國文命題解剖</h1>
-  <p class="lede">依大考中心公布的 107–115 年學測國文試卷與參考答案，把九年共 <span class="num" id="totalQ"></span> 題逐題分類：選文取材從哪裡來、文言占多少、語文知識考什麼，以及 111 年改為「國語文綜合能力測驗」後，混合題與非選擇題怎麼出。</p>
+  <p class="lede">依大考中心公布的 107–115 年學測國文試卷與參考答案，把九年共 <span class="num" id="totalQ"></span> 題逐題分類：選文取材從哪裡來、文言占多少、語文知識考什麼，以及 111 年改為「國語文綜合能力測驗」後，混合題與非選擇題怎麼出；另整理九年國寫的材料、題目與小題要求。</p>
   <div class="meta"><span>資料來源：大考中心「學科能力測驗 歷年試題」</span><span>整理日期：2026-09-28</span><span>題型與配分依官方試卷；取材與考點為本頁逐題分類</span></div>
 </header>
 
 <nav class="toc" aria-label="章節">
-  <a href="#findings">九年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#structure">試卷結構</a><a href="#knowledge">語文知識必考點</a><a href="#groups">題組取材</a><a href="#mixed">混合題</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
+  <a href="#findings">九年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#structure">試卷結構</a><a href="#knowledge">語文知識必考點</a><a href="#groups">題組取材</a><a href="#mixed">混合題</a><a href="#writing">國寫</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
 </nav>
 
 <section id="findings">
@@ -273,6 +273,22 @@ mark{background:var(--card-red-soft);color:inherit}
   <div class="mixed" id="mixedList"></div>
 </section>
 
+<section id="writing">
+  <div class="sec-head"><span class="kicker">國語文寫作能力測驗 · 兩大題各 25 分</span><h2>國寫</h2><p>國寫與國綜分開考，第一大題測知性統整判斷，第二大題測情意感受抒發。下表整理九年的材料與題目，選年度可看原題與各小題要求。</p></div>
+  <ul class="findings">
+    <li><b>結構九年不變</b><p>每年兩大題、各 25 分。第一大題是知性題，第二大題是情意題。考試時間 107 年為 80 分鐘，108 年起改為 90 分鐘。</p></li>
+    <li><b>知性題固定兩小題</b><p>問題（一）限 80 字、4 分，依材料說明或比較；問題（二）限 400 字、21 分，要表達立場、權衡利弊或分析正負影響。九年格式完全相同。</p></li>
+    <li><b>情意題改為一篇到底</b><p>107–108 年先寫 120 字的材料賞析（7 分），再寫作文（18 分）。109 年起直接一篇作文 25 分、文長不限，每年都有訂好的題目。</p></li>
+    <li><b>材料越來越多元</b><p>知性題從 107–108 年的統計圖，轉向概念說明、影視情節、社會案例與思想實驗；情意題以新詩、現代散文、古典詩詞與繪本圖文引導。</p></li>
+  </ul>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th>第一大題・知性（材料／問題二要求）</th><th>第二大題・情意（題目／材料）</th></tr></thead>
+    <tbody id="wTable"></tbody>
+  </table></div>
+  <div class="year-tabs" role="tablist" aria-label="選擇國寫年度" id="wTabs"></div>
+  <div class="two" id="wPanels"></div>
+</section>
+
 <section id="advice">
   <div class="sec-head"><span class="kicker">依上面數據推論</span><h2>教學建議</h2></div>
   <div class="advice">
@@ -293,7 +309,8 @@ mark{background:var(--card-red-soft);color:inherit}
       <li>單選、多選、混合題的題號範圍與配分，直接取自試卷上的說明；非選擇題配分取自評分原則。</li>
       <li>取材類型與考點是本頁逐題判讀的結果，不是官方分類，建議教學使用前再核對。</li>
       <li>「試題庫」的題目圖片直接裁切自官方試卷 PDF，未經改動；「文字版」由 PDF 自動擷取，排版與圖表可能不完整，引用時請以圖片為準。</li>
-      <li>國寫（國語文寫作能力測驗）與 106 年以前的試題未列入本次分析。</li>
+      <li>國寫取自同一頁的 107–115 年「國寫」試卷；配分、字數限制與題目直接擷取自試卷，材料類型為本頁整理。各年評分原則請見官網。</li>
+      <li>106 年以前的試題未列入本次分析。</li>
     </ul>
     <p>官網：<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634" target="_blank" rel="noopener">大考中心・學測歷年試題</a></p>
   </div>
@@ -301,6 +318,7 @@ mark{background:var(--card-red-soft);color:inherit}
 </div>
 
 <script id="examData" type="application/json">{{json:examData}}</script>
+<script id="writeData" type="application/json">{{json:writeData}}</script>
 <script>
 const MAT = {
   K:{name:"語文知識",v:"--K"}, L:{name:"文學／文化常識",v:"--L"}, B:{name:"白話文學",v:"--B"}, I:{name:"知識性白話",v:"--I"},
@@ -428,9 +446,39 @@ document.getElementById("mixedList").innerHTML = YEARS.filter(y=>STRUCT[y].mixed
 }).join("");
 document.getElementById("mixedList").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,+a.dataset.n);});
 
+const X0=56, XW=486;  // 試卷內容區的水平範圍（PDF 座標）
+
+/* writing (國寫) */
+const WR = JSON.parse(document.getElementById("writeData").textContent);
+const escW=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const wTitle=t=>t.subs.map(s=>s.title).filter(Boolean)[0];
+document.getElementById("wTable").innerHTML=YEARS.filter(y=>WR[y]).map(y=>{
+  const [a,b]=WR[y].tasks;
+  const ask2=a.subs[a.subs.length-1];
+  return `<tr><td class="num"><b>${y}</b></td><td><div>${escW(a.topic)}</div><span class="tag" style="white-space:normal">${escW(a.mat)}</span></td><td><div style="font-family:'LXGW WenKai TC',serif;font-size:16px">${wTitle(b)?`「${escW(wTitle(b))}」`:escW(b.topic)}</div><span class="tag" style="white-space:normal">${escW(b.mat)}</span>${b.subs.length>1?`<span class="tag n">兩小題</span>`:""}</td></tr>`;
+}).join("");
+function wPaper(y,slices,label){
+  const W=WR[y].w,H=WR[y].h;
+  return `<div class="paper">${slices.map(([p,a,b])=>`<svg viewBox="${X0} ${a} ${XW} ${(b-a).toFixed(1)}" role="img" aria-label="${label}"><image href="pages/${y}-w${p}.webp" x="0" y="0" width="${W}" height="${H}"/></svg>`).join("")}</div>`;
+}
+const wTabs=document.getElementById("wTabs"), wPanels=document.getElementById("wPanels");
+function showWriting(y){
+  wTabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(+b.dataset.y===y)));
+  wPanels.innerHTML=WR[y].tasks.map(t=>`<div style="display:grid;gap:10px;align-content:start">
+    <h3>第${t.no===1?"一":"二"}大題・${t.no===1?"知性":"情意"}</h3>
+    <p style="font-size:14px;color:var(--ink-2)">材料：${escW(t.mat)}</p>
+    <ul style="margin:0;padding-left:1.1em;font-size:14px;display:grid;gap:6px">${t.subs.map(s=>`<li><b>${escW(s.label||"作文")}</b>　<span class="pts" style="color:var(--t4);font-weight:700">${s.pts} 分</span>　<span style="color:var(--ink-3)">${s.limit?`限 ${s.limit} 字`:"文長不限"}</span>${s.title?`<br>題目：「${escW(s.title)}」`:""}</li>`).join("")}</ul>
+    <details class="passage"><summary>看原題</summary>${wPaper(y,t.s,`${y}年國寫第${t.no}大題`)}</details>
+  </div>`).join("");
+}
+YEARS.filter(y=>WR[y]).forEach(y=>{
+  const b=document.createElement("button"); b.type="button"; b.role="tab"; b.dataset.y=y; b.textContent=y+" 年";
+  b.addEventListener("click",()=>showWriting(y)); wTabs.appendChild(b);
+});
+showWriting(YEARS[YEARS.length-1]);
+
 /* question bank */
 const EX = JSON.parse(document.getElementById("examData").textContent);
-const X0=56, XW=486;
 function paperHTML(y, slices, label){
   const W=EX[y].w, H=EX[y].h;
   return `<div class="paper">${slices.map(([p,a,b])=>

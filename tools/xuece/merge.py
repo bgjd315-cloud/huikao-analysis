@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from classify import GROUPS, Q  # noqa: E402
+from classify import GROUPS, Q, WRITE  # noqa: E402
 from parse_nonchoice import parse as parse_ns  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,6 +39,16 @@ def merge(y):
         for n in ns:
             if not q[n - 1][1].startswith("非選"):
                 err.append(f"第 {n} 題是非選題，但分類說明沒標「非選」")
+    wf = INC / f"writing-{y}.json"
+    write = None
+    if wf.exists():
+        wd = json.loads(wf.read_text("utf-8"))
+        for t, (mat, topic) in zip(wd["tasks"], WRITE[y]):
+            t.update(mat=mat, topic=topic)
+            total = sum(s["pts"] or 0 for s in t["subs"])
+            if total != 25:
+                err.append(f"國寫第 {t['no']} 大題配分合計 {total}，應為 25")
+        write = wd
     if err:
         sys.exit(f"[錯誤] {y}：" + "；".join(err))
     out = {
@@ -49,6 +59,8 @@ def merge(y):
         "js:GROUPS": groups,
         "js:NS": {str(k): v for k, v in ns.items()},
     }
+    if write:
+        out["json:writeData"] = write
     p = ROOT / "data" / "xuece" / f"{y}.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), "utf-8")
