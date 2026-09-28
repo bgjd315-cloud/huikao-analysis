@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from classify import GROUPS, Q, WRITE  # noqa: E402
+from classify import GROUPS, Q, WRITE, WRITE_TOP  # noqa: E402
 from parse_nonchoice import parse as parse_ns  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -44,7 +44,7 @@ def merge(y):
     if wf.exists():
         wd = json.loads(wf.read_text("utf-8"))
         for t, (mat, topic) in zip(wd["tasks"], WRITE[y]):
-            t.update(mat=mat, topic=topic)
+            t.update(mat=mat, topic=topic, top=WRITE_TOP[y][t["no"] - 1])
             total = sum(s["pts"] or 0 for s in t["subs"])
             if total != 25:
                 err.append(f"國寫第 {t['no']} 大題配分合計 {total}，應為 25")

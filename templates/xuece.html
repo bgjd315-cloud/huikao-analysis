@@ -279,6 +279,8 @@ mark{background:var(--card-red-soft);color:inherit}
     <li><b>結構九年不變</b><p>每年兩大題、各 25 分。第一大題是知性題，第二大題是情意題。考試時間 107 年為 80 分鐘，108 年起改為 90 分鐘。</p></li>
     <li><b>知性題固定兩小題</b><p>問題（一）限 80 字、4 分，依材料說明或比較；問題（二）限 400 字、21 分，要表達立場、權衡利弊或分析正負影響。九年格式完全相同。</p></li>
     <li><b>情意題改為一篇到底</b><p>107–108 年先寫 120 字的材料賞析（7 分），再寫作文（18 分）。109 年起直接一篇作文 25 分、文長不限，每年都有訂好的題目。</p></li>
+    <li><b>111 年起分小題評分</b><p>107–110 年知性題兩小題合併評一個等級（A+ 22–25 分）；111 年起分開評分，問題（一）A 等 4–3 分、問題（二）A+ 19–21 分，短答的準確度單獨計分。</p></li>
+    <li><b>A+ 看同一組字眼</b><p>九年的最高等級標準幾乎都要求「結構嚴謹」，知性題另重「論點明確、詮釋深入」，情意題另重「敘寫細膩、情感雋永」；情意題也常要求連結題目提供的材料。</p></li>
     <li><b>材料越來越多元</b><p>知性題從 107–108 年的統計圖，轉向概念說明、影視情節、社會案例與思想實驗；情意題以新詩、現代散文、古典詩詞與繪本圖文引導。</p></li>
   </ul>
   <div class="tbl-wrap"><table>
@@ -309,7 +311,7 @@ mark{background:var(--card-red-soft);color:inherit}
       <li>單選、多選、混合題的題號範圍與配分，直接取自試卷上的說明；非選擇題配分取自評分原則。</li>
       <li>取材類型與考點是本頁逐題判讀的結果，不是官方分類，建議教學使用前再核對。</li>
       <li>「試題庫」的題目圖片直接裁切自官方試卷 PDF，未經改動；「文字版」由 PDF 自動擷取，排版與圖表可能不完整，引用時請以圖片為準。</li>
-      <li>國寫取自同一頁的 107–115 年「國寫」試卷；配分、字數限制與題目直接擷取自試卷，材料類型為本頁整理。各年評分原則請見官網。</li>
+      <li>國寫取自同一頁的 107–115 年「國寫」試卷；配分、字數限制與題目直接擷取自試卷，材料類型為本頁整理；「最高等級標準」摘自各年「評分原則說明」，文字略有精簡，完整等級表請見官網。</li>
       <li>106 年以前的試題未列入本次分析。</li>
     </ul>
     <p>官網：<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634" target="_blank" rel="noopener">大考中心・學測歷年試題</a></p>
@@ -468,6 +470,7 @@ function showWriting(y){
     <h3>第${t.no===1?"一":"二"}大題・${t.no===1?"知性":"情意"}</h3>
     <p style="font-size:14px;color:var(--ink-2)">材料：${escW(t.mat)}</p>
     <ul style="margin:0;padding-left:1.1em;font-size:14px;display:grid;gap:6px">${t.subs.map(s=>`<li><b>${escW(s.label||"作文")}</b>　<span class="pts" style="color:var(--t4);font-weight:700">${s.pts} 分</span>　<span style="color:var(--ink-3)">${s.limit?`限 ${s.limit} 字`:"文長不限"}</span>${s.title?`<br>題目：「${escW(s.title)}」`:""}</li>`).join("")}</ul>
+    <div class="nsref"><h4>最高等級標準（官方評分原則）</h4>${(t.top||[]).map(([who,lv,txt])=>`<div><b style="font-variant-numeric:tabular-nums">${who==="全題"?"":escW(who)+"　"}${escW(lv)} 分</b><br>${escW(txt)}</div>`).join("")}</div>
     <details class="passage"><summary>看原題</summary>${wPaper(y,t.s,`${y}年國寫第${t.no}大題`)}</details>
   </div>`).join("");
 }
