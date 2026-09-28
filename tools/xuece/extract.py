@@ -26,9 +26,15 @@ TOP, BOTTOM = 76, 782  # 頁首、頁尾之間的內容區
 
 def content_boxes(page):
     """頁面上所有內容（文字行、圖片、線條）的 y 範圍，排除頁首頁尾。"""
-    boxes = [bb for bb, t in lines(page) if not re.fullmatch(r"\s*-\s*\d+\s*-\s*", t)]  # 排除頁碼
+    ls = lines(page)
+    boxes = [bb for bb, t in ls if not re.fullmatch(r"\s*-\s*\d+\s*-\s*", t)]  # 排除頁碼
     boxes += [tuple(i["bbox"]) for i in page.get_image_info()]
     boxes += [tuple(d["rect"]) for d in page.get_drawings()]
+    # 排除頁尾「背面還有試題」提示框（含外框）
+    for bb, t in ls:
+        if "背面還有試題" in re.sub(r"\s", "", t):
+            x0, y0, x1, y1 = bb[0] - 25, bb[1] - 20, bb[2] + 25, bb[3] + 20
+            boxes = [b for b in boxes if not (b[0] >= x0 and b[1] >= y0 and b[2] <= x1 and b[3] <= y1)]
     return [b for b in boxes if b[1] >= TOP - 2 and b[3] <= BOTTOM + 2 and b[3] - b[1] < 700]
 
 

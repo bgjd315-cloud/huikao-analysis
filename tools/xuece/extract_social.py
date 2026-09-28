@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
 SUBJ = {"s": "soc", "n": "sci"}  # 檔名代號 → 輸出代號
 PART2 = re.compile(r"^\s*第貳部分")
+SECTION = re.compile(r"^\s*[一二三四]、\s*(單選|多選|綜合|混合|非選|選擇)題")  # 區段標題：切在標題之前，不併入上一題
 
 
 CN = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6}
@@ -53,6 +54,8 @@ def extract(year, subj="s"):
                 continue
             if PART2.match(t):
                 M.append(("P", pn, y0, None))
+            elif SECTION.match(t):
+                M.append(("S", pn, y0, None))
             elif m := GRE.match(t):
                 M.append(("G", pn, y0, (int(m[1]), int(m[2]))))
             elif m := QRE.match(t):
