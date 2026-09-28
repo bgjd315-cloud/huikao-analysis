@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>學測數學與數甲</title>
+<title>學測數學與數甲數乙</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
@@ -189,8 +189,8 @@ mark{background:var(--card-red-soft);color:inherit}
 <a class="home-link" href="../" style="display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none">← 回總覽</a>
 <header class="top">
   <div class="eyebrow">學科能力測驗・分科測驗（指考）· 數學 · 107–115 年</div>
-  <h1>學測數學與數甲命題解剖</h1>
-  <p class="lede">依大考中心公布的學測 107–110 年「數學」、111–115 年「數學A」「數學B」，以及 107–110 年指考、111–115 年分科測驗的「數學甲」試卷及答案，把 23 份試卷共 <span class="num" id="totalQ"></span> 題逐題歸入單元：數A、數B、數甲各考哪些單元、題型與配分怎麼變、混合題與非選擇題怎麼出。</p>
+  <h1>學測數學與數甲、數乙命題解剖</h1>
+  <p class="lede">依大考中心公布的學測 107–110 年「數學」、111–115 年「數學A」「數學B」，以及 107–110 年指考、111–115 年分科測驗的「數學甲」與「數學乙」（111–113 年未舉辦）試卷及答案，把 29 份試卷共 <span class="num" id="totalQ"></span> 題逐題歸入單元：數A、數B、數甲、數乙各考哪些單元、題型與配分怎麼變、混合題與非選擇題怎麼出。</p>
   <div class="meta"><span>資料來源：大考中心「學科能力測驗」「分科測驗（110 前指考）」歷年試題</span><span>整理日期：2026-09-28</span><span>題型與配分依官方試卷；單元與考點為本頁逐題分類</span></div>
 </header>
 
@@ -207,6 +207,7 @@ mark{background:var(--card-red-soft);color:inherit}
     <li><b>三角與機率年年考</b><p>不論哪一科，三角每年 2–4 題、機率每年 2–3 題，幾乎是固定配額；機率常以條件機率或期望值出現（快篩、篩檢、福袋、抽卡）。</p></li>
     <li><b>混合題是一個情境</b><p>111 年起混合題都是 1 組題組：先 1 題選擇或選填（3–5 分），再 2 題非選擇（共 10–12 分），要寫出計算過程或作圖，主題多為坐標幾何或空間（星軌、斜塔、掃描棒、平行六面體）。</p></li>
     <li><b>數甲重微積分</b><p>數甲九年 137 題中，微積分（極限、導數、積分、黎曼和）34 題，每年 3–5 題，而且多集中在非選擇題；複數每年固定 1 題。111 年起改為分科測驗後，非選擇題改成 2 組混合題組（共 24 分）。</p></li>
+    <li><b>數乙重機率與線性規劃</b><p>數乙六份試卷 84 題中，機率 15 題最多；線性規劃在 107–110 年每年都是非選擇題，114 年又出現在混合題。數乙在 111–113 年停辦，114 年恢復後也開始考微積分與複數。</p></li>
     <li><b>選填占四分之一</b><p>選填題九年都是每題 5 分、合計 25–40 分，答案要逐格畫記，常要求「化為最簡分數」或「最簡根式」，沒有部分給分。</p></li>
   </ul>
 </section>
@@ -228,7 +229,7 @@ mark{background:var(--card-red-soft);color:inherit}
       <label for="bYear" class="bank-count">年度</label>
       <select id="bYear"><option value="all">全部</option></select>
       <label for="bTest" class="bank-count">科目</label>
-      <select id="bTest"><option value="all">全部</option><option value="m">數學（107–110）</option><option value="ma">數學A</option><option value="mb">數學B</option><option value="mj">數學甲</option></select>
+      <select id="bTest"><option value="all">全部</option><option value="m">數學（107–110）</option><option value="ma">數學A</option><option value="mb">數學B</option><option value="mj">數學甲</option><option value="mi">數學乙</option></select>
       <label for="bUnit" class="bank-count">單元</label>
       <select id="bUnit"><option value="all">全部</option></select>
       <label for="bKind" class="bank-count">題型</label>
@@ -250,9 +251,9 @@ mark{background:var(--card-red-soft);color:inherit}
 </section>
 
 <section id="units">
-  <div class="sec-head"><span class="kicker">逐題分類</span><h2>單元分布</h2><p>四種試卷的單元題數合計（學測舊制數學 4 年 80 題；數A、數B 各 5 年 100 題；數甲 9 年 137 題）。</p></div>
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>單元分布</h2><p>五種試卷的單元題數合計（學測舊制數學 4 年 80 題；數A、數B 各 5 年 100 題；數甲 9 年 137 題；數乙 6 年 84 題）。</p></div>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>單元</th><th>學測數學（107–110）</th><th>數學A（111–115）</th><th>數學B（111–115）</th><th>數學甲（107–115）</th></tr></thead>
+    <thead><tr><th>單元</th><th>學測數學（107–110）</th><th>數學A（111–115）</th><th>數學B（111–115）</th><th>數學甲（107–115）</th><th>數學乙（107–110、114–115）</th></tr></thead>
     <tbody id="uTable"></tbody>
   </table></div>
 </section>
@@ -267,7 +268,7 @@ mark{background:var(--card-red-soft);color:inherit}
 </section>
 
 <section id="mixed">
-  <div class="sec-head"><span class="kicker">第貳部分</span><h2>混合題與非選擇題</h2><p>學測數A、數B 自 111 年起每份 1 組混合題（15 分）；數甲 107–110 年（指考）為 2 大題非選擇題（24 分），111 年起為 2 組混合題（24 分）。非選擇題需寫出計算過程或理由，官方參考答案與評分原則請見大考中心網站。</p></div>
+  <div class="sec-head"><span class="kicker">第貳部分</span><h2>混合題與非選擇題</h2><p>學測數A、數B 自 111 年起每份 1 組混合題（15 分）；數甲、數乙 107–110 年（指考）為 2 大題非選擇題，111 年起（數乙 114 年起）為 2 組混合題。非選擇題需寫出計算過程或理由，官方參考答案與評分原則請見大考中心網站。</p></div>
   <div class="mixed" id="mixedList"></div>
 </section>
 
@@ -287,7 +288,7 @@ mark{background:var(--card-red-soft);color:inherit}
   <div class="sec-head"><span class="kicker">說明</span><h2>資料與方法</h2></div>
   <div class="source">
     <ul>
-      <li>原始資料：大考中心「學科能力測驗」與「分科測驗（110 前指考）」歷年試題頁公布的學測 107–110 年數學、111–115 年數學A 與數學B，以及 107–115 年數學甲考科試卷與選擇（填）題答案。</li>
+      <li>原始資料：大考中心「學科能力測驗」與「分科測驗（110 前指考）」歷年試題頁公布的學測 107–110 年數學、111–115 年數學A 與數學B，以及 107–115 年數學甲、107–110 與 114–115 年數學乙考科試卷與選擇（填）題答案。</li>
       <li>題型範圍與配分直接取自試卷；混合題非選擇題的參考答案含大量數學式，本頁未轉錄，請見官網「非選擇題參考答案與評分原則」。</li>
       <li>單元與考點是本頁逐題判讀的結果，不是官方分類；跨單元的題目依主要解題工具歸類，建議教學使用前再核對。</li>
       <li>「試題庫」的題目圖片直接裁切自官方試卷 PDF，未經改動；「文字版」由 PDF 自動擷取，數學式可能錯亂，請以圖片為準。</li>
@@ -301,7 +302,7 @@ mark{background:var(--card-red-soft);color:inherit}
 <script>
 const UNITS = {N:"數與式",F:"多項式與函數",X:"指數與對數",Q:"數列與級數",C:"排列組合",P:"機率",D:"數據分析",T:"三角",L:"直線與圓",V:"平面向量",S:"空間向量與幾何",M:"矩陣",K:"圓錐曲線",G:"微積分",Z:"複數"};
 const UORDER = Object.keys(UNITS);
-const TESTS = {m:"數學",ma:"數學A",mb:"數學B",mj:"數學甲"};
+const TESTS = {m:"數學",ma:"數學A",mb:"數學B",mj:"數學甲",mi:"數學乙"};
 const KINDS = ["單選題","多選題","選填題","非選擇題"];
 const YEARS = {{years}};
 const Q = {{js:Q}};
@@ -353,8 +354,8 @@ PAPERS.forEach(([y,t])=>{
 /* unit totals */
 document.getElementById("uTable").innerHTML=UORDER.map(k=>{
   const c=t=>PAPERS.filter(p=>p[1]===t).reduce((a,[y])=>a+Q[y][t].filter(r=>r[2]===k).length,0);
-  const tot={m:80,ma:100,mb:100,mj:137};
-  return `<tr><td style="white-space:nowrap"><span class="dot" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--u${k});margin-right:7px"></span><b>${UNITS[k]}</b></td>${["m","ma","mb","mj"].map(t=>{const n=c(t);return n?`<td><div class="bar" style="height:20px"><span style="width:${n/tot[t]*100*3}%;max-width:100%;background:var(--u${k})">${n}</span></div></td>`:`<td class="miss">—</td>`;}).join("")}</tr>`;
+  const tot={m:80,ma:100,mb:100,mj:137,mi:84};
+  return `<tr><td style="white-space:nowrap"><span class="dot" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--u${k});margin-right:7px"></span><b>${UNITS[k]}</b></td>${["m","ma","mb","mj","mi"].map(t=>{const n=c(t);return n?`<td><div class="bar" style="height:20px"><span style="width:${n/tot[t]*100*3}%;max-width:100%;background:var(--u${k})">${n}</span></div></td>`:`<td class="miss">—</td>`;}).join("")}</tr>`;
 }).join("");
 
 /* per-year unit table */

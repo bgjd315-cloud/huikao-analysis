@@ -18,7 +18,7 @@ UNITS = set("NFXQCPDTLVSMKGZ")
 
 def merge(y):
     ex_all, q_all, err = {}, {}, []
-    for t in ("m", "ma", "mb", "mj"):
+    for t in ("m", "ma", "mb", "mj", "mi"):
         f = INC / f"extract-math-{y}-{t}.json"
         if not f.exists():
             continue
