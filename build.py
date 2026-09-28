@@ -23,6 +23,7 @@ SUBJECTS = {  # 資料夾代號 → 顯示名稱
     "social": "社會",
     "science": "自然",
     "xuece": "學測國文",
+    "xuece-en": "學測英文",
 }
 HEAD_EXTRA = '<meta name="robots" content="noindex,nofollow">'
 

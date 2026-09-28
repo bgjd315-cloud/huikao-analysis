@@ -1,0 +1,501 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>學測英文命題解剖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --card-red:#C23B4E; --card-red-soft:#F7E3E6;
+  --K:#8A8F98; --L:#B08A3E; --B:#2F6DB5; --I:#7B61B8; --P:#8FB3E0; --N:#2E9384; --W:#C23B4E; --C:#E8929E;
+  --t1:#8A8F98; --t2:#2F6DB5; --t3:#2E9384; --t4:#D08A2C;
+  --focus:#2F6DB5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+    --K:#9CA1AA; --L:#D2AA5C; --B:#5B93D6; --I:#A58BE0; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+    --t1:#9CA1AA; --t2:#5B93D6; --t3:#3FB3A2; --t4:#E3A450; --focus:#8FB3E0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+  --K:#9CA1AA; --L:#D2AA5C; --B:#5B93D6; --I:#A58BE0; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+  --t1:#9CA1AA; --t2:#5B93D6; --t3:#3FB3A2; --t4:#E3A450; --focus:#8FB3E0;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB","BiauKai",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:26px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--B)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+header.top{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--card-red);font-weight:700}
+.lede{max-width:62ch;color:var(--ink-2);font-size:16.5px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-3)}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 16px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:14px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--card-red)}
+
+section{padding-block:44px 8px;display:grid;gap:18px}
+.sec-head{display:grid;gap:6px}
+.sec-head .kicker{font-size:12.5px;letter-spacing:.1em;color:var(--ink-3);font-weight:500}
+.sec-head p{color:var(--ink-2);max-width:66ch}
+
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.findings li{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.findings b{font-family:"LXGW WenKai TC",serif;font-size:19px;color:var(--card-red);font-weight:700;line-height:1.4}
+@media (max-width:560px){.findings li{grid-template-columns:1fr;gap:2px}}
+
+/* answer card */
+.card-panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px;display:grid;gap:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.legend button{font:inherit;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 8px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.legend button[aria-pressed="true"]{border-color:var(--ink);background:var(--rule-2)}
+.legend .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.legend .ct{color:var(--ink-3);font-size:12px}
+.shape-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12.5px;color:var(--ink-3);align-items:center}
+.shape-key i{display:inline-block;width:12px;height:15px;margin-right:6px;vertical-align:-3px;background:var(--ink-3)}
+.shape-key .s1{border-radius:40%}.shape-key .s2{border-radius:2px}.shape-key .s3{border-radius:40%;background:transparent;border:2px solid var(--ink-3)}
+.sheet{overflow-x:auto}
+.sheet-inner{min-width:780px;display:grid;gap:8px}
+.row{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px}
+.row .yr{font-weight:700;font-size:14px;color:var(--ink-2)}
+.row .yr small{display:block;font-weight:400;font-size:10.5px;color:var(--ink-3);line-height:1.1}
+.bubbles{display:grid;grid-template-columns:repeat(44,1fr);gap:3px;align-items:center}
+.bubbles .gap{align-self:stretch;border-left:1px dashed var(--rule);margin-left:45%}
+.bub{min-width:0;aspect-ratio:1/1.35;max-height:30px;border-radius:40%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;font-size:9.5px;color:#fff;font-variant-numeric:tabular-nums;transition:opacity .15s}
+.bub.m{border-radius:3px}
+.bub.f{background:transparent!important;border:2.5px solid var(--c);color:var(--ink)}
+.bub.dim{opacity:.14}
+.bub[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.scale{display:grid;grid-template-columns:44px 1fr;gap:10px;font-size:11.5px;color:var(--ink-3)}
+.scale .ticks{display:flex;justify-content:space-between}
+.detail{min-height:48px;border-top:1px solid var(--rule);padding-top:10px;font-size:14.5px;color:var(--ink-2)}
+.detail strong{color:var(--ink)}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:44px 1fr 86px;gap:10px;align-items:center;font-size:13.5px}
+.bar{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
+.bar span{display:grid;place-items:center;color:#fff;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.bar-row .yr{font-weight:700;color:var(--ink-2)}
+.bar-row .note{color:var(--ink-3);font-size:12.5px;text-align:right}
+.mini-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.mini-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center}
+.q{font-variant-numeric:tabular-nums;color:var(--card-red);font-weight:500}
+.miss{color:var(--ink-3)}
+.tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:3px;margin:1px 3px 1px 0;border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.tag.x{border-color:var(--B);color:var(--B)}
+.tag.g{border-color:var(--N);color:var(--N)}
+.tag.w{border-color:var(--W);color:var(--W)}
+.tag.p{border-color:var(--C);color:var(--ink-2)}
+.tag.n{border-color:var(--t4);color:var(--t4)}
+.hit{background:var(--card-red-soft)}
+
+.year-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.year-tabs button{font:inherit;font-size:14px;padding:4px 14px;border-radius:4px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer}
+.year-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.mixed{display:grid;gap:0;border-top:1px solid var(--rule)}
+.mixed > div{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.mixed .y{font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.mixed .src{font-family:"LXGW WenKai TC",serif;font-size:17px}
+.mixed ul{margin:4px 0 0;padding-left:1.1em;font-size:13.5px;color:var(--ink-2);display:grid;gap:2px}
+.mixed .pts{color:var(--t4);font-weight:700;font-variant-numeric:tabular-nums}
+
+.advice{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.advice > div{padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.advice h3{font-size:17px}
+.advice p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.advice{grid-template-columns:1fr}}
+
+/* question bank */
+.bank-ctl{display:grid;gap:10px}
+.bank-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bank-row select,.bank-row input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink)}
+.bank-row input{flex:1 1 220px;min-width:0}
+.bank-count{font-size:13px;color:var(--ink-3)}
+.qlist{display:grid;border-top:1px solid var(--rule)}
+.qitem{border-bottom:1px solid var(--rule)}
+.qitem > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:78px 1fr auto;gap:12px;padding:10px 4px;align-items:baseline}
+.qitem > summary::-webkit-details-marker{display:none}
+.qitem > summary:hover{background:var(--rule-2)}
+.qid{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.qid .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.qsum{display:grid;gap:2px;min-width:0}
+.qsum .lab{font-size:14.5px}
+.qsum .lab small{color:var(--ink-3);font-size:12.5px;margin-left:6px}
+.qsum .snip{font-size:13px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qitem[open] > summary{background:var(--rule-2)}
+.qbody{padding:12px 4px 18px;display:grid;gap:10px}
+.paper{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:6px 4px;display:grid;gap:0}
+.paper svg{display:block;width:100%;height:auto}
+.passage > summary{cursor:pointer;font-size:13.5px;color:var(--ink-2);padding:4px 0}
+.qtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qtools button{font:inherit;font-size:13px;padding:4px 12px;border-radius:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+.qtools .msg{font-size:12.5px;color:var(--ink-3)}
+.qtext{white-space:pre-wrap;font-size:14px;line-height:1.8;background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;margin:0;max-height:360px;overflow:auto;font-family:inherit}
+.nsref{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--t4);border-radius:4px;padding:10px 12px;font-size:14px;display:grid;gap:6px}
+.nsref h4{margin:0;font-size:13.5px;color:var(--t4)}
+.nsref pre{white-space:pre-wrap;margin:0;font-family:inherit;line-height:1.8}
+.nsref .parts{font-size:12.5px;color:var(--ink-3)}
+mark{background:var(--card-red-soft);color:inherit}
+.ans-toggle{font-size:14px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.ans-toggle input{flex:none;width:16px;height:16px;accent-color:var(--card-red)}
+.ans{font-weight:700;font-size:13px;color:var(--card-red);border:1.5px solid var(--card-red);border-radius:4px;padding:0 7px;align-self:center;font-variant-numeric:tabular-nums}
+.ans.f{color:var(--t4);border-color:var(--t4)}
+.ans-reveal{font-size:14px;font-weight:700;color:var(--card-red)}
+.more{font:inherit;font-size:14px;padding:8px;border:1px dashed var(--rule);background:transparent;color:var(--ink-2);border-radius:4px;cursor:pointer}
+
+.source{font-size:13px;color:var(--ink-3);display:grid;gap:6px}
+.source ul{margin:0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+:root{ --s1:#8A8F98; --s2:#2F6DB5; --s3:#2E9384; --s4:#D08A2C; --s5:#7B61B8; --s6:#C23B4E; --S:#2F6DB5; --H:#2E9384; --E:#5E8F2E; --C:#C23B4E; --O:#7B61B8; --L:#D08A2C; --P:#8A8F98; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --s1:#9CA1AA; --s2:#5B93D6; --s3:#3FB3A2; --s4:#E3A450; --s5:#A58BE0; --s6:#E8687A; --S:#5B93D6; --H:#3FB3A2; --E:#8CC063; --C:#E8687A; --O:#A58BE0; --L:#E3A450; --P:#9CA1AA; } }
+.bubbles{grid-template-columns:repeat(62,1fr);gap:2px}
+.sheet-inner{min-width:840px}
+.bub{font-size:8.5px}
+:root[data-theme="dark"]{ --s1:#9CA1AA; --s2:#5B93D6; --s3:#3FB3A2; --s4:#E3A450; --s5:#A58BE0; --s6:#E8687A; --S:#5B93D6; --H:#3FB3A2; --E:#8CC063; --C:#E8687A; --O:#A58BE0; --L:#E3A450; --P:#9CA1AA; }
+</style>
+
+<div class="wrap">
+<a class="home-link" href="../" style="display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none">← 回總覽</a>
+<header class="top">
+  <div class="eyebrow">大學學科能力測驗 · 英文考科 · 107–115 年</div>
+  <h1>學測英文命題解剖</h1>
+  <p class="lede">依大考中心公布的 107–115 年學測英文試卷、答案與非選擇題評分原則，整理九年共 <span class="num" id="totalQ"></span> 題選擇與混合題、72 篇題組短文，以及翻譯與作文：各題型配分怎麼變、短文取材偏好哪些主題、閱讀測驗考哪些題型、詞彙題考過哪些字。</p>
+  <div class="meta"><span>資料來源：大考中心「學科能力測驗 歷年試題」</span><span>整理日期：2026-09-28</span><span>題型與配分依官方試卷；短文主題為本頁判讀，閱讀題型依題幹自動分類</span></div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#findings">九年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#structure">試卷結構</a><a href="#reading">閱讀題型</a><a href="#topics">短文主題</a><a href="#vocab">詞彙答案</a><a href="#mixed">混合題</a><a href="#writing">翻譯與作文</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
+</nav>
+
+<section id="findings">
+  <div class="sec-head"><span class="kicker">重點</span><h2>九年結論</h2></div>
+  <ul class="findings">
+    <li><b>111 年分水嶺</b><p>107–110 年選擇題 56 題 72 分；111 年起降為 46 題 62 分，詞彙與綜合測驗各從 15 題減為 10 題，新增「篇章結構」4 題與「混合題」10 分。翻譯 8 分、作文 20 分九年不變。</p></li>
+    <li><b>閱讀以細節為主</b><p>九年 124 題閱讀測驗中，細節題 63 題（約一半），其次是主旨、字義、組織與手法、指涉各 10–15 題。109 年起每年固定 1 題以圖片或地圖作為選項。</p></li>
+    <li><b>短文偏好文化與科學</b><p>72 篇題組短文中，歷史文化 20 篇最多，科學科技 12、社會心理 11、健康醫學 10、自然生態 9。多是「某個現象的由來或研究發現」這類說明文。</p></li>
+    <li><b>混合題考「找字」</b><p>111 年起每年 1 組混合題：從文中找出單詞填入摘要句並做字形變化（每格 2 分）、1 題多選（4 分），112 年起再加 1 題從文中找片語的簡答。</p></li>
+    <li><b>作文多半看圖</b><p>作文九年都要求至少 120 詞、分兩段。107–108 年為主題寫作，109 年起幾乎每年附圖，第一段描述圖片或現象，第二段說明看法、原因或經驗。</p></li>
+    <li><b>中譯英題目生活化</b><p>每年 2 句、各 4 分，每個錯誤扣 0.5 分。主題貼近生活與時事（颱風、寵物、選舉、戰爭與和平、英語教學），用字以詞彙表四級內為主。</p></li>
+  </ul>
+</section>
+
+<section id="sheet">
+  <div class="sec-head"><span class="kicker">互動</span><h2>題目地圖</h2><p>每一列是一年的選擇題與混合題，排列方式像答案卡。顏色代表題型，點選圖例可以只看某一類；點選圓點會在下方試題庫打開原題。</p></div>
+  <div class="card-panel">
+    <div class="legend" id="legend" role="group" aria-label="篩選題型"></div>
+    <div class="shape-key"><span><i class="s1"></i>單選</span><span><i class="s2"></i>多選</span><span><i class="s3"></i>非選（填充、簡答）</span></div>
+    <div class="sheet"><div class="sheet-inner" id="sheetRows"></div></div>
+    <div class="detail" id="detail" aria-live="polite">點選任一題，會在下方試題庫打開原題。</div>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="sec-head"><span class="kicker">原試題</span><h2>試題庫</h2><p>題目圖片直接裁切自官方試卷。綜合測驗、文意選填、篇章結構的題目在短文空格中，會一併附上題組短文。可以依年度、題型、短文主題篩選，或用英文單字搜尋題目與短文；答案預設隱藏。</p></div>
+  <div class="bank-ctl">
+    <div class="bank-row">
+      <label for="bYear" class="bank-count">年度</label>
+      <select id="bYear"><option value="all">全部</option></select>
+      <label for="bSec" class="bank-count">題型</label>
+      <select id="bSec"><option value="all">全部</option></select>
+      <label for="bTopic" class="bank-count">短文主題</label>
+      <select id="bTopic"><option value="all">全部</option></select>
+    </div>
+    <div class="bank-row">
+      <input id="bSearch" type="search" placeholder="搜尋：例如 infer、refer to、Taiwan、主旨">
+      <label class="ans-toggle" for="bAns"><input type="checkbox" id="bAns"> 列表顯示答案</label>
+    </div>
+    <div class="bank-count" id="bCount" aria-live="polite"></div>
+  </div>
+  <div class="qlist" id="qlist"></div>
+</section>
+
+<section id="structure">
+  <div class="sec-head"><span class="kicker">官方試卷</span><h2>試卷結構</h2><p>各題型的配分。詞彙、綜合測驗、文意選填每題 1 分；篇章結構、閱讀測驗每題 2 分；混合題與非選擇題依題末配分。</p></div>
+  <div class="mini-legend" id="secLegend"></div>
+  <div class="bars" id="secBars"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th class="c">詞彙</th><th class="c">綜合測驗</th><th class="c">文意選填</th><th class="c">篇章結構</th><th class="c">閱讀測驗</th><th class="c">混合題</th><th class="c">翻譯＋作文</th></tr></thead>
+    <tbody id="secTable"></tbody>
+  </table></div>
+</section>
+
+<section id="reading">
+  <div class="sec-head"><span class="kicker">依題幹自動分類</span><h2>閱讀題型</h2><p>依閱讀測驗題幹的問法歸類，例如「mainly about」為主旨、「closest in meaning」為字義、「refer to」為指涉、「can be inferred」為推論。表中數字為題數，點數字可打開該類第一題。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead id="rHead"></thead>
+    <tbody id="rTable"></tbody>
+  </table></div>
+</section>
+
+<section id="topics">
+  <div class="sec-head"><span class="kicker">逐篇判讀</span><h2>短文主題</h2><p>每年 8 篇題組短文（綜合測驗、文意選填、篇章結構、閱讀測驗、混合題）的主題分布；選年度可看各篇標題。</p></div>
+  <div class="mini-legend" id="tLegend"></div>
+  <div class="bars" id="tBars"></div>
+  <div class="year-tabs" role="tablist" aria-label="選擇年度" id="gTabs"></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>題號</th><th>題型</th><th>短文</th><th>主題</th></tr></thead>
+    <tbody id="gTable"></tbody>
+  </table></div>
+</section>
+
+<section id="vocab">
+  <div class="sec-head"><span class="kicker">正確答案</span><h2>詞彙答案</h2><p>詞彙題的正確答案，也就是每年直接考的單字；綜合測驗與文意選填的答案可在試題庫中查看。點單字可打開原題。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th>詞彙題答案</th></tr></thead>
+    <tbody id="vTable"></tbody>
+  </table></div>
+</section>
+
+<section id="mixed">
+  <div class="sec-head"><span class="kicker">111 年起 · 第貳部分</span><h2>混合題</h2><p>每年 1 組題組、共 10 分，混合選擇與非選擇。以下列出官方公布的非選參考答案。</p></div>
+  <div class="mixed" id="mixedList"></div>
+</section>
+
+<section id="writing">
+  <div class="sec-head"><span class="kicker">非選擇題 · 28 分</span><h2>翻譯與作文</h2><p>中譯英 2 句各 4 分（每個錯誤扣 0.5 分）；英文作文 20 分，依內容、組織、文法句構、字彙拼字四項整體評分，至少 120 詞、字數不足或未分段各扣 1 分。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th>中譯英</th><th>英文作文</th></tr></thead>
+    <tbody id="wTable"></tbody>
+  </table></div>
+  <div class="year-tabs" role="tablist" aria-label="選擇作文年度" id="wTabs"></div>
+  <div class="two" id="wPanels"></div>
+</section>
+
+<section id="advice">
+  <div class="sec-head"><span class="kicker">依上面數據推論</span><h2>教學建議</h2></div>
+  <div class="advice">
+    <div><h3>閱讀先練「定位細節」</h3><p>細節題占閱讀一半，常以「which is true／NOT true」出現。練習時要求學生標出每個選項在原文的出處，辨認改寫（paraphrase）與偷換概念。</p></div>
+    <div><h3>字義與指涉靠上下文</h3><p>字義題考的多是超出詞彙表的字或片語（arid、a blip、exacerbate），要從上下文推測；指涉題問 this、them、it 指什麼，練習往前找最近的合理名詞片語。</p></div>
+    <div><h3>篇章結構看轉承</h3><p>111 年起新增的篇章結構，要把 4 個句子放回文章空格。練習抓每段主題句、代名詞與轉折語（however、as a result），判斷前後句的連接。</p></div>
+    <div><h3>混合題要會改字形</h3><p>填充題要從文中找字，再依句構改成名詞、動名詞或過去分詞（participation、blended）。平常讀文章時可以練「同一個字的詞性變化」。</p></div>
+    <div><h3>文化與科學的背景字彙</h3><p>短文最常談歷史文化與科學研究，閱讀時累積相關主題字（origin、tradition、researchers、species），能加快理解速度。</p></div>
+    <div><h3>看圖作文兩段式</h3><p>作文幾乎都是「第一段描述圖片／現象，第二段說明看法或經驗」。練習時先列出每段要回答的問題，確保兩段都完整呼應提示，避免因離題失分。</p></div>
+  </div>
+</section>
+
+<section id="source">
+  <div class="sec-head"><span class="kicker">說明</span><h2>資料與方法</h2></div>
+  <div class="source">
+    <ul>
+      <li>原始資料：大考中心「學科能力測驗 歷年試題及答題卷」頁公布的 107–115 年英文考科試卷、選擇題答案，以及非選擇題參考答案與評分原則。</li>
+      <li>題型範圍與配分直接取自試卷；混合題非選參考答案取自評分原則。中譯英參考答案在官方文件中有多種替代寫法並列，本頁未轉錄，請見官網。</li>
+      <li>「閱讀題型」依題幹用字自動分類，可能有少數歸類不精確；「短文主題」為本頁逐篇判讀，建議教學使用前再核對。</li>
+      <li>「試題庫」的題目圖片直接裁切自官方試卷 PDF，未經改動；「文字版」由 PDF 自動擷取，排版與圖片可能不完整，引用時請以圖片為準。</li>
+    </ul>
+    <p>官網：<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634" target="_blank" rel="noopener">大考中心・學測歷年試題</a></p>
+  </div>
+</section>
+</div>
+
+<script id="examData" type="application/json">{{json:examData}}</script>
+<script id="writeData" type="application/json">{{json:writeData}}</script>
+<script>
+const SECS = {"詞彙":{v:"--s1"},"綜合測驗":{v:"--s2"},"文意選填":{v:"--s3"},"篇章結構":{v:"--s4"},"閱讀測驗":{v:"--s5"},"混合題":{v:"--s6"}};
+const SORDER = Object.keys(SECS);
+const TOP = {S:{name:"科學科技",v:"--S"},H:{name:"健康醫學",v:"--H"},E:{name:"自然生態",v:"--E"},C:{name:"歷史文化",v:"--C"},O:{name:"社會心理",v:"--O"},L:{name:"生活休閒",v:"--L"},P:{name:"人物故事",v:"--P"}};
+const TORDER = Object.keys(TOP);
+const RORDER = ["細節","主旨","字義","指涉","組織與手法","推論","態度語氣","圖表判讀"];
+const YEARS = {{years}};
+const Q = {{js:Q}};
+const ANS = {{js:ANS}};
+const GROUPS = {{js:GROUPS}};
+const MIX = {{js:MIX}};
+const EX = JSON.parse(document.getElementById("examData").textContent);
+const WR = JSON.parse(document.getElementById("writeData").textContent);
+const X0=56, XW=486;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const nQ=y=>Q[y].length;
+const isNS=(y,n)=>ANS[y][n-1]==="／"||ANS[y][n-1]==="/";
+const isMulti=(y,n)=>!isNS(y,n)&&ANS[y][n-1].length>1;
+const grpOf=(y,n)=>EX[y].g.find(g=>n>=g.a&&n<=g.b)||null;
+const topicOf=(y,n)=>Q[y][n-1][2];
+function qpts(y,n){const s=Q[y][n-1][0]; if(s==="混合題") return isNS(y,n)?(MIX[y][n].pts||0):isMulti(y,n)?4:2; return (s==="篇章結構"||s==="閱讀測驗")?2:1;}
+function labelOf(y,n){const [s,l]=Q[y][n-1]; if(s==="閱讀測驗") return `閱讀・${l}`; if(s==="篇章結構") return "篇章結構・句子插入"; if(s==="混合題") return `混合題・${l}`; return `${s}・${l}`;}
+document.getElementById("totalQ").textContent = YEARS.reduce((a,y)=>a+nQ(y),0);
+
+/* sheet */
+let filter=null, picked=null;
+const legend=document.getElementById("legend");
+SORDER.forEach(k=>{
+  const tot=YEARS.reduce((a,y)=>a+Q[y].filter(q=>q[0]===k).length,0);
+  const b=document.createElement("button"); b.type="button"; b.setAttribute("aria-pressed","false"); b.dataset.k=k;
+  b.innerHTML=`<span class="sw" style="background:var(${SECS[k].v})"></span>${k}<span class="ct num">${tot}</span>`;
+  b.addEventListener("click",()=>{filter=filter===k?null:k; document.querySelectorAll("#legend button").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.k===filter))); document.querySelectorAll(".bub").forEach(x=>x.classList.toggle("dim",!!filter&&x.dataset.k!==filter));});
+  legend.appendChild(b);
+});
+const rows=document.getElementById("sheetRows");
+YEARS.forEach(y=>{
+  const r=document.createElement("div"); r.className="row";
+  r.innerHTML=`<span class="yr num">${y}<small>${y>=111?"新制":"舊制"}</small></span>`;
+  const bb=document.createElement("div"); bb.className="bubbles";
+  Q[y].forEach(([s],i)=>{
+    const n=i+1;
+    if(i>0 && Q[y][i-1][0]!==s){const g=document.createElement("span");g.className="gap";g.setAttribute("aria-hidden","true");bb.appendChild(g);}
+    const b=document.createElement("button"); b.type="button"; b.className="bub"+(isMulti(y,n)?" m":isNS(y,n)?" f":""); b.dataset.k=s;
+    b.style.background=`var(${SECS[s].v})`; b.style.setProperty("--c",`var(${SECS[s].v})`); b.textContent=n;
+    b.setAttribute("aria-label",`${y}年第${n}題，${labelOf(y,n)}`); b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",()=>{ if(picked) picked.setAttribute("aria-pressed","false"); picked=b; b.setAttribute("aria-pressed","true");
+      const t=topicOf(y,n), g=GROUPS[y].find(([r])=>{const [a,c]=r.split("–").map(Number);return n>=a&&n<=c;});
+      document.getElementById("detail").innerHTML=`<strong>${y} 年第 ${n} 題</strong>　${esc(labelOf(y,n))}${g?`　｜　${esc(g[3])}（${TOP[t].name}）`:""}　<a href="#qi-${y}-${n}">看原題 ↓</a>`;
+      openInBank(y,n);});
+    bb.appendChild(b);
+  });
+  r.appendChild(bb); rows.appendChild(r);
+});
+const sc=document.createElement("div"); sc.className="scale"; sc.innerHTML=`<span></span><div class="ticks"><span>第 1 題</span><span>詞彙 → 綜合 → 文意 → 篇章 → 閱讀 → 混合</span></div>`; rows.appendChild(sc);
+
+/* structure */
+const secPts=y=>{const p={}; SORDER.forEach(k=>p[k]=0); Q[y].forEach(([s],i)=>p[s]+=qpts(y,i+1)); return p;};
+const secN=y=>{const p={}; SORDER.forEach(k=>p[k]=0); Q[y].forEach(([s])=>p[s]++); return p;};
+document.getElementById("secLegend").innerHTML=SORDER.map(k=>`<span><i style="background:var(${SECS[k].v})"></i>${k}</span>`).join("")+`<span><i style="background:var(--rule)"></i>翻譯＋作文</span>`;
+YEARS.forEach(y=>{
+  const p=secPts(y), c=secN(y);
+  document.getElementById("secBars").insertAdjacentHTML("beforeend",`<div class="bar-row"><span class="yr num">${y}</span><div class="bar" role="img" aria-label="${y}年 ${SORDER.map(k=>k+p[k]+"分").join(" ")} 翻譯作文28分">${SORDER.filter(k=>p[k]).map(k=>`<span style="width:${p[k]}%;background:var(${SECS[k].v})">${p[k]}</span>`).join("")}<span style="width:28%;background:var(--rule);color:var(--ink-2)">28</span></div><span class="note num">100 分</span></div>`);
+  document.getElementById("secTable").insertAdjacentHTML("beforeend",`<tr><td class="num"><b>${y}</b></td>${SORDER.map(k=>c[k]?`<td class="c num">${c[k]} 題・${p[k]} 分</td>`:`<td class="c miss">—</td>`).join("")}<td class="c num">8＋20 分</td></tr>`);
+});
+
+/* reading types */
+document.getElementById("rHead").innerHTML=`<tr><th>題型</th>${YEARS.map(y=>`<th class="c">${y}</th>`).join("")}<th class="c">合計</th></tr>`;
+RORDER.forEach(t=>{
+  let sum=0;
+  const cells=YEARS.map(y=>{const qs=Q[y].map((q,i)=>q[0]==="閱讀測驗"&&q[1]===t?i+1:0).filter(Boolean); sum+=qs.length;
+    return qs.length?`<td class="c hit"><a class="q" href="#qi-${y}-${qs[0]}" data-y="${y}" data-n="${qs[0]}" title="第 ${qs.join("、")} 題">${qs.length}</a></td>`:`<td class="c miss">—</td>`;}).join("");
+  document.getElementById("rTable").insertAdjacentHTML("beforeend",`<tr><td style="white-space:nowrap"><b>${t}</b></td>${cells}<td class="c num"><b>${sum}</b></td></tr>`);
+});
+document.getElementById("rTable").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,+a.dataset.n);});
+
+/* topics */
+document.getElementById("tLegend").innerHTML=TORDER.map(k=>`<span><i style="background:var(${TOP[k].v})"></i>${TOP[k].name}</span>`).join("");
+YEARS.forEach(y=>{
+  const c={}; TORDER.forEach(k=>c[k]=0); GROUPS[y].forEach(g=>c[g[2]]++); const n=GROUPS[y].length;
+  document.getElementById("tBars").insertAdjacentHTML("beforeend",`<div class="bar-row"><span class="yr num">${y}</span><div class="bar" role="img" aria-label="${y}年 ${TORDER.map(k=>TOP[k].name+c[k]).join(" ")}">${TORDER.filter(k=>c[k]).map(k=>`<span style="width:${c[k]/n*100}%;background:var(${TOP[k].v})">${c[k]}</span>`).join("")}</div><span class="note num">${n} 篇</span></div>`);
+});
+const gTabs=document.getElementById("gTabs"), gTable=document.getElementById("gTable");
+function showGroups(y){
+  gTabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(+b.dataset.y===y)));
+  gTable.innerHTML=GROUPS[y].map(([r,s,t,title])=>`<tr><td class="q" style="white-space:nowrap"><a href="#qi-${y}-${r.split("–")[0]}" data-y="${y}" data-n="${r.split("–")[0]}">${r}</a></td><td style="white-space:nowrap">${s}</td><td>${esc(title)}</td><td><span class="tag" style="border-color:var(${TOP[t].v});color:var(${TOP[t].v})">${TOP[t].name}</span></td></tr>`).join("");
+  try{localStorage.setItem("ceec-en-gyear",y);}catch(e){}
+}
+YEARS.forEach(y=>{const b=document.createElement("button"); b.type="button"; b.role="tab"; b.dataset.y=y; b.textContent=y+" 年"; b.addEventListener("click",()=>showGroups(y)); gTabs.appendChild(b);});
+let gy=YEARS[YEARS.length-1]; try{const s=+localStorage.getItem("ceec-en-gyear"); if(YEARS.includes(s)) gy=s;}catch(e){}
+showGroups(gy);
+gTable.addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,+a.dataset.n);});
+
+/* vocab */
+document.getElementById("vTable").innerHTML=YEARS.map(y=>`<tr><td class="num"><b>${y}</b></td><td>${Q[y].map((q,i)=>q[0]==="詞彙"?`<a class="tag" style="text-decoration:none" href="#qi-${y}-${i+1}" data-y="${y}" data-n="${i+1}">${esc(q[1])}</a>`:"").join("")}</td></tr>`).join("");
+document.getElementById("vTable").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,+a.dataset.n);});
+
+/* mixed */
+document.getElementById("mixedList").innerHTML=YEARS.filter(y=>Q[y].some(q=>q[0]==="混合題")).map(y=>{
+  const g=GROUPS[y].find(g=>g[1]==="混合題");
+  const items=Q[y].map((q,i)=>q[0]==="混合題"?i+1:0).filter(Boolean);
+  return `<div><span class="y">${y}</span><div><div class="src">${esc(g?g[3]:"")}</div><ul>${items.map(n=>`<li><a href="#qi-${y}-${n}" data-y="${y}" data-n="${n}">第 ${n} 題</a>　${esc(Q[y][n-1][1])}　<span class="pts">${qpts(y,n)} 分</span>${isNS(y,n)&&MIX[y][n]?`　參考答案：<b>${esc(MIX[y][n].ref)}</b>`:""}</li>`).join("")}</ul></div></div>`;
+}).join("");
+document.getElementById("mixedList").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,+a.dataset.n);});
+
+/* writing */
+function paperOf(y,slices,label,W,H){return `<div class="paper">${slices.map(([p,a,b])=>`<svg viewBox="${X0} ${a} ${XW} ${(b-a).toFixed(1)}" role="img" aria-label="${label}"><image href="pages/${y}-${p}.webp" x="0" y="0" width="${W}" height="${H}"/></svg>`).join("")}</div>`;}
+document.getElementById("wTable").innerHTML=YEARS.map(y=>{const w=WR[y]; return `<tr><td class="num"><b>${y}</b></td><td style="font-size:13.5px">${w.tr.sent.map((s,i)=>`${i+1}. ${esc(s)}`).join("<br>")}</td><td><div>${esc(w.essay.topic)}</div><span class="tag">${esc(w.essay.type)}</span></td></tr>`;}).join("");
+const wTabs=document.getElementById("wTabs"), wPanels=document.getElementById("wPanels");
+function showWriting(y){
+  wTabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",String(+b.dataset.y===y)));
+  const w=WR[y];
+  wPanels.innerHTML=`<div style="display:grid;gap:10px;align-content:start"><h3>中譯英・8 分</h3><ol style="margin:0;padding-left:1.3em;font-size:14.5px;display:grid;gap:6px">${w.tr.sent.map(s=>`<li>${esc(s)}</li>`).join("")}</ol><details class="passage"><summary>看原題</summary>${paperOf(y,w.tr.s,`${y}年中譯英`,w.w,w.h)}</details></div>
+  <div style="display:grid;gap:10px;align-content:start"><h3>英文作文・20 分</h3><p style="font-size:14.5px">${esc(w.essay.type)}：${esc(w.essay.topic)}</p><p style="font-size:13.5px;color:var(--ink-2)">段落要求：${esc(w.essay.req)}</p><details class="passage"><summary>看原題</summary>${paperOf(y,w.essay.s,`${y}年英文作文`,w.w,w.h)}</details></div>`;
+}
+YEARS.forEach(y=>{const b=document.createElement("button"); b.type="button"; b.role="tab"; b.dataset.y=y; b.textContent=y+" 年"; b.addEventListener("click",()=>showWriting(y)); wTabs.appendChild(b);});
+showWriting(YEARS[YEARS.length-1]);
+
+/* question bank */
+const ITEMS=[];
+YEARS.forEach(y=>EX[y].q.forEach(q=>{
+  const g=grpOf(y,q.n), [s,l,t]=Q[y][q.n-1];
+  const gi=GROUPS[y].find(([r])=>{const [a,c]=r.split("–").map(Number);return q.n>=a&&q.n<=c;});
+  ITEMS.push({y,n:q.n,s,t,q,g,title:gi?gi[3]:"",lab:labelOf(y,q.n),
+    hay:(labelOf(y,q.n)+" "+(gi?gi[3]+" "+(TOP[t]?TOP[t].name:""):"")+" "+q.t+" "+(g?g.t:"")).replace(/\s+/g," ").toLowerCase()});
+}));
+const bYear=document.getElementById("bYear"), bSec=document.getElementById("bSec"), bTopic=document.getElementById("bTopic"), bSearch=document.getElementById("bSearch"), bAns=document.getElementById("bAns");
+YEARS.forEach(y=>bYear.insertAdjacentHTML("beforeend",`<option value="${y}">${y} 年</option>`));
+SORDER.forEach(k=>bSec.insertAdjacentHTML("beforeend",`<option value="${k}">${k}</option>`));
+TORDER.forEach(k=>bTopic.insertAdjacentHTML("beforeend",`<option value="${k}">${TOP[k].name}</option>`));
+const ansText=it=>isNS(it.y,it.n)?"非選":ANS[it.y][it.n-1];
+function snippet(it,kw){
+  const base=(it.q.t||"").replace(/^\d{1,2}\s*[-–]?\s*\d*\s*[.．]?\s*/,"").replace(/\s+/g," ");
+  if(kw){const i=it.hay.indexOf(kw); if(i>=0){const s=Math.max(0,i-30); return esc(it.hay.slice(s,i))+"<mark>"+esc(it.hay.slice(i,i+kw.length))+"</mark>"+esc(it.hay.slice(i+kw.length,i+kw.length+50));}}
+  return esc((base||it.title).slice(0,90));
+}
+let LIMIT=60;
+function renderBank(openId){
+  const y=bYear.value, s=bSec.value, t=bTopic.value, kw=bSearch.value.trim().toLowerCase().replace(/\s+/g," ");
+  const hits=ITEMS.filter(it=>(y==="all"||it.y==+y)&&(s==="all"||it.s===s)&&(t==="all"||it.t===t)&&(!kw||it.hay.includes(kw)));
+  const shown=hits.slice(0,Math.max(LIMIT,openId?hits.findIndex(h=>`${h.y}-${h.n}`===openId)+1:0));
+  const list=document.getElementById("qlist");
+  list.innerHTML=shown.map(it=>`<details class="qitem" id="qi-${it.y}-${it.n}" data-y="${it.y}" data-n="${it.n}">
+    <summary><span class="qid"><span class="dot" style="background:var(${SECS[it.s].v})"></span>${it.y}-${String(it.n).padStart(2,"0")}</span>
+    <span class="qsum"><span class="lab">${esc(it.lab)}${it.title?`<small>${esc(it.title)}</small>`:""}</span><span class="snip">${snippet(it,kw)}</span></span>${bAns.checked?`<span class="ans${isNS(it.y,it.n)?" f":""}">${esc(ansText(it))}</span>`:"<span></span>"}</summary>
+    <div class="qbody"></div></details>`).join("")+(hits.length>shown.length?`<button type="button" class="more" id="moreBtn">再顯示 ${Math.min(60,hits.length-shown.length)} 題（共 ${hits.length} 題）</button>`:"");
+  document.getElementById("bCount").textContent=`符合 ${hits.length} 題`;
+  const mb=document.getElementById("moreBtn"); if(mb) mb.addEventListener("click",()=>{LIMIT+=60;renderBank();});
+  list.querySelectorAll("details.qitem").forEach(d=>d.addEventListener("toggle",()=>{if(d.open) fillBody(d);}));
+}
+function fillBody(d){
+  const body=d.querySelector(".qbody"); if(body.dataset.done) return;
+  const it=ITEMS.find(i=>i.y==+d.dataset.y&&i.n==+d.dataset.n), W=EX[it.y].w, H=EX[it.y].h;
+  const own=it.q.s.length>0;
+  let h="";
+  if(it.g) h+=`<details class="passage" ${(!own||it.n===it.g.a)?"open":""}><summary>題組短文（第 ${it.g.a}–${it.g.b} 題共用）${own?"":`・本題為第 ${it.n} 格`}</summary>${paperOf(it.y,it.g.s,`${it.y}年第${it.g.a}至${it.g.b}題短文`,W,H)}</details>`;
+  if(own) h+=paperOf(it.y,it.q.s,`${it.y}年第${it.n}題原題`,W,H);
+  const ns=isNS(it.y,it.n);
+  h+=`<div class="qtools"><button type="button" class="an">${ns?"看參考答案":"看答案"}</button><button type="button" class="tx">顯示文字版</button></div>`;
+  if(ns) h+=`<div class="nsref" hidden><h4>官方參考答案・${MIX[it.y][it.n].pts} 分</h4><pre></pre></div>`;
+  h+=`<pre class="qtext" hidden></pre>`;
+  body.innerHTML=h; body.dataset.done="1";
+  body.querySelector(".qtext").textContent=(it.g?it.g.t+"\n\n":"")+(it.q.t||"");
+  if(ns) body.querySelector(".nsref pre").textContent=MIX[it.y][it.n].ref;
+  body.querySelector(".an").addEventListener("click",e=>{const b=e.target.closest("button");
+    if(ns){const r=body.querySelector(".nsref"); r.hidden=!r.hidden; b.textContent=r.hidden?"看參考答案":"隱藏參考答案"; return;}
+    if(b.dataset.on){b.textContent="看答案";delete b.dataset.on;}else{b.innerHTML=`參考答案：<span class="ans-reveal">(${esc(ANS[it.y][it.n-1])})</span>`;b.dataset.on="1";}});
+  body.querySelector(".tx").addEventListener("click",e=>{const p=body.querySelector(".qtext"); p.hidden=!p.hidden; e.target.textContent=p.hidden?"顯示文字版":"隱藏文字版";});
+}
+function openInBank(y,n){
+  bYear.value=String(y); bSec.value="all"; bTopic.value="all"; bSearch.value="";
+  renderBank(`${y}-${n}`);
+  const d=document.getElementById(`qi-${y}-${n}`);
+  if(d){d.open=true; fillBody(d); d.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}
+}
+bAns.addEventListener("change",()=>{const open=[...document.querySelectorAll("details.qitem[open]")].map(d=>d.id);renderBank();open.forEach(id=>{const d=document.getElementById(id);if(d){d.open=true;fillBody(d);}});});
+[bYear,bSec,bTopic].forEach(el=>el.addEventListener("change",()=>{LIMIT=60;renderBank();}));
+let st; bSearch.addEventListener("input",()=>{clearTimeout(st);st=setTimeout(()=>{LIMIT=60;renderBank();},180);});
+bYear.value=String(YEARS[YEARS.length-1]); renderBank();
+</script>
+
+</body></html>
