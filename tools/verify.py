@@ -13,7 +13,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ["", "guowen/", "english/", "math/", "social/", "science/"]
+PAGES = ["", "guowen/", "english/", "math/", "social/", "science/", "xuece/"]
 
 
 def serve(directory, port):
