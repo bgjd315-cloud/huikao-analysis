@@ -35,7 +35,7 @@ def content_boxes(page):
         if "背面還有試題" in re.sub(r"\s", "", t):
             x0, y0, x1, y1 = bb[0] - 25, bb[1] - 20, bb[2] + 25, bb[3] + 20
             boxes = [b for b in boxes if not (b[0] >= x0 and b[1] >= y0 and b[2] <= x1 and b[3] <= y1)]
-    return [b for b in boxes if b[1] >= TOP - 2 and b[3] <= BOTTOM + 2 and b[3] - b[1] < 700]
+    return [b for b in boxes if b[1] >= TOP - 2 and b[3] <= BOTTOM + 5 and b[3] - b[1] < 700]  # +5：頁底最後一行下緣可略低於 BOTTOM
 
 
 def region(boxes_by_page, start, end):

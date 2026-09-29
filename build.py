@@ -31,6 +31,7 @@ SUBJECTS = {  # 資料夾代號 → 顯示名稱
     "xuece-phy": "分科物理",
     "xuece-chem": "分科化學",
     "xuece-bio": "分科生物",
+    "xuece-hist": "分科歷史",
 }
 HEAD_EXTRA = '<meta name="robots" content="noindex,nofollow">'
 

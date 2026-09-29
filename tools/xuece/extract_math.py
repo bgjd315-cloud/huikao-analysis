@@ -23,7 +23,7 @@ from markers import lines  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
 OUT = ROOT / "assets" / "xuece-math" / "pages"
-OTHER = {"ph": "phy", "ch": "chem", "bi": "bio"}  # 借用本程式的其他科：科目代號 → 輸出代號
+OTHER = {"ph": "phy", "ch": "chem", "bi": "bio", "hi": "hist"}  # 借用本程式的其他科：科目代號 → 輸出代號
 
 QRE = re.compile(r"^\s*(\d{1,2}|[A-H])\s*[.．]")
 SEC = re.compile(r"^\s*(?:[一二三四]、\s*|第[壹貳參]部分[：:、]\s*)(單選題|多選題|選填題|混合題|非選擇題|閱讀題|實驗題|選擇題)")  # 生物另有閱讀題、實驗題
@@ -107,6 +107,8 @@ def extract(key):
                 M.append(("S", pn, y0, m[1]))
                 if pts:
                     sec_total[m[1]] = int(re.sub(r"\s", "", pts[1]))
+            elif next((x[3] for x in reversed(M) if x[0] == "S"), None) == "混合題" and NSQ.match(t):
+                M.append(("H", pn, y0, None))  # 混合題以「一、」「二、」開頭的共用題幹（歷史卷）
             elif M and any(x[0] == "S" and x[3] == "非選擇題" for x in M) and (m := NSQ.match(t)):
                 lab = "非選" + m[1]
                 seen.append(lab)
@@ -122,7 +124,7 @@ def extract(key):
                     continue
                 seen.append(lab)
                 M.append(("Q", pn, y0, lab))
-    last = (len(doc) - 1, BOTTOM + 3)
+    last = (len(doc) - 1, BOTTOM + 8)
     fstart = next((pn for pn in range(1, len(doc)) if any("參考公式" in t for _, t in lines(doc[pn])[:6])), None)
     if fstart:
         last = (fstart - 1, BOTTOM + 3)
@@ -138,6 +140,12 @@ def extract(key):
             cur = v
             if v == "混合題":
                 mix_mark = i
+        elif k == "H":
+            j = next(j for j in range(i + 1, len(M)) if M[j][0] == "Q")
+            end = next((e for e in range(i + 1, len(M)) if M[e][0] in ("H", "S")), len(M))
+            labs = [M[e][3] for e in range(j, end) if M[e][0] == "Q"]
+            s = region(boxes, (p, y), (M[j][1], M[j][2]))
+            groups.append({"a": int(labs[0]), "b": int(labs[-1]), "s": s, "t": text_of(doc, s)})
         elif k == "G":
             j = next(j for j in range(i + 1, len(M)) if M[j][0] == "Q")
             s = region(boxes, (p, y), (M[j][1], M[j][2]))

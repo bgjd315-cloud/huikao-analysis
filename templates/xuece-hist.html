@@ -1,0 +1,440 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>分科歷史命題解剖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --card-red:#C23B4E; --card-red-soft:#F7E3E6;
+  --K:#8A8F98; --L:#B08A3E; --B:#2F6DB5; --I:#7B61B8; --P:#8FB3E0; --N:#2E9384; --W:#C23B4E; --C:#E8929E;
+  --t1:#8A8F98; --t2:#2F6DB5; --t3:#2E9384; --t4:#D08A2C;
+  --focus:#2F6DB5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+    --K:#9CA1AA; --L:#D2AA5C; --B:#5B93D6; --I:#A58BE0; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+    --t1:#9CA1AA; --t2:#5B93D6; --t3:#3FB3A2; --t4:#E3A450; --focus:#8FB3E0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --card-red:#E8687A; --card-red-soft:#3A2227;
+  --K:#9CA1AA; --L:#D2AA5C; --B:#5B93D6; --I:#A58BE0; --P:#9DBDE6; --N:#3FB3A2; --W:#E8687A; --C:#F0A9B3;
+  --t1:#9CA1AA; --t2:#5B93D6; --t3:#3FB3A2; --t4:#E3A450; --focus:#8FB3E0;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB","BiauKai",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:26px;font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:var(--B)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+header.top{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--card-red);font-weight:700}
+.lede{max-width:62ch;color:var(--ink-2);font-size:16.5px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-3)}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 16px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:14px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--card-red)}
+
+section{padding-block:44px 8px;display:grid;gap:18px}
+.sec-head{display:grid;gap:6px}
+.sec-head .kicker{font-size:12.5px;letter-spacing:.1em;color:var(--ink-3);font-weight:500}
+.sec-head p{color:var(--ink-2);max-width:66ch}
+
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.findings li{display:grid;grid-template-columns:7.5em 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.findings b{font-family:"LXGW WenKai TC",serif;font-size:19px;color:var(--card-red);font-weight:700;line-height:1.4}
+@media (max-width:560px){.findings li{grid-template-columns:1fr;gap:2px}}
+
+/* answer card */
+.card-panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px;display:grid;gap:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.legend button{font:inherit;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 8px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer}
+.legend button[aria-pressed="true"]{border-color:var(--ink);background:var(--rule-2)}
+.legend .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.legend .ct{color:var(--ink-3);font-size:12px}
+.shape-key{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12.5px;color:var(--ink-3);align-items:center}
+.shape-key i{display:inline-block;width:12px;height:15px;margin-right:6px;vertical-align:-3px;background:var(--ink-3)}
+.shape-key .s1{border-radius:40%}.shape-key .s2{border-radius:2px}.shape-key .s3{border-radius:40%;background:transparent;border:2px solid var(--ink-3)}
+.sheet{overflow-x:auto}
+.sheet-inner{min-width:780px;display:grid;gap:8px}
+.row{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:10px}
+.row .yr{font-weight:700;font-size:14px;color:var(--ink-2)}
+.row .yr small{display:block;font-weight:400;font-size:10.5px;color:var(--ink-3);line-height:1.1}
+.bubbles{display:grid;grid-template-columns:repeat(44,1fr);gap:3px;align-items:center}
+.bubbles .gap{align-self:stretch;border-left:1px dashed var(--rule);margin-left:45%}
+.bub{min-width:0;aspect-ratio:1/1.35;max-height:30px;border-radius:40%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;font-size:9.5px;color:#fff;font-variant-numeric:tabular-nums;transition:opacity .15s}
+.bub.m{border-radius:3px}
+.bub.f{background:transparent!important;border:2.5px solid var(--c);color:var(--ink)}
+.bub.dim{opacity:.14}
+.bub[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.scale{display:grid;grid-template-columns:44px 1fr;gap:10px;font-size:11.5px;color:var(--ink-3)}
+.scale .ticks{display:flex;justify-content:space-between}
+.detail{min-height:48px;border-top:1px solid var(--rule);padding-top:10px;font-size:14.5px;color:var(--ink-2)}
+.detail strong{color:var(--ink)}
+
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:44px 1fr 86px;gap:10px;align-items:center;font-size:13.5px}
+.bar{display:flex;height:26px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
+.bar span{display:grid;place-items:center;color:#fff;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.bar-row .yr{font-weight:700;color:var(--ink-2)}
+.bar-row .note{color:var(--ink-3);font-size:12.5px;text-align:right}
+.mini-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.mini-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center}
+.q{font-variant-numeric:tabular-nums;color:var(--card-red);font-weight:500}
+.miss{color:var(--ink-3)}
+.tag{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:3px;margin:1px 3px 1px 0;border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.tag.x{border-color:var(--B);color:var(--B)}
+.tag.g{border-color:var(--N);color:var(--N)}
+.tag.w{border-color:var(--W);color:var(--W)}
+.tag.p{border-color:var(--C);color:var(--ink-2)}
+.tag.n{border-color:var(--t4);color:var(--t4)}
+.hit{background:var(--card-red-soft)}
+
+.year-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.year-tabs button{font:inherit;font-size:14px;padding:4px 14px;border-radius:4px;border:1px solid var(--rule);background:transparent;color:var(--ink-2);cursor:pointer}
+.year-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.mixed{display:grid;gap:0;border-top:1px solid var(--rule)}
+.mixed > div{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.mixed .y{font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.mixed .src{font-family:"LXGW WenKai TC",serif;font-size:17px}
+.mixed ul{margin:4px 0 0;padding-left:1.1em;font-size:13.5px;color:var(--ink-2);display:grid;gap:2px}
+.mixed .pts{color:var(--t4);font-weight:700;font-variant-numeric:tabular-nums}
+
+.advice{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule)}
+.advice > div{padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.advice h3{font-size:17px}
+.advice p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.advice{grid-template-columns:1fr}}
+
+/* question bank */
+.bank-ctl{display:grid;gap:10px}
+.bank-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bank-row select,.bank-row input{font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink)}
+.bank-row input{flex:1 1 220px;min-width:0}
+.bank-count{font-size:13px;color:var(--ink-3)}
+.qlist{display:grid;border-top:1px solid var(--rule)}
+.qitem{border-bottom:1px solid var(--rule)}
+.qitem > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:78px 1fr auto;gap:12px;padding:10px 4px;align-items:baseline}
+.qitem > summary::-webkit-details-marker{display:none}
+.qitem > summary:hover{background:var(--rule-2)}
+.qid{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.qid .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.qsum{display:grid;gap:2px;min-width:0}
+.qsum .lab{font-size:14.5px}
+.qsum .lab small{color:var(--ink-3);font-size:12.5px;margin-left:6px}
+.qsum .snip{font-size:13px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qitem[open] > summary{background:var(--rule-2)}
+.qbody{padding:12px 4px 18px;display:grid;gap:10px}
+.paper{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:6px 4px;display:grid;gap:0}
+.paper svg{display:block;width:100%;height:auto}
+.passage > summary{cursor:pointer;font-size:13.5px;color:var(--ink-2);padding:4px 0}
+.qtools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.qtools button{font:inherit;font-size:13px;padding:4px 12px;border-radius:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+.qtools .msg{font-size:12.5px;color:var(--ink-3)}
+.qtext{white-space:pre-wrap;font-size:14px;line-height:1.8;background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;margin:0;max-height:360px;overflow:auto;font-family:inherit}
+.nsref{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--t4);border-radius:4px;padding:10px 12px;font-size:14px;display:grid;gap:6px}
+.nsref h4{margin:0;font-size:13.5px;color:var(--t4)}
+.nsref pre{white-space:pre-wrap;margin:0;font-family:inherit;line-height:1.8}
+.nsref .parts{font-size:12.5px;color:var(--ink-3)}
+mark{background:var(--card-red-soft);color:inherit}
+.ans-toggle{font-size:14px;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.ans-toggle input{flex:none;width:16px;height:16px;accent-color:var(--card-red)}
+.ans{font-weight:700;font-size:13px;color:var(--card-red);border:1.5px solid var(--card-red);border-radius:4px;padding:0 7px;align-self:center;font-variant-numeric:tabular-nums}
+.ans.f{color:var(--t4);border-color:var(--t4)}
+.ans-reveal{font-size:14px;font-weight:700;color:var(--card-red)}
+.more{font:inherit;font-size:14px;padding:8px;border:1px dashed var(--rule);background:transparent;color:var(--ink-2);border-radius:4px;cursor:pointer}
+
+.source{font-size:13px;color:var(--ink-3);display:grid;gap:6px}
+.source ul{margin:0;padding-left:1.2em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+:root{ --uT:#C23B4E; --uC:#E0795A; --uA:#B8702A; --uW:#8E2F4A; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --uT:#E8687A; --uC:#F09A7E; --uA:#E0954A; --uW:#C9607C; } }
+:root[data-theme="dark"]{ --uT:#E8687A; --uC:#F09A7E; --uA:#E0954A; --uW:#C9607C; }
+.bubbles{grid-template-columns:repeat(49,1fr);gap:2px}
+.sheet-inner{min-width:820px}
+.bub{font-size:8px}
+.bar span{font-size:11.5px}
+#topicList button{cursor:pointer}
+</style>
+
+<div class="wrap">
+<a class="home-link" href="../" style="display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none">← 回總覽</a>
+<header class="top">
+  <div class="eyebrow">指考 107–110 年 · 分科測驗 111–115 年 · 歷史考科</div>
+  <h1>分科歷史命題解剖</h1>
+  <p class="lede">依大考中心公布的 107–110 年指考、111–115 年分科測驗歷史試卷、答案與非選擇題評分原則，把九年共 <span class="num" id="totalQ"></span> 題逐題歸入臺灣史、中國史、亞洲史、世界史並標出考點，可以直接點開原題。</p>
+  <div class="meta"><span>資料來源：大考中心「分科測驗（110 前指考）歷年試題」</span><span>整理日期：2026-09-29</span><span>配分依官方試卷與評分原則；單元與考點為本頁判讀</span></div>
+</header>
+
+<nav class="toc" aria-label="章節">
+  <a href="#findings">九年結論</a><a href="#sheet">題目地圖</a><a href="#bank">試題庫</a><a href="#units">單元配分</a><a href="#types">題型與配分</a><a href="#topics">常考主題</a><a href="#mixed">非選擇題</a><a href="#advice">教學建議</a><a href="#source">資料與方法</a>
+</nav>
+
+<section id="findings">
+  <div class="sec-head"><span class="kicker">重點</span><h2>九年結論</h2></div>
+  <ul class="findings">
+    <li><b>世界史最重</b><p>九年平均每年世界史約 41 分、中國史約 29 分、臺灣史約 23 分，日韓、東南亞、南亞等亞洲史約 7 分。世界史題材最廣，從古埃及、希臘羅馬到冷戰都有。</p></li>
+    <li><b>臺灣史比重上升</b><p>108 課綱後（111 年起）臺灣史從平均每年 20.5 分增加到 24.6 分；中國史從 30.3 分降到 28 分，世界史從 42.5 分降到 40.6 分。</p></li>
+    <li><b>八成題目以史料出題</b><p>約 81% 的題目引用史料、學者論述或圖表，要學生判斷時代、比較觀點或推論原因，單純記憶年代、人名的題目很少。</p></li>
+    <li><b>選擇題結構穩定</b><p>九年都是單選 34 題（每題 2 分）、多選 4 題（每題 3 分）；111 年起其中 4 題單選移到第貳部分的題組中。</p></li>
+    <li><b>非選改成題組小題</b><p>指考的非選是四大題共 20 分；111 年起第貳部分是 4 組題組、每組 3 題，含 7–9 題非選、共 20–22 分，114 年起還規定答案字數（如「15 字以內」）。</p></li>
+    <li><b>重視史學方法</b><p>史料的證據價值、史家觀點與時代背景、歷史解釋的差異常直接成為題目，例如蘭克史學、被發明的傳統、史學研究的轉向、論文註腳格式。</p></li>
+  </ul>
+</section>
+
+<section id="sheet">
+  <div class="sec-head"><span class="kicker">互動</span><h2>題目地圖</h2><p>每一列是一年的所有題目，排列方式像答案卡。顏色代表單元，空格隔開單選、多選與第貳部分；外框空心的是非選擇題，107–110 年的非選四大題標為「一」到「四」。點按鈕篩選單元，點題號可看原題。</p></div>
+  <div class="card-panel">
+    <div class="legend" id="legend" role="group" aria-label="篩選單元"></div>
+    <div class="shape-key"><span><i class="s1"></i>選擇題</span><span><i class="s3"></i>非選擇題</span></div>
+    <div class="sheet"><div class="sheet-inner" id="sheetRows"></div></div>
+    <div class="detail" id="detail" aria-live="polite">點選任一題，會在下方試題庫打開原題。</div>
+  </div>
+</section>
+
+<section id="bank">
+  <div class="sec-head"><span class="kicker">原試題</span><h2>試題庫</h2><p>題目圖片直接裁切自官方試卷，含史料、地圖、圖片與統計表；題組題會附上共用題文。可以依年度、單元、題型篩選，也可以用關鍵字搜尋。</p></div>
+  <div class="bank-ctl">
+    <div class="bank-row">
+      <label for="bYear" class="bank-count">年度</label>
+      <select id="bYear"><option value="all">全部</option></select>
+      <label for="bUnit" class="bank-count">單元</label>
+      <select id="bUnit"><option value="all">全部</option></select>
+      <label for="bKind" class="bank-count">題型</label>
+      <select id="bKind"><option value="all">全部</option><option value="單選題">單選題</option><option value="多選題">多選題</option><option value="非選擇題">非選擇題</option></select>
+    </div>
+    <div class="bank-row">
+      <input id="bSearch" type="search" placeholder="搜尋：例如 荷蘭、冷戰、宗教改革、清代">
+      <label class="ans-toggle" for="bAns"><input type="checkbox" id="bAns"> 列表顯示答案</label>
+    </div>
+    <div class="bank-count" id="bCount" aria-live="polite"></div>
+  </div>
+  <div class="qlist" id="qlist"></div>
+</section>
+
+<section id="units">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>單元配分</h2><p>長條依各單元當年的配分（滿分 100），長條內數字為配分。下表點數字可打開該單元當年第一題；右側比較 107–110 年（99 課綱）與 111–115 年（108 課綱）的平均每年配分。</p></div>
+  <div class="mini-legend" id="uLegend"></div>
+  <div class="bars" id="uBars"></div>
+  <div class="tbl-wrap" style="margin-top:22px"><table>
+    <thead id="uHead"></thead>
+    <tbody id="uTable"></tbody>
+  </table></div>
+</section>
+
+<section id="types">
+  <div class="sec-head"><span class="kicker">逐題分類</span><h2>題型與配分</h2><p>第貳部分中的選擇題依答案個數分單選、多選。題組題是有共用題文的題目。</p></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>年度</th><th class="c">單選</th><th class="c">多選</th><th class="c">非選</th><th class="c">題組數</th><th class="c">題組題</th></tr></thead>
+    <tbody id="tTable"></tbody>
+  </table></div>
+</section>
+
+<section id="topics">
+  <div class="sec-head"><span class="kicker">考點</span><h2>常考主題</h2><p>依考點名稱統計九年出現的題數，點主題會在試題庫列出相關題目。</p></div>
+  <div class="legend" id="topicList" role="group" aria-label="常考主題"></div>
+</section>
+
+<section id="mixed">
+  <div class="sec-head"><span class="kicker">第貳部分</span><h2>非選擇題</h2><p>107–110 年為四大題、共 20 分；111 年起分散在第貳部分的 4 組題組中，每年 7–9 題、共 20–22 分，每題 2 或 4 分。點題號可看原題；官方參考答案與評分原則請見大考中心網站。</p></div>
+  <div class="mixed" id="mixedList"></div>
+</section>
+
+<section id="advice">
+  <div class="sec-head"><span class="kicker">依上面數據推論</span><h2>教學建議</h2></div>
+  <div class="advice">
+    <div><h3>練習讀史料</h3><p>八成題目以史料出題。練習時先找出資料的時代線索（年號、人物、制度、用語），再判斷是哪個時期、哪個地區，最後才看選項。</p></div>
+    <div><h3>世界史要有架構</h3><p>世界史配分最多、範圍最廣，建議以主題串連：宗教改革、啟蒙與革命、工業化、帝國主義、兩次大戰與冷戰，並注意各地區之間的互動。</p></div>
+    <div><h3>臺灣史重制度與族群</h3><p>臺灣史比重上升，常考荷鄭與清代的治理、開港貿易、日治的殖民政策與原住民、戰後戒嚴與轉型正義，要能連結政策與社會變遷。</p></div>
+    <div><h3>中國史重長時段比較</h3><p>中國史常比較不同朝代的制度（戶籍、科舉、土地、法令）與經濟重心、對外交流，建議把同一主題跨朝代整理成表格。</p></div>
+    <div><h3>非選寫出證據</h3><p>非選常要求「從資料中找出證據並說明」，而且有字數限制。作答時先引資料中的關鍵詞，再用一句話說明與問題的關係。</p></div>
+    <div><h3>史學方法要理解</h3><p>一手與二手史料、史家立場、歷史解釋的差異常直接出題，教學時可以讓學生比較兩段對同一事件的不同說法。</p></div>
+  </div>
+</section>
+
+<section id="source">
+  <div class="sec-head"><span class="kicker">說明</span><h2>資料與方法</h2></div>
+  <div class="source">
+    <ul>
+      <li>原始資料：大考中心「分科測驗（110 前指考）歷年試題」頁公布的 107–110 年指考、111–115 年分科測驗歷史考科試卷、選擇題答案與非選擇題參考答案或評分原則。109 年另有補考卷，本頁未納入。</li>
+      <li>九年單選每題 2 分、多選每題 3 分；107–110 年非選四大題共 20 分（依試卷題末子題配分）；111 年起第貳部分的單選每題 2 分，非選擇題配分取自各年評分原則總說明。108 年第 31 題、114 年第 14 題官方公告無答案（送分）。</li>
+            <li>範圍分為臺灣史、中國史、亞洲史（日韓、東南亞、南亞等）、世界史四類，是本頁逐題判讀的結果，不是官方分類；跨單元的題目依主要考查的概念歸類，建議教學使用前再核對。</li>
+      <li>「試題庫」的題目圖片直接裁切自官方試卷 PDF，未經改動；「文字版」由 PDF 自動擷取，公式與符號可能不完整，請以圖片為準。</li>
+    </ul>
+    <p>官網：<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052427633128416650" target="_blank" rel="noopener">大考中心・分科測驗歷年試題</a></p>
+  </div>
+</section>
+</div>
+
+<script id="examData" type="application/json">{{json:examData}}</script>
+<script>
+const UNIT = {T:"臺灣史",C:"中國史",A:"亞洲史",W:"世界史"};
+const UORDER = Object.keys(UNIT);
+const YEARS = {{years}};
+const Q = {{js:Q}};   // [區段, 題型, 單元, 考點, 答案, 配分]
+const EX = JSON.parse(document.getElementById("examData").textContent);
+const X0=56, XW=486;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const isNS=r=>r[4]==="／"||r[4]==="/";
+const lab=r=>r[3].replace(/^非選：/,"");
+const qname=l=>/^非選/.test(l)?`非選第${l.slice(2)}題`:`第 ${l} 題`;
+const qshort=l=>/^非選/.test(l)?l.slice(2):l;
+const partOf=r=>r[0]==="混合題"||r[0]==="非選擇題"?"第貳部分":r[0];
+document.getElementById("totalQ").textContent=YEARS.reduce((a,y)=>a+Q[y].length,0);
+
+/* sheet */
+let filter=null, picked=null;
+const legend=document.getElementById("legend");
+UORDER.forEach(k=>{
+  const tot=YEARS.reduce((a,y)=>a+Q[y].filter(r=>r[2]===k).length,0);
+  const b=document.createElement("button"); b.type="button"; b.setAttribute("aria-pressed","false"); b.dataset.k=k;
+  b.innerHTML=`<span class="sw" style="background:var(--u${k})"></span>${UNIT[k]}<span class="ct num">${tot}</span>`;
+  b.addEventListener("click",()=>{filter=filter===k?null:k; document.querySelectorAll("#legend button").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.k===filter))); document.querySelectorAll(".bub").forEach(x=>x.classList.toggle("dim",!!filter&&x.dataset.k!==filter));});
+  legend.appendChild(b);
+});
+const rows=document.getElementById("sheetRows");
+YEARS.forEach(y=>{
+  const r=document.createElement("div"); r.className="row";
+  r.innerHTML=`<span class="yr num">${y}</span>`;
+  const bb=document.createElement("div"); bb.className="bubbles";
+  Q[y].forEach((row,i)=>{
+    const l=EX[y].q[i].lab;
+    if(i>0 && partOf(row)!==partOf(Q[y][i-1])){const g=document.createElement("span");g.className="gap";g.setAttribute("aria-hidden","true");bb.appendChild(g);}
+    const b=document.createElement("button"); b.type="button"; b.className="bub"+(isNS(row)?" f":""); b.dataset.k=row[2];
+    b.style.background=`var(--u${row[2]})`; b.style.setProperty("--c",`var(--u${row[2]})`); b.textContent=qshort(l);
+    b.setAttribute("aria-label",`${y}年${qname(l)}，${row[1]}，${UNIT[row[2]]}，${lab(row)}`); b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",()=>{ if(picked) picked.setAttribute("aria-pressed","false"); picked=b; b.setAttribute("aria-pressed","true");
+      document.getElementById("detail").innerHTML=`<strong>${y} 年${qname(l)}</strong>　${row[1]}・${row[5]} 分・${UNIT[row[2]]}　｜　${esc(lab(row))}　<a href="#qi-${y}-${l}">看原題 ↓</a>`;
+      openInBank(y,l);});
+    bb.appendChild(b);
+  });
+  r.appendChild(bb); rows.appendChild(r);
+});
+
+/* unit bars + table */
+const upts=(y,k)=>Q[y].filter(r=>r[2]===k).reduce((a,r)=>a+(r[5]||0),0);
+document.getElementById("uLegend").innerHTML=UORDER.map(k=>`<span><i style="background:var(--u${k})"></i>${UNIT[k]}</span>`).join("");
+YEARS.forEach(y=>{
+  document.getElementById("uBars").insertAdjacentHTML("beforeend",`<div class="bar-row"><span class="yr num">${y}</span><div class="bar" role="img" aria-label="${y}年 ${UORDER.map(k=>`${UNIT[k]}${upts(y,k)}分`).join(" ")}">${UORDER.map(k=>`<span style="width:${upts(y,k)}%;background:var(--u${k})">${upts(y,k)||""}</span>`).join("")}</div><span class="note num">${y<111?"指考":"分科"}</span></div>`);
+});
+document.getElementById("uHead").innerHTML=`<tr><th>單元</th>${YEARS.map(y=>`<th class="c">${y}</th>`).join("")}<th class="c">107–110<br>每年</th><th class="c">111–115<br>每年</th></tr>`;
+document.getElementById("uTable").innerHTML=UORDER.map(k=>{
+  let o=0,nn=0;
+  const cells=YEARS.map(y=>{const p=upts(y,k); if(y<111) o+=p; else nn+=p; const i=Q[y].findIndex(r=>r[2]===k);
+    return p?`<td class="c hit"><a class="q" href="#qi-${y}-${EX[y].q[i].lab}" data-y="${y}" data-l="${EX[y].q[i].lab}" title="${Q[y].filter(r=>r[2]===k).length} 題">${p}</a></td>`:`<td class="c miss">—</td>`;}).join("");
+  const a=o/4, b=nn/5, arrow=b-a>=2?" ▲":a-b>=2?" ▼":"";
+  return `<tr><td style="white-space:nowrap"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--u${k});margin-right:7px"></span><b>${UNIT[k]}</b></td>${cells}<td class="c num">${a.toFixed(1)}</td><td class="c num"><b>${b.toFixed(1)}</b>${arrow}</td></tr>`;
+}).join("");
+document.getElementById("uTable").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,a.dataset.l);});
+
+/* types table */
+document.getElementById("tTable").innerHTML=YEARS.map(y=>{
+  const c={}, p={};
+  Q[y].forEach(r=>{c[r[1]]=(c[r[1]]||0)+1; p[r[1]]=(p[r[1]]||0)+r[5];});
+  const cell=k=>c[k]?`${c[k]} 題・${p[k]} 分`:"—";
+  const g=EX[y].g, inG=new Set(); g.forEach(x=>{for(let n=x.a;n<=x.b;n++) inG.add(n);});
+  return `<tr><td><b class="num">${y}</b> <small style="color:var(--ink-3)">${y<111?"指考":"分科"}</small></td><td class="c num">${cell("單選題")}</td><td class="c num">${cell("多選題")}</td><td class="c num">${cell("非選擇題")}</td><td class="c num">${g.length}</td><td class="c num">${inG.size}</td></tr>`;
+}).join("");
+
+/* topics */
+const TOPICS=[["清","清代"],["日治","日治"],["荷","荷蘭"],["戰後","戰後"],["戒嚴","戒嚴"],["宋","宋代"],["唐","唐代"],["元","元代"],["宗教改革","宗教改革"],["法國大革命","法國大革命"],["工業革命","工業革命"],["冷戰","冷戰"],["一戰","一戰"],["二戰","二戰"],["羅馬","羅馬"],["希臘","希臘"],["伊斯蘭","伊斯蘭"],["耶穌會","耶穌會"],["史學","史學方法"]];
+document.getElementById("topicList").innerHTML=TOPICS.map(([t,name])=>{
+  const hits=YEARS.reduce((a,y)=>a+Q[y].filter(r=>r[3].includes(t)).length,0);
+  return hits>=2?`<button type="button" data-t="${t}"><span class="ct num" style="margin:0 6px 0 0">${hits}</span>${name}</button>`:"";
+}).join("");
+document.getElementById("topicList").addEventListener("click",e=>{const b=e.target.closest("button[data-t]"); if(!b) return;
+  bYear.value="all"; bUnit.value="all"; bKind.value="all"; bSearch.value=b.dataset.t; LIMIT=60; renderBank();
+  document.getElementById("bank").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});
+
+/* non-choice */
+document.getElementById("mixedList").innerHTML=YEARS.map(y=>{
+  const ns=Q[y].map((r,i)=>isNS(r)?i:-1).filter(i=>i>=0);
+  const pts=ns.reduce((a,i)=>a+Q[y][i][5],0);
+  return `<div><span class="y">${y}</span><div><div style="font-size:13.5px;color:var(--ink-3)">非選擇題 ${ns.length} 題・共 ${pts} 分</div><ul>${ns.map(i=>{const r=Q[y][i], l=EX[y].q[i].lab;return `<li><a href="#qi-${y}-${l}" data-y="${y}" data-l="${l}">${qname(l)}</a>　${UNIT[r[2]]}　<span class="pts">${r[5]} 分</span>　${esc(lab(r))}</li>`;}).join("")}</ul></div></div>`;
+}).join("");
+document.getElementById("mixedList").addEventListener("click",e=>{const a=e.target.closest("a[data-y]"); if(!a) return; e.preventDefault(); openInBank(+a.dataset.y,a.dataset.l);});
+
+/* question bank */
+function paperOf(y,slices,label){const W=EX[y].w,H=EX[y].h;return `<div class="paper">${slices.map(([p,a,b])=>`<svg viewBox="${X0} ${a} ${XW} ${(b-a).toFixed(1)}" role="img" aria-label="${label}"><image href="pages/${y}hi-${p}.webp" x="0" y="0" width="${W}" height="${H}"/></svg>`).join("")}</div>`;}
+const ITEMS=[];
+YEARS.forEach(y=>EX[y].q.forEach((q,i)=>{
+  const r=Q[y][i], n=+q.lab, g=isNaN(n)?null:(EX[y].g.find(g=>n>=g.a&&n<=g.b)||null);
+  ITEMS.push({y,l:q.lab,q,r,g,hay:(r[3]+" "+UNIT[r[2]]+" "+q.t+" "+(g?g.t:"")).replace(/\s+/g,"")});
+}));
+const bYear=document.getElementById("bYear"), bUnit=document.getElementById("bUnit"), bKind=document.getElementById("bKind"), bSearch=document.getElementById("bSearch"), bAns=document.getElementById("bAns");
+YEARS.forEach(y=>bYear.insertAdjacentHTML("beforeend",`<option value="${y}">${y} 年</option>`));
+UORDER.forEach(k=>bUnit.insertAdjacentHTML("beforeend",`<option value="${k}">${UNIT[k]}</option>`));
+const ansHTML=it=>isNS(it.r)?`<span class="ans f">非選 ${it.r[5]} 分</span>`:`<span class="ans">${esc(it.r[4])}</span>`;
+function snippet(it,kw){
+  if(kw){const i=it.hay.indexOf(kw); if(i>=0){const s=Math.max(0,i-20); return esc(it.hay.slice(s,i))+"<mark>"+esc(kw)+"</mark>"+esc(it.hay.slice(i+kw.length,i+kw.length+40));}}
+  return esc(it.q.t.replace(/\s+/g," ").replace(/^(\d{1,2}|[一二])\s*[.．、]\s*/,"").slice(0,80));
+}
+let LIMIT=60;
+function renderBank(openId){
+  const y=bYear.value, u=bUnit.value, k=bKind.value, kw=bSearch.value.replace(/\s+/g,"");
+  const hits=ITEMS.filter(it=>(y==="all"||it.y==+y)&&(u==="all"||it.r[2]===u)&&(k==="all"||it.r[1]===k)&&(!kw||it.hay.includes(kw)));
+  const shown=hits.slice(0,Math.max(LIMIT,openId?hits.findIndex(h=>`${h.y}-${h.l}`===openId)+1:0));
+  const list=document.getElementById("qlist");
+  list.innerHTML=shown.map(it=>`<details class="qitem" id="qi-${it.y}-${it.l}" data-y="${it.y}" data-l="${it.l}">
+    <summary><span class="qid"><span class="dot" style="background:var(--u${it.r[2]})"></span>${it.y}-${/^非選/.test(it.l)?it.l:String(it.l).padStart(2,"0")}</span>
+    <span class="qsum"><span class="lab">${esc(lab(it.r))}<small>${it.g?"題組・":""}${it.r[1]}・${it.r[5]} 分・${UNIT[it.r[2]]}</small></span><span class="snip">${snippet(it,kw)}</span></span>${bAns.checked?ansHTML(it):"<span></span>"}</summary>
+    <div class="qbody"></div></details>`).join("")+(hits.length>shown.length?`<button type="button" class="more" id="moreBtn">再顯示 ${Math.min(60,hits.length-shown.length)} 題（共 ${hits.length} 題）</button>`:"");
+  document.getElementById("bCount").textContent=`符合 ${hits.length} 題`;
+  const mb=document.getElementById("moreBtn"); if(mb) mb.addEventListener("click",()=>{LIMIT+=60;renderBank();});
+  list.querySelectorAll("details.qitem").forEach(d=>d.addEventListener("toggle",()=>{if(d.open) fillBody(d);}));
+}
+function fillBody(d){
+  const body=d.querySelector(".qbody"); if(body.dataset.done) return;
+  const it=ITEMS.find(x=>x.y==+d.dataset.y&&x.l===d.dataset.l);
+  let h="";
+  if(it.g) h+=`<details class="passage" ${+it.l===it.g.a?"open":""}><summary>題組題文（第 ${it.g.a}–${it.g.b} 題共用）</summary>${paperOf(it.y,it.g.s,`${it.y}年第${it.g.a}至${it.g.b}題題文`)}</details>`;
+  h+=paperOf(it.y,it.q.s,`${it.y}年${qname(it.l)}原題`);
+  const ns=isNS(it.r);
+  h+=`<div class="qtools">${ns?`<span class="bank-count">非選擇題 ${it.r[5]} 分・參考答案請見大考中心評分原則</span>`:`<button type="button" class="an">看答案</button>`}<button type="button" class="tx">顯示文字版</button></div><pre class="qtext" hidden></pre>`;
+  body.innerHTML=h; body.dataset.done="1";
+  body.querySelector(".qtext").textContent=(it.g?it.g.t+"\n\n":"")+it.q.t;
+  const an=body.querySelector(".an");
+  if(an) an.addEventListener("click",e=>{const b=e.target.closest("button"); if(b.dataset.on){b.textContent="看答案";delete b.dataset.on;}else{b.innerHTML=`參考答案：<span class="ans-reveal">${/^[A-E]$/.test(it.r[4])?"("+it.r[4]+")":esc(it.r[4])}</span>`;b.dataset.on="1";}});
+  body.querySelector(".tx").addEventListener("click",e=>{const p=body.querySelector(".qtext"); p.hidden=!p.hidden; e.target.textContent=p.hidden?"顯示文字版":"隱藏文字版";});
+}
+function openInBank(y,l){
+  l=String(l); bYear.value=String(y); bUnit.value="all"; bKind.value="all"; bSearch.value="";
+  renderBank(`${y}-${l}`);
+  const d=document.getElementById(`qi-${y}-${l}`);
+  if(d){d.open=true; fillBody(d); d.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});}
+}
+bAns.addEventListener("change",()=>{const open=[...document.querySelectorAll("details.qitem[open]")].map(d=>d.id);renderBank();open.forEach(id=>{const d=document.getElementById(id);if(d){d.open=true;fillBody(d);}});});
+[bYear,bUnit,bKind].forEach(el=>el.addEventListener("change",()=>{LIMIT=60;renderBank();}));
+let st; bSearch.addEventListener("input",()=>{clearTimeout(st);st=setTimeout(()=>{LIMIT=60;renderBank();},180);});
+bYear.value=String(YEARS[YEARS.length-1]); renderBank();
+</script>
+
+</body></html>
