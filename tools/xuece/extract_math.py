@@ -23,11 +23,11 @@ from markers import lines  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
 OUT = ROOT / "assets" / "xuece-math" / "pages"
-OTHER = {"ph": "phy"}  # 借用本程式的其他科：科目代號 → 輸出代號
+OTHER = {"ph": "phy", "ch": "chem"}  # 借用本程式的其他科：科目代號 → 輸出代號
 
 QRE = re.compile(r"^\s*(\d{1,2}|[A-H])\s*[.．]")
 SEC = re.compile(r"^\s*(?:[一二三]、\s*|第[壹貳參]部分[：:、]\s*)(單選題|多選題|選填題|混合題|非選擇題)")
-GRE = re.compile(r"^\s*(?:第\s*)?(\d{1,2})\s*(?:至|-|–)\s*(\d{1,2})\s*題為題組")
+GRE = re.compile(r"^\s*(?:第\s*)?(\d{1,2})\s*(?:至|-|–)\s*(\d{1,2})\s*題?\s*為題組")  # 也接受「6-7為題組」
 NSQ = re.compile(r"^\s*([一二三四])\s*[、.．]")  # 指考非選擇題大題（「一、」或「一.」）
 PTS = re.compile(r"占\s*(\d[\d\s]*)\s*分")
 
