@@ -275,7 +275,7 @@ mark{background:var(--card-red-soft);color:inherit}
     <thead><tr><th>年度</th><th>題目</th><th>主題</th><th class="c">0 級分</th><th class="c">1 級分</th><th class="c">2 級分</th><th class="c">3 級分</th></tr></thead>
     <tbody id="nsTable"></tbody>
   </table></div>
-  <p class="note-p">官方閱卷說明強調：策略適切且表達合理時，即使計算有誤仍可能給分；未恰當表達解題策略與過程合理性者不給 3 級分。</p>
+  <p class="note-p">依官方閱卷說明整理：策略適切且表達合理時，即使計算有誤仍可能給分；未恰當表達解題策略與過程合理性者不給 3 級分。</p>
 </section>
 
 <section id="levels">
@@ -337,6 +337,7 @@ mark{background:var(--card-red-soft);color:inherit}
   <div class="source">
     <ul>
       <li>原始資料：心測中心國中教育會考官網「歷屆試題」頁所連結的 111–115 年數學科試題本、試題說明、選擇題參考答案一覽表、數學非選擇題各級分人數百分比統計表，以及「各科計分與閱卷結果說明」中的數學非選擇題閱卷說明。</li>
+      <li>試題說明、閱卷說明等官方文件的內容，本頁只以數據或本站自行撰寫的摘要呈現，未轉載全文；完整內容請見國中教育會考官網。</li>
       <li>評量能力題數、能力等級示例與非選擇題級分比例取自官方文件；參考答案已用試題說明中的示例題逐一核對，全部相符。</li>
       <li>主題與考點是本頁逐題判讀的結果，不是官方分類。主題名稱依 108 課綱學習內容類別：數與量、代數、函數、坐標幾何、空間與形狀（本頁稱幾何）、資料與不確定性。</li>
       <li>「試題庫」的題目圖片裁切自官方試題本 PDF，未經改動；「文字版」由 PDF 自動擷取，數學式與圖形常無法正確呈現，引用時請以圖片為準。</li>
@@ -490,7 +491,7 @@ function fillBody(d){
   h+=paperHTML(it.y,it.q.s,`${it.y}年第${qname(it.n)}題原題`);
   if(it.ns){
     const [t,p]=NSD[it.y][it.n-26]; const note=(NSNOTE[it.y]||[])[it.n-26];
-    h+=`<div class="nsbox"><div><b>官方說明的評量重點</b>：${esc(t)}（每題 0–3 級分）</div>${note?`<div>${esc(note)}</div>`:""}<div class="nsbar" role="img" aria-label="級分比例 ${p.map((v,i)=>i+"級分"+v+"%").join(" ")}">${p.map((v,i)=>`<span style="width:${v}%;background:var(--g${i})" title="${i} 級分 ${v}%">${v>=8?i+"級 "+Math.round(v)+"%":""}</span>`).join("")}</div></div>`;
+    h+=`<div class="nsbox"><div><b>本站整理的題目重點</b>：${esc(t)}（每題 0–3 級分）</div>${note?`<div>${esc(note)}<small>（本站依官方閱卷資料摘要，完整評分原則請見官網）</small></div>`:""}<div class="nsbar" role="img" aria-label="級分比例 ${p.map((v,i)=>i+"級分"+v+"%").join(" ")}">${p.map((v,i)=>`<span style="width:${v}%;background:var(--g${i})" title="${i} 級分 ${v}%">${v>=8?i+"級 "+Math.round(v)+"%":""}</span>`).join("")}</div></div>`;
     h+=`<div class="qtools"><button type="button" class="cp">複製題目文字</button><button type="button" class="tx">顯示文字版</button><span class="msg" aria-live="polite"></span></div>`;
   } else {
     h+=`<div class="qtools"><button type="button" class="an">看答案</button><button type="button" class="cp">複製題目文字</button><button type="button" class="tx">顯示文字版</button><span class="msg" aria-live="polite"></span></div>`;
