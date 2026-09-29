@@ -71,9 +71,28 @@ def render(tpl, years, subj):
     return re.sub(r"\{\{years\}\}|\{\{(json|js):(\w+)\}\}", sub, tpl)
 
 
+# 著作權與來源說明：自動加在每一頁最下方
+COPY_NOTE = (
+    '<footer class="copy-note" style="max-width:1040px;margin:48px auto 0;padding-top:14px;'
+    'border-top:1px solid var(--rule,#E3E1DB);font-size:12.5px;line-height:1.75;color:var(--ink-3,#7A818A)">'
+    '<p style="margin:0 0 6px"><b>著作權與來源說明</b>　本網站收錄的國中教育會考、大學學測、分科測驗（含 110 年以前指考）試題，'
+    '依著作權法第 9 條第 1 項第 5 款，屬依法令舉行之考試試題，不得為著作權之標的；但試題中引用的文章、詩文、圖片、照片、漫畫與地圖等，'
+    '著作權仍屬原作者所有。本網站僅供非營利之教學與研究使用，請勿作商業用途。題目圖片裁切自官方公布的試卷，'
+    '答案、配分與評分原則以官方公布為準；單元與考點分類為本站逐題判讀，並非官方分類。</p>'
+    '<p style="margin:0">官方來源：'
+    '<a href="https://cap.rcpet.edu.tw/examination.html" target="_blank" rel="noopener" style="color:inherit">國中教育會考・歷屆試題</a>｜'
+    '<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634" target="_blank" rel="noopener" style="color:inherit">大考中心・學測歷年試題</a>｜'
+    '<a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052427633128416650" target="_blank" rel="noopener" style="color:inherit">大考中心・分科測驗（110 前指考）歷年試題</a>'
+    '。如權利人認為有不當使用，請透過 <a href="https://github.com/bgjd315-cloud/huikao-analysis/issues" target="_blank" rel="noopener" style="color:inherit">GitHub 專案頁</a>告知，將儘速處理。</p>'
+    '</footer>\n'
+)
+
+
 def finish(html, lang="zh-Hant"):
     html = html.replace("<html>", f'<html lang="{lang}">', 1)
     html = html.replace("<meta charset=utf8>", "<meta charset=utf8>" + HEAD_EXTRA, 1)
+    assert html.count("</body></html>") == 1, "頁面結尾必須是唯一的 </body></html>"
+    html = html.replace("</body></html>", COPY_NOTE + "</body></html>", 1)
     return html
 
 
