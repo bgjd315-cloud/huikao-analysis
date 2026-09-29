@@ -23,7 +23,7 @@ from markers import lines  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
 OUT = ROOT / "assets" / "xuece-math" / "pages"
-OTHER = {"ph": "phy", "ch": "chem", "bi": "bio", "hi": "hist", "ge": "geo"}  # 借用本程式的其他科：科目代號 → 輸出代號
+OTHER = {"ph": "phy", "ch": "chem", "bi": "bio", "hi": "hist", "ge": "geo", "ci": "civ"}  # 借用本程式的其他科：科目代號 → 輸出代號
 
 QRE = re.compile(r"^\s*(\d{1,2}|[A-H])\s*[.．]")
 SEC = re.compile(r"^\s*(?:[一二三四]、\s*|第[壹貳參]部分[：:、]\s*|[壹貳參]、\s*)(單選題|多選題|選填題|混合題|非選擇題|閱讀題|實驗題|選擇題)")  # 生物另有閱讀題、實驗題
