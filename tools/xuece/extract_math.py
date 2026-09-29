@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """學測數學：試卷切圖、逐題切片、題型、答案（含選填格）擷取。
 
-科目代號：m＝數學（107–110）、ma＝數學A、mb＝數學B（111 起）。
-用法：python tools/xuece/extract_math.py 115-ma 115-mb 110-m ...
+科目代號：m＝數學（107–110）、ma＝數學A、mb＝數學B（111 起）、mj＝數學甲、mi＝數學乙；
+ph＝物理（107–110 指考、111 起分科測驗，版面與數甲相同，另存到 xuece-phy）。
+用法：python tools/xuece/extract_math.py 115-ma 115-mb 110-m 115-ph ...
 輸入：incoming/xuece/<年>-<科>-paper.pdf、-ans.pdf
-輸出：assets/xuece-math/pages/<年><科>-<頁>.webp、incoming/xuece/extract-math-<年>-<科>.json
+輸出：assets/xuece-math（物理為 xuece-phy）/pages/<年><科>-<頁>.webp、
+      incoming/xuece/extract-math（物理為 extract-phy）-<年>-<科>.json
 """
 import json
 import re
@@ -21,6 +23,7 @@ from markers import lines  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 INC = ROOT / "incoming" / "xuece"
 OUT = ROOT / "assets" / "xuece-math" / "pages"
+OTHER = {"ph": "phy"}  # 借用本程式的其他科：科目代號 → 輸出代號
 
 QRE = re.compile(r"^\s*(\d{1,2}|[A-H])\s*[.．]")
 SEC = re.compile(r"^\s*(?:[一二三]、\s*|第[壹貳參]部分[：:、]\s*)(單選題|多選題|選填題|混合題|非選擇題)")
@@ -81,11 +84,12 @@ def parse_answers(path):
 def extract(key):
     year, subj = key.split("-")
     doc = pymupdf.open(INC / f"{key}-paper.pdf")
-    OUT.mkdir(parents=True, exist_ok=True)
+    out = ROOT / "assets" / f"xuece-{OTHER[subj]}" / "pages" if subj in OTHER else OUT
+    out.mkdir(parents=True, exist_ok=True)
     for pn in range(1, len(doc)):
         pix = doc[pn].get_pixmap(matrix=pymupdf.Matrix(SCALE, SCALE))
         Image.frombytes("RGB", (pix.width, pix.height), pix.samples).save(
-            OUT / f"{year}{subj}-{pn}.webp", "WEBP", quality=80, method=6)
+            out / f"{year}{subj}-{pn}.webp", "WEBP", quality=80, method=6)
     boxes = {pn: content_boxes(doc[pn]) for pn in range(1, len(doc))}
     M = []
     seen = []
@@ -97,6 +101,7 @@ def extract(key):
         for (x0, y0, x1, y1), t in page_lines:
             if x0 > 80 or y0 < 75 or y0 > 785:
                 continue
+            t = re.sub("[-]", lambda c: chr(ord(c[0]) - 0xF000), t)  # Symbol 字型的題號（如 110 物理第 22 題）
             if m := SEC.match(t):
                 pts = PTS.search(t)
                 M.append(("S", pn, y0, m[1]))
@@ -178,7 +183,7 @@ def extract(key):
 if __name__ == "__main__":
     for key in sys.argv[1:]:
         d = extract(key)
-        (INC / f"extract-math-{key}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), "utf-8")
+        (INC / f"extract-{OTHER.get(key.split('-')[1], 'math')}-{key}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), "utf-8")
         runs = []
         for q in d["q"]:
             if runs and runs[-1][0] == q["sec"]:
