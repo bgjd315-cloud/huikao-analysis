@@ -36,6 +36,13 @@ SUBJECTS = {  # 資料夾代號 → 顯示名稱
     "xuece-civ": "分科公民",
 }
 HEAD_EXTRA = '<meta name="robots" content="noindex,nofollow">'
+# 跨科搜尋的直達連結：網址帶 #open=年,題號（或其他參數）時，載入後自動在試題庫打開該題
+OPEN_HASH = r"""<script>(function(){var m=location.hash.match(/^#open=(.+)$/);if(!m)return;
+var a=m[1].split(",").map(function(v){v=decodeURIComponent(v);return /^\d+$/.test(v)?+v:v;});
+function go(){if(typeof openInBank!=="function")return;openInBank.apply(null,a);
+setTimeout(function(){var d=document.querySelector("details.qitem[open]");if(d)d.scrollIntoView({block:"start"});},450);}
+if(document.readyState==="complete")setTimeout(go,60);else addEventListener("load",function(){setTimeout(go,60);});})();</script>
+"""
 
 
 def load_years(subj):
@@ -86,6 +93,7 @@ def main():
             sys.exit(f"[錯誤] {subj} 還有未替換的佔位符：{sorted(set(left))}")
         out = DIST / subj
         out.mkdir()
+        html = html.replace("</body></html>", OPEN_HASH + "</body></html>", 1)
         (out / "index.html").write_text(finish(html), "utf-8")
         src = ROOT / "assets" / subj
         if src.exists():
@@ -94,6 +102,15 @@ def main():
 
     index = (ROOT / "templates" / "index.html").read_text("utf-8")
     (DIST / "index.html").write_text(finish(index), "utf-8")
+
+    # 跨科搜尋頁：索引由 tools/search_index.py 從各科 data/ 產生
+    sys.path.insert(0, str(ROOT / "tools"))
+    from search_index import build_index
+    idx = build_index(ROOT)
+    (DIST / "search").mkdir()
+    (DIST / "search" / "data.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), "utf-8")
+    (DIST / "search" / "index.html").write_text(finish((ROOT / "templates" / "search.html").read_text("utf-8")), "utf-8")
+    print(f"跨科搜尋：{len(idx['items'])} 題")
     (DIST / "robots.txt").write_text("User-agent: *\nDisallow: /\n", "utf-8")
     (DIST / ".nojekyll").write_text("", "utf-8")
     print(f"完成：{DIST}")

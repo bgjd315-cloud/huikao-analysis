@@ -1,0 +1,209 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>跨科搜尋</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FAF9F6; --surface:#FFFFFF; --ink:#1E2227; --ink-2:#4A515A; --ink-3:#7A818A;
+  --rule:#E3E1DB; --rule-2:#EFEDE8; --red:#C23B4E;
+  --lvA:#C23B4E; --lvB:#D08A2C; --lvC:#8A8F98;
+  --zh:#C23B4E; --en:#2E9384; --ma:#2F6DB5; --so:#B8702A; --sc:#7A5AB8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+    --rule:#33373D; --rule-2:#2A2E33; --red:#E8687A;
+    --lvA:#E8687A; --lvB:#E3A450; --lvC:#9CA1AA;
+    --zh:#E8687A; --en:#3FB3A2; --ma:#5B93D6; --so:#E0954A; --sc:#A58BE0;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#16181B; --surface:#1E2125; --ink:#ECEDEF; --ink-2:#B9BEC5; --ink-3:#8C929A;
+  --rule:#33373D; --rule-2:#2A2E33; --red:#E8687A;
+  --lvA:#E8687A; --lvB:#E3A450; --lvC:#9CA1AA;
+  --zh:#E8687A; --en:#3FB3A2; --ma:#5B93D6; --so:#E0954A; --sc:#A58BE0;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:15.5px;line-height:1.75;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:"LXGW WenKai TC","Kaiti TC","DFKai-SB",serif;text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:clamp(30px,5vw,44px)}
+h2{font-size:26px}
+h3{font-size:21px}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ma);outline-offset:2px}
+header{padding-block:48px 28px;border-bottom:2px solid var(--ink);display:grid;gap:14px}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;color:var(--red);font-weight:700}
+.lede{max-width:64ch;color:var(--ink-2);font-size:16.5px}
+.meta{font-size:13px;color:var(--ink-3)}
+section{padding-block:40px 4px;display:grid;gap:16px}
+.sec-head{display:grid;gap:6px}
+.sec-head p{color:var(--ink-2);max-width:68ch}
+
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.subj{background:var(--surface);border:1px solid var(--rule);border-top:4px solid var(--c);border-radius:6px;padding:18px 18px 16px;display:grid;gap:10px;align-content:start}
+.subj-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.subj .fmt{font-size:13px;color:var(--ink-3);text-align:right}
+.subj ul{margin:0;padding-left:1.1em;display:grid;gap:4px;font-size:14px;color:var(--ink-2)}
+.subj .go{justify-self:start;margin-top:4px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--c);text-decoration:none;border:1.5px solid var(--c);border-radius:4px;padding:5px 12px}
+.subj .go:hover{background:var(--rule-2)}
+
+.tbl-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-weight:700;font-size:13px;color:var(--ink-2);background:var(--rule-2);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+
+.plot{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;gap:10px}
+.plot-legend{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px;color:var(--ink-2)}
+.plot-legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.prow{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:center}
+.prow .lab{font-size:14px;font-weight:700}
+.prow .lab small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-3)}
+.track{position:relative;height:30px;border-bottom:1px solid var(--rule)}
+.track .m{position:absolute;bottom:6px;width:11px;height:11px;border-radius:50%;transform:translateX(-50%);border:1.5px solid var(--surface)}
+.axis{display:grid;grid-template-columns:92px 1fr;gap:12px;font-size:11.5px;color:var(--ink-3)}
+.axis .ticks{display:flex;justify-content:space-between}
+
+.patterns{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--rule)}
+.patterns > div{padding:14px 20px 14px 0;border-bottom:1px solid var(--rule);display:grid;gap:4px}
+.patterns p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.patterns{grid-template-columns:1fr}}
+.source{font-size:13px;color:var(--ink-3)}
+</style>
+<style>
+.kicker{font-size:12px;letter-spacing:.12em;color:var(--ink-3);font-weight:700}
+.jump{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;padding-top:4px}
+.jump a{text-decoration:none;color:var(--ink-2);border-bottom:1.5px solid var(--rule)}
+.jump a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.qsearch{display:flex;gap:8px;max-width:620px}
+.qsearch input{flex:1;min-width:0;font:inherit;font-size:16px;padding:10px 14px;border:1.5px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+.qsearch input:focus{outline:none;border-color:var(--ink)}
+.qsearch button{font:inherit;font-weight:700;padding:10px 18px;border-radius:6px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.qhint{font-size:13px;color:var(--ink-3)}
+.qhint a{color:var(--ink-2)}
+.group-head{padding-top:44px;border-top:2px solid var(--ink);margin-top:36px}
+.group-head h2{font-size:30px}
+td.chg{min-width:220px}
+td a{text-decoration:none}
+td a:hover{text-decoration:underline}
+</style>
+<style>
+.back{display:inline-block;margin-top:18px;font-size:13.5px;color:var(--ink-3);text-decoration:none}
+.kicker{font-size:12px;letter-spacing:.12em;color:var(--ink-3);font-weight:700}
+.ctl{display:grid;gap:10px;background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 16px}
+.row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.row label{font-size:13px;color:var(--ink-3)}
+#q{flex:1;min-width:0;font:inherit;font-size:16px;padding:10px 14px;border:1.5px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink)}
+#q:focus{outline:none;border-color:var(--ink)}
+select{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--rule);border-radius:5px;background:var(--paper);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:13px;padding:3px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:700}
+.chip .n{font-variant-numeric:tabular-nums;color:var(--ink-3)}
+.status{font-size:14px;color:var(--ink-2)}
+.results{display:grid;border-top:1px solid var(--rule)}
+.res{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:12px 4px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}
+.res:hover{background:var(--rule-2)}
+.res .tag{grid-row:span 2;display:grid;gap:2px;min-width:118px;font-size:13px;color:var(--ink-3)}
+.res .tag b{font-size:14px;color:var(--ink);display:flex;align-items:center;gap:6px}
+.res .tag b i{width:9px;height:9px;border-radius:50%;flex:none}
+.res .k{font-weight:700;font-size:15px}
+.res .k small{font-weight:400;color:var(--ink-3);margin-left:8px;font-size:13px}
+.res .t{font-size:14px;color:var(--ink-2);overflow-wrap:anywhere}
+mark{background:#F6E27A;color:inherit;padding:0 1px;border-radius:2px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) mark{background:#6B5A12}}
+:root[data-theme="dark"] mark{background:#6B5A12}
+.more{justify-self:start;margin-top:12px;font:inherit;font-size:14px;padding:6px 14px;border:1.5px solid var(--ink);border-radius:5px;background:transparent;color:var(--ink);cursor:pointer}
+.empty{font-size:14.5px;color:var(--ink-2);display:grid;gap:10px}
+@media (max-width:560px){.res{grid-template-columns:1fr}.res .tag{grid-row:auto;display:flex;flex-wrap:wrap;gap:4px 10px}}
+</style>
+
+<div class="wrap">
+<a class="back" href="../">← 回總覽</a>
+<header>
+  <div class="eyebrow">國中教育會考 · 大學學測 · 分科測驗</div>
+  <h1>跨科搜尋</h1>
+  <p class="lede">用關鍵字一次搜尋三種考試、十七個分析頁的原題，比對題目文字、考點與類別。點選結果會開啟該科頁面的原題。</p>
+</header>
+
+<section>
+  <div class="ctl">
+    <div class="row"><input id="q" type="search" placeholder="輸入關鍵字，多個關鍵字以空白分隔（例如：颱風 路徑）" aria-label="搜尋關鍵字" autocomplete="off"></div>
+    <div class="row">
+      <label for="grp">考試</label><select id="grp"><option value="">全部</option><option>會考</option><option>學測</option><option>分科測驗</option></select>
+      <label for="yr">年度</label><select id="yr"><option value="">全部</option></select>
+    </div>
+    <div class="chips" id="subs" role="group" aria-label="依科目篩選"></div>
+  </div>
+  <div class="status" id="status" aria-live="polite">載入資料中…</div>
+  <div class="results" id="results"></div>
+</section>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const EXAMPLES=["颱風","比例原則","GDP","光電效應","孟德爾","宗教改革","人口金字塔","文言文","供需","電磁感應"];
+let S=[], I=[], pick=null, LIMIT=50;
+const params=new URLSearchParams(location.search);
+$("q").value=params.get("q")||"";
+
+function terms(){return $("q").value.trim().toLowerCase().split(/\s+/).filter(Boolean);}
+function hl(text,ts){
+  let out=esc(text);
+  ts.forEach(t=>{const re=new RegExp(esc(t).replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"gi"); out=out.replace(re,m=>`<mark>${m}</mark>`);});
+  return out;
+}
+function snippet(t,ts){
+  const low=t.toLowerCase(); let i=-1;
+  for(const x of ts){const j=low.indexOf(x); if(j>=0&&(i<0||j<i)) i=j;}
+  if(i<0) return t.slice(0,90);
+  const s=Math.max(0,i-30); return (s>0?"…":"")+t.slice(s,s+110)+(s+110<t.length?"…":"");
+}
+function run(){
+  const ts=terms(), g=$("grp").value, y=$("yr").value;
+  const url=new URL(location.href); if(ts.length) url.searchParams.set("q",$("q").value.trim()); else url.searchParams.delete("q"); history.replaceState(null,"",url);
+  if(!ts.length){
+    $("status").innerHTML=`<div class="empty"><p>輸入關鍵字開始搜尋，或試試：</p><div class="chips">${EXAMPLES.map(e=>`<button type="button" class="chip ex">${e}</button>`).join("")}</div></div>`;
+    $("results").innerHTML=""; $("subs").innerHTML="";
+    document.querySelectorAll(".ex").forEach(b=>b.addEventListener("click",()=>{$("q").value=b.textContent; LIMIT=50; run();}));
+    return;
+  }
+  const base=I.filter(it=>{
+    const s=S[it[0]]; if(g&&s.group!==g) return false; if(y&&String(it[1])!==y) return false;
+    return ts.every(t=>it.hay.includes(t));
+  });
+  const cnt={}; base.forEach(it=>cnt[it[0]]=(cnt[it[0]]||0)+1);
+  if(pick!==null&&!cnt[pick]) pick=null;
+  $("subs").innerHTML=S.map((s,i)=>cnt[i]?`<button type="button" class="chip" data-i="${i}" aria-pressed="${pick===i}"><i style="width:8px;height:8px;border-radius:50%;background:var(${s.c})"></i>${esc(s.name)}<span class="n">${cnt[i]}</span></button>`:"").join("");
+  document.querySelectorAll("#subs .chip").forEach(b=>b.addEventListener("click",()=>{const i=+b.dataset.i; pick=pick===i?null:i; LIMIT=50; run();}));
+  const hits=(pick===null?base:base.filter(it=>it[0]===pick)).map(it=>{
+    const kc=(it[4]+" "+it[5]).toLowerCase(); let score=0; ts.forEach(t=>{if(kc.includes(t)) score+=10;});
+    return [score,it];
+  }).sort((a,b)=>b[0]-a[0]||b[1][1]-a[1][1]||a[1][0]-b[1][0]).map(x=>x[1]);
+  $("status").textContent=hits.length?`找到 ${hits.length} 題${pick!==null?`（${S[pick].name}）`:""}，分布在 ${Object.keys(cnt).length} 個分析頁`:"沒有符合的題目，試試較短或不同的關鍵字。";
+  const shown=hits.slice(0,LIMIT);
+  $("results").innerHTML=shown.map(it=>{
+    const s=S[it[0]], href=`../${s.key}/#open=${it[2].map(v=>encodeURIComponent(v)).join(",")}`;
+    return `<a class="res" href="${href}"><span class="tag"><b><i style="background:var(${s.c})"></i>${esc(s.name)}</b><span>${it[1]} 年・第 ${esc(it[3])} 題</span></span>`+
+      `<span class="k">${hl(it[4]||"（未分類考點）",ts)}<small>${hl(it[5],ts)}</small></span><span class="t">${hl(snippet(it[6],ts),ts)}</span></a>`;
+  }).join("")+(hits.length>shown.length?`<button type="button" class="more" id="more">再顯示 ${Math.min(50,hits.length-shown.length)} 題（共 ${hits.length} 題）</button>`:"");
+  const m=$("more"); if(m) m.addEventListener("click",()=>{LIMIT+=50; run();});
+}
+fetch("data.json").then(r=>r.json()).then(d=>{
+  S=d.subjects; I=d.items; I.forEach(it=>it.hay=(S[it[0]].name+" "+it[4]+" "+it[5]+" "+it[6]).toLowerCase());
+  const ys=[...new Set(I.map(it=>it[1]))].sort((a,b)=>b-a);
+  $("yr").insertAdjacentHTML("beforeend",ys.map(y=>`<option value="${y}">${y} 年</option>`).join(""));
+  let t; $("q").addEventListener("input",()=>{clearTimeout(t); t=setTimeout(()=>{LIMIT=50; pick=null; run();},200);});
+  [$("grp"),$("yr")].forEach(el=>el.addEventListener("change",()=>{LIMIT=50; pick=null; run();}));
+  run();
+}).catch(()=>{$("status").textContent="搜尋資料載入失敗，請重新整理頁面。";});
+</script>
+</body></html>

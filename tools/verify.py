@@ -13,7 +13,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ["", "guowen/", "english/", "math/", "social/", "science/", "xuece/", "xuece-en/", "xuece-math/", "xuece-soc/", "xuece-sci/", "xuece-earth/", "xuece-phy/", "xuece-chem/", "xuece-bio/", "xuece-hist/", "xuece-geo/", "xuece-civ/"]
+PAGES = ["", "guowen/", "english/", "math/", "social/", "science/", "xuece/", "xuece-en/", "xuece-math/", "xuece-soc/", "xuece-sci/", "xuece-earth/", "xuece-phy/", "xuece-chem/", "xuece-bio/", "xuece-hist/", "xuece-geo/", "xuece-civ/", "search/?q=颱風"]
 
 
 def serve(directory, port):
@@ -68,8 +68,33 @@ def main():
                     for line in list(difflib.unified_diff(old.splitlines(), text.splitlines(), lineterm="", n=0))[:20]:
                         print("       ", line)
             ok = ok and status == "OK"
+        ok = check_deep_links(b) and ok
         b.close()
     sys.exit(0 if ok else 1)
+
+
+def check_deep_links(browser):
+    """跨科搜尋的直達連結：每一科取中間一題，確認開啟後該題在試題庫中展開。"""
+    idx = json.loads((ROOT / "dist" / "search" / "data.json").read_text("utf-8"))
+    by = {}
+    for it in idx["items"]:
+        by.setdefault(it[0], []).append(it)
+    good = 0
+    for si, items in sorted(by.items()):
+        it = items[len(items) // 2]
+        key = idx["subjects"][si]["key"]
+        args = ",".join(str(a) for a in it[2])
+        pg = browser.new_page()
+        pg.goto(f"http://127.0.0.1:8765/{key}/#open={args}", wait_until="networkidle")
+        pg.wait_for_timeout(700)
+        opened = pg.evaluate("[...document.querySelectorAll('details.qitem[open]')].map(d=>d.id)")
+        pg.close()
+        hit = any(str(it[1]) in o for o in opened)
+        good += hit
+        if not hit:
+            print(f"[有問題] 直達連結 /{key}/#open={args} 沒有打開題目（開啟：{opened[:3]}）")
+    print(f"[{'OK' if good == len(by) else '有問題'}] 直達連結 {good}/{len(by)} 科可正確打開原題")
+    return good == len(by)
 
 
 if __name__ == "__main__":

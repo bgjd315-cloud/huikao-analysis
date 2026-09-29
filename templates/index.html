@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>會考五科命題總覽</title>
+<title>大考命題分析總覽</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
@@ -77,17 +77,41 @@ tbody tr:last-child td{border-bottom:0}
 @media (max-width:640px){.patterns{grid-template-columns:1fr}}
 .source{font-size:13px;color:var(--ink-3)}
 </style>
+<style>
+.kicker{font-size:12px;letter-spacing:.12em;color:var(--ink-3);font-weight:700}
+.jump{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;padding-top:4px}
+.jump a{text-decoration:none;color:var(--ink-2);border-bottom:1.5px solid var(--rule)}
+.jump a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.qsearch{display:flex;gap:8px;max-width:620px}
+.qsearch input{flex:1;min-width:0;font:inherit;font-size:16px;padding:10px 14px;border:1.5px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+.qsearch input:focus{outline:none;border-color:var(--ink)}
+.qsearch button{font:inherit;font-weight:700;padding:10px 18px;border-radius:6px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.qhint{font-size:13px;color:var(--ink-3)}
+.qhint a{color:var(--ink-2)}
+.group-head{padding-top:44px;border-top:2px solid var(--ink);margin-top:36px}
+.group-head h2{font-size:30px}
+#huikao{border-top:0;margin-top:0;padding-top:36px}
+td.chg{min-width:220px}
+td a{text-decoration:none}
+td a:hover{text-decoration:underline}
+</style>
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">國中教育會考 · 111–115 年 · 五科</div>
-  <h1>會考五科命題總覽</h1>
-  <p class="lede">國文、英語、數學、社會、自然五科的命題分析入口。每一科都依心測中心公布的試題本、試題說明與參考答案逐題分類，並附可搜尋、含答案的原題試題庫。這頁整理五科的共同規律，點選下方卡片進入各科。</p>
-  <p class="meta">資料來源：國中教育會考官網「歷屆試題」｜整理日期：2026-09-27</p>
+  <div class="eyebrow">國中教育會考 · 大學學測 · 分科測驗</div>
+  <h1>大考命題分析總覽</h1>
+  <p class="lede">會考五科、學測六科與分科測驗八科的命題分析入口。每一科都依官方公布的試題、答案與評分原則逐題分類，並附可搜尋、含答案的原題試題庫；也可以直接用關鍵字跨科搜尋題目。</p>
+  <form class="qsearch" action="search/" method="get" role="search">
+    <input type="search" name="q" placeholder="跨科搜尋：例如 比例原則、颱風、GDP、光電效應" aria-label="跨科搜尋關鍵字">
+    <button type="submit">搜尋</button>
+  </form>
+  <p class="qhint">可搜尋題目文字、考點與類別，涵蓋三種考試約 6,000 題。<a href="search/">打開跨科搜尋 →</a></p>
+  <nav class="jump" aria-label="分區"><a href="#huikao">會考</a><a href="#xuece">學測</a><a href="#bunke">分科測驗</a><a href="#compare">108 課綱前後比較</a><a href="search/">跨科搜尋</a></nav>
+  <p class="meta">資料來源：國中教育會考官網、大考中心「歷年試題」｜整理日期：2026-09-29</p>
 </header>
 
-<section>
-  <div class="sec-head"><h2>各科分析</h2></div>
+<section id="huikao" class="group-head">
+  <div class="sec-head"><span class="kicker">國中教育會考 · 111–115 年</span><h2>會考五科</h2><p>國文、英語、數學、社會、自然五科，依心測中心公布的試題本、試題說明與參考答案逐題分類。</p></div>
   <div class="subjects">
     <article class="subj" style="--c:var(--zh)">
       <div class="subj-top"><h3>國文</h3><span class="fmt num">42 題・70 分鐘<br>寫作 50 分鐘</span></div>
@@ -138,7 +162,43 @@ tbody tr:last-child td{border-bottom:0}
 </section>
 
 <section>
-  <div class="sec-head"><h2>延伸：學測</h2><p>大學學科能力測驗的命題分析，用同樣的方法逐題分類，並附原題試題庫。</p></div>
+  <div class="sec-head"><span class="kicker">會考</span><h2>五科結構對照</h2></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>科目</th><th>題數與時間</th><th>題組</th><th>題數最多的類別</th><th>官方能力分類中最多的一類</th></tr></thead>
+    <tbody>
+      <tr><td><span class="dot" style="background:var(--zh)"></span><b>國文</b></td><td class="num">42 題・70 分</td><td>8 組 17–19 題，最後 2 組為文言文</td><td>白話文閱讀</td><td>文意理解（每年 22–24 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--en)"></span><b>英語</b></td><td class="num">閱讀 43＋聽力 21</td><td>閱讀 8 篇 20–24 題，末篇克漏字</td><td>篇章理解</td><td>篇章理解（每年 18–20 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--ma)"></span><b>數學</b></td><td class="num">25＋2 題・80 分</td><td>選文 1 組 2–3 題</td><td>幾何</td><td>解題應用（每年 8–10 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--so)"></span><b>社會</b></td><td class="num">54 題・70 分</td><td>4 組 11–12 題，多跨科</td><td>三科均分</td><td>覺察說明（每年 17–25 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--sc)"></span><b>自然</b></td><td class="num">50 題・70 分</td><td>4 組 8–9 題</td><td>生物、物理</td><td>推論與應用（每年 21–28 題）</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="kicker">會考</span><h2>等級示例都在固定位置</h2><p>心測中心每年每科會挑 3 題說明精熟、基礎、待加強的典型題目。把五年的示例題號標在題本位置上，五科都呈現同樣的規律：待加強在最前面，精熟在後半段。</p></div>
+  <div class="plot">
+    <div class="plot-legend"><span><i style="background:var(--lvA)"></i>精熟示例</span><span><i style="background:var(--lvB)"></i>基礎示例</span><span><i style="background:var(--lvC)"></i>待加強示例</span></div>
+    <div id="plot"></div>
+    <div class="axis"><span></span><div class="ticks"><span>題本開頭</span><span>中段</span><span>最後一題</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="kicker">會考</span><h2>五科共同規律</h2></div>
+  <div class="patterns">
+    <div><h3>前段題目決定是否待加強</h3><p>五科的待加強示例幾乎都在前 10 題，是單一步驟的基本概念題。確保學生前段零失誤，是脫離 C 等級最直接的方法。</p></div>
+    <div><h3>精熟要統整推論</h3><p>精熟示例都要結合兩個以上的概念或整篇資訊：國文是長篇文言，數學與自然是幾何或理化推論，社會與英語是整合圖表與文本。</p></div>
+    <div><h3>圖表與情境是共同語言</h3><p>社會約一半題目附圖表，自然、數學的題組都用生活情境或實驗數據，國文、英語也大量使用海報、傳單、統計圖等不連續文本。</p></div>
+    <div><h3>題組放在最後</h3><p>五科都把題組放在題本後段，且閱讀量大。考試時間分配要預留給最後的題組。</p></div>
+    <div><h3>年年必考的清單</h3><p>每科都有幾乎每年出現的考點，例如國文的六項語文知識、數學的二次函數與機率、自然的遺傳、社會的地圖技能。各科頁面的「重複考點」表可以直接拿來排複習。</p></div>
+    <div><h3>表達與論證變重要</h3><p>數學非選擇題要求詳細解釋，國文寫作要求詮釋材料，自然與社會也出現評估他人說法的題目。練習時要讓學生說出理由，而不只選出答案。</p></div>
+  </div>
+</section>
+
+
+<section id="xuece" class="group-head">
+  <div class="sec-head"><span class="kicker">大學學科能力測驗 · 107–115 年</span><h2>學測</h2><p>107–110 年為 99 課綱舊制，111 年起為 108 課綱新制（混合題、非選擇題）。地科是從學測自然抽出的地球科學題。</p></div>
   <div class="subjects">
     <article class="subj" style="--c:var(--zh)">
       <div class="subj-top"><h3>學測國文</h3><span class="fmt num">107–115 年<br>國綜 36–37 題</span></div>
@@ -159,13 +219,13 @@ tbody tr:last-child td{border-bottom:0}
       <a class="go" href="xuece-en/">進入學測英文分析 →</a>
     </article>
     <article class="subj" style="--c:var(--ma)">
-      <div class="subj-top"><h3>學測數學・數甲・數乙</h3><span class="fmt num">學測數學・數A・數B<br>數甲・數乙（指考／分科）</span></div>
+      <div class="subj-top"><h3>學測數學</h3><span class="fmt num">107–115 年<br>數學（107–110）・數A・數B</span></div>
       <ul>
         <li>數A 重空間與矩陣，五年未考圓錐曲線</li>
         <li>數B 多生活情境，三角與直線與圓最多</li>
-        <li>數甲微積分每年 3–5 題；數乙重機率與線性規劃</li>
+        <li>111 年起分成數A、數B，各有 1 組混合題</li>
       </ul>
-      <a class="go" href="xuece-math/">進入數學分析 →</a>
+      <a class="go" href="xuece-math/">進入學測數學分析 →</a>
     </article>
     <article class="subj" style="--c:var(--so)">
       <div class="subj-top"><h3>學測社會</h3><span class="fmt num">107–115 年<br>144 分・歷史地理公民</span></div>
@@ -193,6 +253,21 @@ tbody tr:last-child td{border-bottom:0}
         <li>分科測驗沒有地科，只考在學測</li>
       </ul>
       <a class="go" href="xuece-earth/">進入學測地科分析 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="bunke" class="group-head">
+  <div class="sec-head"><span class="kicker">107–110 年指考 · 111–115 年分科測驗</span><h2>分科測驗</h2><p>110 年以前為指定科目考試（指考），111 年起改為分科測驗。分科測驗沒有國文、英文與地球科學。</p></div>
+  <div class="subjects">
+    <article class="subj" style="--c:var(--ma)">
+      <div class="subj-top"><h3>數學甲・數學乙</h3><span class="fmt num">107–115 年<br>指考・分科測驗 100 分</span></div>
+      <ul>
+        <li>數甲微積分每年 3–5 題，多在非選擇題</li>
+        <li>數乙重機率與線性規劃，111–113 年未舉辦</li>
+        <li>與學測數學同一頁，可切換試卷比較</li>
+      </ul>
+      <a class="go" href="xuece-math/">進入數甲・數乙分析 →</a>
     </article>
     <article class="subj" style="--c:var(--sc)">
       <div class="subj-top"><h3>分科物理</h3><span class="fmt num">107–115 年<br>指考・分科測驗 100 分</span></div>
@@ -251,43 +326,30 @@ tbody tr:last-child td{border-bottom:0}
   </div>
 </section>
 
-<section>
-  <div class="sec-head"><h2>五科結構對照</h2></div>
+<section id="compare" class="group-head">
+  <div class="sec-head"><span class="kicker">學測 · 分科測驗</span><h2>108 課綱前後比較</h2><p>各科每年題數與非選擇題配分，比較 107–110 年舊制與 111–115 年新制。非選配分含混合題中的非選擇題。</p></div>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>科目</th><th>題數與時間</th><th>題組</th><th>題數最多的類別</th><th>官方能力分類中最多的一類</th></tr></thead>
+    <thead><tr><th>考科</th><th>每年題數<br><small>舊制 → 新制</small></th><th>非選配分<br><small>舊制 → 新制</small></th><th>最明顯的變化</th></tr></thead>
     <tbody>
-      <tr><td><span class="dot" style="background:var(--zh)"></span><b>國文</b></td><td class="num">42 題・70 分</td><td>8 組 17–19 題，最後 2 組為文言文</td><td>白話文閱讀</td><td>文意理解（每年 22–24 題）</td></tr>
-      <tr><td><span class="dot" style="background:var(--en)"></span><b>英語</b></td><td class="num">閱讀 43＋聽力 21</td><td>閱讀 8 篇 20–24 題，末篇克漏字</td><td>篇章理解</td><td>篇章理解（每年 18–20 題）</td></tr>
-      <tr><td><span class="dot" style="background:var(--ma)"></span><b>數學</b></td><td class="num">25＋2 題・80 分</td><td>選文 1 組 2–3 題</td><td>幾何</td><td>解題應用（每年 8–10 題）</td></tr>
-      <tr><td><span class="dot" style="background:var(--so)"></span><b>社會</b></td><td class="num">54 題・70 分</td><td>4 組 11–12 題，多跨科</td><td>三科均分</td><td>覺察說明（每年 17–25 題）</td></tr>
-      <tr><td><span class="dot" style="background:var(--sc)"></span><b>自然</b></td><td class="num">50 題・70 分</td><td>4 組 8–9 題</td><td>生物、物理</td><td>推論與應用（每年 21–28 題）</td></tr>
+      <tr><td><span class="dot" style="background:var(--zh)"></span><b><a href="xuece/">學測國文</a></b></td><td class="num">42 → 36–37</td><td class="num">0 → 18–20<br><small>另有國寫 50 分</small></td><td class="chg">改為國綜，加入混合題與非選短答；題組約七成</td></tr>
+      <tr><td><span class="dot" style="background:var(--en)"></span><b><a href="xuece-en/">學測英文</a></b></td><td class="num">56 → 49–50</td><td class="num">28 → 34</td><td class="chg">新增篇章結構與混合題；作文幾乎都是看圖寫作</td></tr>
+      <tr><td><span class="dot" style="background:var(--ma)"></span><b><a href="xuece-math/">學測數學</a></b></td><td class="num">20 → 數A、數B 各 20</td><td class="num">0 → 10–12</td><td class="chg">分成數A、數B，各 1 組混合題</td></tr>
+      <tr><td><span class="dot" style="background:var(--so)"></span><b><a href="xuece-soc/">學測社會</a></b></td><td class="num">72 → 64–67</td><td class="num">0 → 30–36</td><td class="chg">臺灣史、地理技能增加，中國史減少</td></tr>
+      <tr><td><span class="dot" style="background:var(--sc)"></span><b><a href="xuece-sci/">學測自然</a></b></td><td class="num">68 → 56–60</td><td class="num">0 → 24–32</td><td class="chg">113 年起四科配分幾乎均分；題組過半</td></tr>
+      <tr><td><span class="dot" style="background:var(--ma)"></span><b><a href="xuece-math/">數學甲</a></b></td><td class="num">13 → 17</td><td class="num">24 → 22</td><td class="chg">非選改為 2 組混合題組</td></tr>
+      <tr><td><span class="dot" style="background:var(--ma)"></span><b><a href="xuece-math/">數學乙</a></b></td><td class="num">12 → 18</td><td class="num">26 → 22</td><td class="chg">111–113 年未舉辦，114 年起恢復</td></tr>
+      <tr><td><span class="dot" style="background:var(--sc)"></span><b><a href="xuece-phy/">分科物理</a></b></td><td class="num">26 → 26</td><td class="num">20 → 20–23</td><td class="chg">多選每題 5 分、合計 35–40 分</td></tr>
+      <tr><td><span class="dot" style="background:var(--sc)"></span><b><a href="xuece-chem/">分科化學</a></b></td><td class="num">27–28 → 27–31</td><td class="num">20 → 16–20</td><td class="chg">多選合計 50–56 分；非選拆成 2 分小題</td></tr>
+      <tr><td><span class="dot" style="background:var(--sc)"></span><b><a href="xuece-bio/">分科生物</a></b></td><td class="num">52 → 47–49</td><td class="num">24 → 24–26</td><td class="chg">演化與生態配分增加一倍以上</td></tr>
+      <tr><td><span class="dot" style="background:var(--so)"></span><b><a href="xuece-hist/">分科歷史</a></b></td><td class="num">42 → 45–46</td><td class="num">20 → 20–22</td><td class="chg">臺灣史比重上升；非選改為題組小題</td></tr>
+      <tr><td><span class="dot" style="background:var(--so)"></span><b><a href="xuece-geo/">分科地理</a></b></td><td class="num">41 → 41–47</td><td class="num">24 → 24–30</td><td class="chg">地理技能與 GIS 比重上升；第貳部分增至 48 分</td></tr>
+      <tr><td><span class="dot" style="background:var(--so)"></span><b><a href="xuece-civ/">分科公民</a></b></td><td class="num">50 → 42–44</td><td class="num">0 → 20–24</td><td class="chg">新增非選；多選從 10–13 題減為 3–4 題</td></tr>
     </tbody>
   </table></div>
 </section>
 
-<section>
-  <div class="sec-head"><h2>等級示例都在固定位置</h2><p>心測中心每年每科會挑 3 題說明精熟、基礎、待加強的典型題目。把五年的示例題號標在題本位置上，五科都呈現同樣的規律：待加強在最前面，精熟在後半段。</p></div>
-  <div class="plot">
-    <div class="plot-legend"><span><i style="background:var(--lvA)"></i>精熟示例</span><span><i style="background:var(--lvB)"></i>基礎示例</span><span><i style="background:var(--lvC)"></i>待加強示例</span></div>
-    <div id="plot"></div>
-    <div class="axis"><span></span><div class="ticks"><span>題本開頭</span><span>中段</span><span>最後一題</span></div></div>
-  </div>
-</section>
-
-<section>
-  <div class="sec-head"><h2>五科共同規律</h2></div>
-  <div class="patterns">
-    <div><h3>前段題目決定是否待加強</h3><p>五科的待加強示例幾乎都在前 10 題，是單一步驟的基本概念題。確保學生前段零失誤，是脫離 C 等級最直接的方法。</p></div>
-    <div><h3>精熟要統整推論</h3><p>精熟示例都要結合兩個以上的概念或整篇資訊：國文是長篇文言，數學與自然是幾何或理化推論，社會與英語是整合圖表與文本。</p></div>
-    <div><h3>圖表與情境是共同語言</h3><p>社會約一半題目附圖表，自然、數學的題組都用生活情境或實驗數據，國文、英語也大量使用海報、傳單、統計圖等不連續文本。</p></div>
-    <div><h3>題組放在最後</h3><p>五科都把題組放在題本後段，且閱讀量大。考試時間分配要預留給最後的題組。</p></div>
-    <div><h3>年年必考的清單</h3><p>每科都有幾乎每年出現的考點，例如國文的六項語文知識、數學的二次函數與機率、自然的遺傳、社會的地圖技能。各科頁面的「重複考點」表可以直接拿來排複習。</p></div>
-    <div><h3>表達與論證變重要</h3><p>數學非選擇題要求詳細解釋，國文寫作要求詮釋材料，自然與社會也出現評估他人說法的題目。練習時要讓學生說出理由，而不只選出答案。</p></div>
-  </div>
-</section>
-
 <section class="source">
-  <p>各科頁面的分類方式與資料說明，請見各頁最後的「資料與方法」。主題與考點分類為逐題判讀的結果，不是官方分類；題數分配、等級示例與參考答案均取自官方文件。</p>
+  <p>各科頁面的分類方式與資料說明，請見各頁最後的「資料與方法」。主題與考點分類為逐題判讀的結果，不是官方分類；題數、配分、等級示例與參考答案均取自官方文件。</p>
 </section>
 </div>
 
