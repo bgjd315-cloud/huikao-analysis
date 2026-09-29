@@ -27,6 +27,7 @@ SUBJECTS = {  # 資料夾代號 → 顯示名稱
     "xuece-math": "學測數學",
     "xuece-soc": "學測社會",
     "xuece-sci": "學測自然",
+    "xuece-earth": "學測地科",
     "xuece-phy": "分科物理",
     "xuece-chem": "分科化學",
     "xuece-bio": "分科生物",
